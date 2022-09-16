@@ -1,0 +1,591 @@
+.siup3_ellipse-icon6 {
+    position: absolute;
+    top: 2176px;
+    left: -194px;
+    width: 634px;
+    height: 634px;
+}
+
+.siup3_ellipse-icon7,
+.siup3_ellipse-icon8 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1317px;
+    height: 904px;
+}
+
+.siup3_ellipse-icon8 {
+    left: 123px;
+}
+
+.siup3_ellipse-icon10,
+.siup3_ellipse-icon9 {
+    position: absolute;
+    top: 3278px;
+    left: 1123px;
+    width: 634px;
+    height: 634px;
+}
+
+.siup3_ellipse-icon10 {
+    top: 0;
+    left: 0;
+    width: 1440px;
+    height: 904px;
+}
+
+.siup3_welcome-to-help-center1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 60px;
+    display: none;
+    width: 624px;
+}
+
+.siup3_group-div6,
+.siup3_group-div7 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+}
+
+.siup3_group-div6 {
+    top: -532px;
+    left: 7577px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.siup3_vector-icon1 {
+    position: absolute;
+    height: 0.74%;
+    width: 1.11%;
+    top: 21.35%;
+    right: 83.54%;
+    bottom: 77.91%;
+    left: 15.35%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.siup3_my-account-p1 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.siup3_logout-p1 {
+    margin: 0;
+}
+
+.siup3_my-account-help-center-logout1 {
+    position: absolute;
+    top: 1136px;
+    left: 71px;
+    font-size: 24px;
+    color: #fff;
+    display: inline-block;
+}
+
+.siup3_ellipse-icon11,
+.siup3_enablemint-div1 {
+    position: absolute;
+    left: -435px;
+    top: -198px;
+    width: 1301px;
+    height: 1301px;
+}
+
+.siup3_enablemint-div1 {
+    top: 53px;
+    left: 102px;
+    color: #fff;
+    display: inline-block;
+    width: 134px;
+    height: 19px;
+}
+
+.plan-radio {
+    color: #388e3c;
+}
+
+.siup3_logo-1-icon1 {
+    position: absolute;
+    top: 37px;
+    left: 47px;
+    width: 51px;
+    height: 51px;
+    object-fit: cover;
+}
+
+.siup3_group-button,
+.siup3_group-button1 {
+    position: absolute;
+    top: 770px;
+    left: 183px;
+}
+
+.siup3_group-button:disabled,
+.siup3_group-button1:disabled {
+    background-color: #a6a6a6;
+    color: #f1f1f1;
+}
+
+.siup3_back-button {
+    position: absolute;
+    top: 708px;
+    left: 577px;
+    font-size: 14px;
+    text-decoration: underline;
+    font-weight: 500;
+    text-align: right;
+    color: #fff;
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+}
+
+.siup3_group-button,
+.siup3_group-button1 {
+    top: 567px;
+    left: 150px;
+}
+
+.siup3_group-button {
+    border-radius: 11px;
+}
+
+.siup3_group-button1 {
+    top: 634px;
+    color: #fff;
+    border-color: #fff;
+    border-radius: 11px;
+}
+
+.siup3_choose-your-plan {
+    position: absolute;
+    top: 168px;
+    left: 188px;
+    font-size: 32px;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    width: 302px;
+    height: 18px;
+}
+
+.siup3_rectangle-div1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    background-color: #fff;
+    width: 226px;
+    height: 261px;
+}
+
+.siup3_group-div9,
+.siup3_starter-b {
+    position: absolute;
+    width: 111.43px;
+    height: 19.25px;
+}
+
+.siup3_starter-b {
+    top: 0;
+    left: 0;
+    text-decoration: underline;
+    display: inline-block;
+}
+
+.siup3_group-div9 {
+    top: 14.97px;
+    left: 49.12px;
+}
+
+.siup3_group-div8,
+.siup3_rectangle-div2 {
+    position: absolute;
+    height: 261px;
+}
+
+.siup3_group-div8 {
+    top: 256px;
+    left: 38px;
+    width: 226px;
+    text-align: center;
+    color: #161c28;
+}
+
+.siup3_rectangle-div2 {
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    background-color: #fff;
+    width: 224.25px;
+}
+
+.siup3_group-div11,
+.siup3_growth-b {
+    position: absolute;
+    width: 110.35px;
+    height: 20.25px;
+}
+
+.siup3_growth-b {
+    top: 0;
+    left: 0;
+    text-decoration: underline;
+    display: inline-block;
+}
+
+.siup3_group-div11 {
+    top: 15.75px;
+    left: 48.65px;
+}
+
+.siup3_accelerator-b,
+.siup3_group-div13 {
+    position: absolute;
+    width: 123.76px;
+    height: 20.41px;
+}
+
+.siup3_accelerator-b {
+    top: 0;
+    left: 0;
+    text-decoration: underline;
+    display: inline-block;
+}
+
+.siup3_group-div13 {
+    top: 16.11px;
+    left: 48.92px;
+}
+
+.siup3_group-div10,
+.siup3_group-div12 {
+    position: absolute;
+    top: 0;
+    left: 236.11px;
+    width: 224.25px;
+    height: 261px;
+}
+
+.siup3_group-div10 {
+    top: 256px;
+    left: 273.63px;
+    width: 460.37px;
+    text-align: center;
+    color: #161c28;
+}
+
+.siup3_ellipse-formcontrollabel,
+.siup3_ellipse-formcontrollabel1,
+.siup3_ellipse-formcontrollabel2 {
+    position: absolute;
+    top: 268px;
+    left: 80px;
+}
+
+.siup3_ellipse-formcontrollabel1 {
+    left: 313px;
+}
+
+.siup3_ellipse-formcontrollabel2 {
+    left: 535px;
+}
+
+.siup3_asset-2-3 {
+    position: absolute;
+    top: 194px;
+    left: 856px;
+    width: 475px;
+    height: 490px;
+    object-fit: cover;
+}
+
+.siup3_subtract-icon {
+    position: relative;
+    width: 21.03px;
+    height: 21.56px;
+}
+
+.siup3_unlimited-contacts-div {
+    position: absolute;
+    top: 0;
+    left: 28.77px;
+    line-height: 30px;
+    font-weight: 500;
+    display: inline-block;
+    width: 140.99px;
+    height: 19.94px;
+}
+
+.siup3_companies-div,
+.siup3_group-div15 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 169.76px;
+    height: 22.89px;
+}
+
+.siup3_companies-div {
+    left: 28.77px;
+    line-height: 30px;
+    font-weight: 500;
+    display: inline-block;
+    width: 132.24px;
+    height: 22.94px;
+}
+
+.siup3_group-div16 {
+    position: absolute;
+    top: 25.88px;
+    left: 0;
+    width: 161.01px;
+    height: 23.14px;
+}
+
+.siup3_campaign-slots-div {
+    position: absolute;
+    top: 0;
+    left: 29.11px;
+    line-height: 30px;
+    font-weight: 500;
+    display: inline-block;
+    width: 181.16px;
+    height: 24.88px;
+}
+
+.siup3_group-div17 {
+    position: absolute;
+    top: 51.92px;
+    left: 0;
+    width: 210.27px;
+    height: 24.88px;
+}
+
+.siup3_contact-list-upload-tool {
+    position: absolute;
+    top: 0;
+    left: 28.77px;
+    line-height: 30px;
+    font-weight: 500;
+    display: inline-block;
+    width: 181.83px;
+    height: 23.93px;
+}
+
+.siup3_group-div18,
+.siup3_mb-storage-div {
+    position: absolute;
+    top: 78.64px;
+    left: 0;
+    width: 210.6px;
+    height: 23.93px;
+}
+
+.siup3_mb-storage-div {
+    top: 0;
+    left: 29.11px;
+    line-height: 30px;
+    font-weight: 500;
+    display: inline-block;
+    width: 126.97px;
+    height: 24.88px;
+}
+
+.siup3_group-div14,
+.siup3_group-div19 {
+    position: absolute;
+    top: 106.18px;
+    left: 0;
+    width: 156.09px;
+    height: 24.88px;
+}
+
+.siup3_group-div14 {
+    top: 305px;
+    left: 51px;
+    width: 210.6px;
+    height: 131.07px;
+    font-size: 15px;
+}
+
+.siup3_group-div26 {
+    position: absolute;
+    top: 131px;
+    left: 0;
+    width: 156.09px;
+    height: 24.88px;
+}
+
+.siup3_group-div20,
+.siup3_group-icon {
+    position: absolute;
+    top: 132.66px;
+    left: 0;
+    width: 21.03px;
+    height: 21.56px;
+}
+
+.siup3_group-div20 {
+    top: 305px;
+    left: 280px;
+    width: 210.6px;
+    height: 155.88px;
+    font-size: 15px;
+}
+
+.siup3_group-div28 {
+    position: absolute;
+    top: 143.52px;
+    left: 0;
+    width: 156.09px;
+    height: 24.88px;
+}
+
+.siup3_collaboration-soon-div {
+    position: absolute;
+    top: 0;
+    left: 29px;
+    line-height: 30px;
+    font-weight: 500;
+    display: inline-block;
+    width: 155px;
+    height: 23px;
+}
+
+.siup3_group-div29 {
+    position: absolute;
+    top: 168.52px;
+    left: 0;
+    width: 184px;
+    height: 23.22px;
+}
+
+.siup3_subtract-icon13 {
+    position: relative;
+    width: 21.69px;
+    height: 23.16px;
+}
+
+.siup3_unlimited-contacts-div2 {
+    position: absolute;
+    top: 0;
+    left: 29.67px;
+    line-height: 30px;
+    font-weight: 500;
+    display: inline-block;
+    width: 145.41px;
+    height: 21.42px;
+}
+
+.siup3_companies-div2,
+.siup3_group-div30 {
+    position: absolute;
+    top: 0;
+    left: 0.38px;
+    width: 175.08px;
+    height: 24.58px;
+}
+
+.siup3_companies-div2 {
+    left: 29.67px;
+    line-height: 30px;
+    font-weight: 500;
+    display: inline-block;
+    width: 136.39px;
+    height: 24.63px;
+}
+
+.siup3_group-div31 {
+    position: absolute;
+    top: 27.8px;
+    left: 0.38px;
+    width: 166.06px;
+    height: 24.85px;
+}
+
+.siup3_campaign-slots-div2 {
+    position: absolute;
+    top: 0;
+    left: 30.03px;
+    line-height: 30px;
+    font-weight: 500;
+    display: inline-block;
+    width: 186.84px;
+    height: 26.73px;
+}
+
+.siup3_group-div32 {
+    position: absolute;
+    top: 55.77px;
+    left: 0.38px;
+    width: 216.87px;
+    height: 26.73px;
+}
+
+.siup3_contact-list-upload-tool2 {
+    position: absolute;
+    top: 0;
+    left: 29.67px;
+    line-height: 30px;
+    font-weight: 500;
+    display: inline-block;
+    width: 187.53px;
+    height: 25.71px;
+}
+
+.siup3_gb-storage-div1,
+.siup3_group-div33 {
+    position: absolute;
+    top: 84.46px;
+    left: 0.38px;
+    width: 217.2px;
+    height: 25.71px;
+}
+
+.siup3_gb-storage-div1 {
+    top: 0;
+    left: 30.03px;
+    line-height: 30px;
+    font-weight: 500;
+    display: inline-block;
+    width: 130.96px;
+    height: 26.73px;
+}
+
+.siup3_group-div27,
+.siup3_group-div34 {
+    position: absolute;
+    top: 114.05px;
+    left: 0.38px;
+    width: 160.98px;
+    height: 26.73px;
+}
+
+.siup3_group-div27 {
+    top: 306.48px;
+    left: 516px;
+    width: 217.59px;
+    height: 191.74px;
+    font-size: 15px;
+}
+
+.siup3_sign-up-workflow-page-3 {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    height: 904px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 20px;
+    color: #191a15;
+    font-family: Inter;
+}

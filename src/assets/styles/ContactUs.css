@@ -1,0 +1,55 @@
+.contactUs {
+  background: #F5F5F5;
+  position: relative;
+  padding-bottom: 255px;
+}
+.contactUs .headerImg {
+  position: absolute;
+  right: 0;
+  top: 80px;
+  width: 50%;
+  z-index: 1;
+}
+.contactUs .headerImg img {
+  width: 100%;
+}
+.contactUs .map {
+  width: 85%;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.contactUs form {
+  width: 80%;
+  background: #222938;
+  border-radius: 20px;
+  margin: auto;
+  padding: 50px 100px;
+}
+
+@media screen and (max-width: 992px) {
+  .contactUs form {
+    padding: 30px 35px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .contactUs form {
+    width: 100%;
+    padding: 30px 15px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contactUs {
+    padding-bottom: 150px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .contactUs .headerImg {
+    top: 68px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .contactUs {
+    padding-bottom: 80px;
+}
+}
