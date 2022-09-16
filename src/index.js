@@ -9,6 +9,7 @@ import { CssBaseline, ThemeProvider, StyledEngineProvider } from "@mui/material"
 import reportWebVitals from "./reportWebVitals";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./assets/styles/Dashboard.css";
 
 import { theme } from './themes'
 

@@ -34,9 +34,9 @@ const NewCampaignApp = () => {
             width: "100%",
             background: "#FFFFFF",
             borderRadius: "15px !important",
-            padding: { md: "50px 45px !important", sm: "40px 15px!important" },
+            padding: { md: "35px 45px !important", sm: "25px 15px!important" },
             ['@media (max-width:600px)']: { // eslint-disable-line no-useless-computed-key 
-              padding: "40px 15px!important",
+              padding: "25px 15px!important",
             }
           }}>
             <Typography

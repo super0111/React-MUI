@@ -52,7 +52,7 @@ const Navbar = (props) => {
 
   const drawer = (
     <Box sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2, color: "black", fontWeight: 700, marginTop: "30px" }}
+      <Typography variant="h6" sx={{ my: 2, color: "white", fontWeight: 700, marginTop: "30px" }}
         onClick={handleDrawerToggle}
       >
         Enablemint
@@ -64,8 +64,8 @@ const Navbar = (props) => {
             { item === "Resources" ?
             <Box display="flex" flexDirection="column" justifyContent="start" sx={{width: "100%"}}>
               <ListItemButton sx={{ textAlign: "left" }} onClick={()=>setResourcesShow(!resourcesShow)}>
-                <ListItemText primary="Resources" />
-                { resourcesShow === true ? <BiChevronUp /> : <BiChevronDown /> }
+                <ListItemText primary="Resources" sx={{color: "white"}} />
+                { resourcesShow === true ? <BiChevronUp color='white' /> : <BiChevronDown color='white' /> }
               </ListItemButton>
               {
                 resourcesShow && 
@@ -75,7 +75,7 @@ const Navbar = (props) => {
                   <Button 
                     sx={{
                       marginLeft: "-30px",
-                      color: "#373737",
+                      color: "white",
                       fontSize: "13px",
                       fontWeight: 500,
                       marginBottom: "-13px",
@@ -87,7 +87,7 @@ const Navbar = (props) => {
                   <Button 
                     sx={{
                       marginLeft: "-30px",
-                      color: "#373737",
+                      color: "white",
                       fontSize: "13px",
                       fontWeight: 500,
                     }}
@@ -100,7 +100,7 @@ const Navbar = (props) => {
             </Box>
             : 
               <ListItemButton sx={{ textAlign: "left" }}>
-                <ListItemText primary={item} />
+                <ListItemText primary={item} sx={{color: "white"}} />
               </ListItemButton>
             }
           </ListItem>

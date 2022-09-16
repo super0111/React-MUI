@@ -19,23 +19,35 @@
   margin-top: 60px;
   margin-bottom: 60px;
 }
-.contactUs form {
+.contactUs-form {
   width: 80%;
   background: #222938;
   border-radius: 20px;
   margin: auto;
-  padding: 50px 100px;
+  padding: 30px 85px;
+}
+.feedback-form {
+  width: 70%;
+  background: #222938;
+  border-radius: 20px;
+  margin: auto;
+  padding: 30px 85px;
+}
+
+@media screen and (max-width: 1200px) {
+  .feedback-form {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 992px) {
-  .contactUs form {
-    padding: 30px 35px;
-  }
-}
-@media screen and (max-width: 992px) {
-  .contactUs form {
+  .contactUs-form {
     width: 100%;
-    padding: 30px 15px;
+    padding: 25px 15px;
+  }
+  .feedback-form {
+    width: 100%;
+    padding: 25px 25px;
   }
 }
 @media screen and (max-width: 768px) {

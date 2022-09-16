@@ -24,7 +24,6 @@ const DashboardApp = () => {
           ['@media (max-width:992px)']: { // eslint-disable-line no-useless-computed-key 
             padding: "120px 10px 70px 10px!important",
           }
-
         }}>
           <TableContainer component={Paper} 
             sx={{ 
@@ -42,7 +41,7 @@ const DashboardApp = () => {
                   <TableCell sx={{padding: "5px", color: "white", width: "25%" }} align="center">Contacts Found</TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody>
+              <TableBody sx={{backgroundColor: "white"}}>
                   <TableRow>
                     <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
                     <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
