@@ -4,17 +4,48 @@ import { useNavigate } from 'react-router-dom';
 
 import { Container, AppBar, Box, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography, Button } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import Dropdown from "./Dropdown"
 
 const drawerWidth = 200;
-const navItems = ['About us', 'Resources', 'Pricing'];
+const navItems = ["Home", "About us", "Resources", "Pricing"];
 
 const Navbar = (props) => {
-  const { window } = props;
+  const { window, currentPage } = props;
   const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
+  };
+
+  const changeLocation = React.useCallback((callerID) => {
+    navigate(`/${callerID}`);
+  }, [navigate]);
+
+  const changeColor = (ref) => {
+    if (ref.getAttribute("id") === currentPage) {
+      ref.style.color = "#388E3C"
+      ref.style.backgroundColor = "#19d27014"
+    }
+  };
+
+  const getNavItem = (item) => {
+    const _item = item.toLowerCase().split(' ').join('-');
+    if (item === "Resources") {
+      return <Dropdown key={item} currentPage={currentPage} />;
+    } else {
+      return (
+        <Button
+          key={_item}
+          id={_item}
+          sx={{ mr: 0.4, color: "#fff", ":hover": { color: "#388E3C", bgcolor: "#19d27014" } }}
+          ref={(ref) => { if (ref) changeColor(ref); }}
+          onClick={() => { changeLocation(_item) }}
+        >
+          {item}
+        </Button>
+      );
+    }
   };
 
   const drawer = (
@@ -33,12 +64,31 @@ const Navbar = (props) => {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
+            if (item === "Resources") {<Dropdown />}else
+            {
+              <ListItemButton sx={{ textAlign: "center" }}>
+                <ListItemText primary={item} />
+              </ListItemButton>
+            }
           </ListItem>
         ))}
       </List>
+          {/* <ListItem disablePadding>
+            <ListItemButton sx={{ textAlign: 'center' }}>
+              <ListItemText primary="About us" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton sx={{ textAlign: 'center' }}>
+              <ListItemText primary="Resources" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton sx={{ textAlign: 'center' }}>
+              <ListItemText primary="Pricing" />
+            </ListItemButton>
+          </ListItem> */}
+      {/* </List> */}
     </Box>
   );
 
@@ -73,6 +123,7 @@ const Navbar = (props) => {
               variant="h6"
               component="div"
               sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+              onClick={()=>navigate("/")}
             >
               <img src="/assets/logo-1@2x.png" alt='logo' style={{width: "55px", marginRight: "5px",}} />
               enablemint
@@ -85,11 +136,18 @@ const Navbar = (props) => {
                 }
               }}
             >
-              {navItems.map((item) => (
-                <Button key={item} sx={{ color: '#fff' }}>
-                  {item}
+                {/* <Box sx={{ display: { xs: "none", sm: "block" } }}> */}
+                  {navItems.map((item) => getNavItem(item))}
+                {/* </Box> */}
+                {/* <Button sx={{ color: '#fff' }} onClick={()=>navigate("/about-us")}>
+                  About us
                 </Button>
-              ))}
+                <Button sx={{ color: '#fff' }} onClick={()=>setResources(true)}>
+                  Resources
+                </Button>
+                <Button sx={{ color: '#fff' }} onClick={()=>navigate("/pricing")}>
+                  Pricing
+                </Button> */}
             </Box>
             <Box>
               <Button sx={{ color: '#fff' }}
