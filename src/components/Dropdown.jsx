@@ -6,7 +6,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 
 
-export const Dropdown = ({ currentPage }) => {
+const Dropdown = ({ currentPage }) => {
   const navigate = useNavigate();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -63,3 +63,5 @@ export const Dropdown = ({ currentPage }) => {
     </>
   );
 };
+
+export default Dropdown
