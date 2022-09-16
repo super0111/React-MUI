@@ -1,4 +1,3 @@
-export { LandingPage } from "./LandingPage";
 export { AboutUsPage } from "./AboutUsPage";
 export { default as Pricing } from "./Pricing";
 export { LoginPage } from "./LoginPage";
@@ -14,3 +13,4 @@ export { default as Dashboard } from "./Dashboard";
 export { default as UploadFile } from "./UploadFile";
 export { default as NewCampaign } from "./NewCampaign";
 export { default as MyAccount } from "./MyAccount";
+export { default as LandingPage } from './Landing'
