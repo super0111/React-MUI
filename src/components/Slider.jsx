@@ -205,7 +205,13 @@ const Slider = (props) => {
             position: "relative"
           }}
         >
-          <div className={ `${open === true ? "d-flex flex-column aign-items-center m-auto" : "d-flex flex-column aign-items-center m-auto pt-4 mt-5"}`}>
+          <div 
+            className={
+              `${open === true ? "d-flex flex-column aign-items-center m-auto" 
+              : "d-flex flex-column aign-items-center m-auto pt-4 mt-5"}`
+            }
+            onClick={()=>navigate("/")}
+          >
             <Typography
               variant="h6"
               component="div"
@@ -317,7 +323,7 @@ const Slider = (props) => {
                       color: "#FFFFFF",
                       marginBottom: "15px",
                     }}
-                    onClick={()=>navigate("/newCampagim")}
+                    onClick={()=>navigate("/newCampaign")}
                   >
                     <img src="/assets/dashboard/Vector (2).png" style={{width: "15px", marginRight: "10px",}} />
                     New campaign

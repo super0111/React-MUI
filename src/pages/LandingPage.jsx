@@ -25,7 +25,7 @@ export const LandingPage = () => {
     <>
       <div className="landing-page-div">
         <Navbar currentPage="home" />
-         
+          
         <Footer />
       </div>
     </>

@@ -12,3 +12,4 @@ export { default as ContactUs } from "./ContactUs";
 
 export { default as Dashboard } from "./Dashboard";
 export { default as UploadFile } from "./UploadFile";
+export { default as NewCampaign } from "./NewCampaign";

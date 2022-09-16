@@ -9,16 +9,15 @@ import Paper from '@mui/material/Paper';
 import { Container, Box, Typography } from '@mui/material';
 import Slider from "../components/Slider";
 
-const items = [
-  { text: "Companies Processed", process: "80%", count: "400/500" },
-  { text: "Campaign Slots", process: "90%", count: "2/3" },
-  { text: "Storage Usage", process: "50%", count: "250/500" },
-]
-
 const UploadFileApp = () => {
   return (
     <Box sx={{background: "#F5F5F5", paddingBottom: "70px !important"}}>
-      <Container sx={{padding: "0 60px !important"}}>
+      <Container sx={{
+        padding: "0 60px !important",
+        ['@media (max-width:684px)']: { // eslint-disable-line no-useless-computed-key 
+          padding: "0px 20px !important",
+        }
+      }}>
         <Box sx={{
           padding: "130px 0px 60px 0px !important",
           display: "flex",
