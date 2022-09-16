@@ -5,32 +5,12 @@ import { App } from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { default as store, persistor } from './app/store';
 import { Provider } from 'react-redux';
-import { CssBaseline, ThemeProvider, createTheme, StyledEngineProvider } from "@mui/material";
+import { CssBaseline, ThemeProvider, StyledEngineProvider } from "@mui/material";
 import reportWebVitals from "./reportWebVitals";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const createFontFamily = (fontFamily) => {
-  return {
-    h1: { fontFamily },
-    h2: { fontFamily },
-    h3: { fontFamily },
-    h4: { fontFamily },
-    h5: { fontFamily },
-    h6: { fontFamily },
-    subtitle1: { fontFamily },
-    subtitle2: { fontFamily },
-    body1: { fontFamily },
-    body2: { fontFamily },
-    button: { fontFamily, textTransform: "normalize" },
-    caption: { fontFamily },
-    overline: { fontFamily },
-  };
-};
-
-const theme = createTheme({
-  typography: createFontFamily("Inter, sans-serif"),
-});
+import { theme } from './themes'
 
 const container = document.getElementById("app");
 const root = createRoot(container);
