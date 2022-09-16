@@ -39,11 +39,26 @@ const createPaletteSystem = () => ({
         // contrastText: '',
     },
 })
-// const createComponentSystem = () => {
-    
-// }
+const createComponentSystem = () => ({
+    MuiButton: {
+        variants: [
+            {
+                props: { variant: 'contained' },
+                style: ({ theme }) => ({
+                    background: theme.palette.primary.main,
+                    borderRadius: 70,
+                    py: 3,
+                    px: 5,
+                })
+            }
+        ]
+    }
+})
 export const theme = createTheme({
+    components: createComponentSystem(),
     typography: createTypographySystem("Inter, sans-serif"),
+    palette: createPaletteSystem(),
+    spacing: 6,
 });
 
 export const palette = theme.pallet
