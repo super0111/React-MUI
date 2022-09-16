@@ -2,18 +2,59 @@ import { createTheme } from '@mui/material'
 
 const createTypographySystem = (fontFamily) => {
     return {
-        h1: { fontFamily },
-        h2: { fontFamily },
-        h3: { fontFamily },
-        h4: { fontFamily },
-        h5: { fontFamily },
-        h6: { fontFamily },
+        h1: {
+            fontFamily,
+            fontSize: 55,
+            fontWeight: 700,
+            fontStyle: 'normal',
+            lineHeight: '110%',
+        },
+        h2: {
+            fontFamily,
+            fontSize: 50,
+            fontWeight: 700,
+            fontStyle: 'normal',
+            lineHeight: '110%',
+        },
+        h3: {
+            fontFamily,
+            fontSize: 45,
+            fontWeight: 700,
+            fontStyle: 'normal',
+            lineHeight: '110%',
+        },
+        h4: {
+            fontFamily,
+            fontSize: 40,
+            fontWeight: 700,
+            fontStyle: 'normal',
+            lineHeight: '110%',
+        },
+        h5: {
+            fontFamily,
+            fontSize: 30,
+            fontWeight: 700,
+            fontStyle: 'normal',
+            lineHeight: '110%',
+        },
+        h6: {
+            fontFamily,
+            fontSize: 25,
+            fontWeight: 700,
+            fontStyle: 'normal',
+            lineHeight: '110%',
+        },
         subtitle1: { fontFamily },
         subtitle2: { fontFamily },
         body1: { fontFamily },
         body2: { fontFamily },
         button: { fontFamily, textTransform: "normalize" },
-        caption: { fontFamily },
+        caption: {
+            fontFamily,
+            fontSize: 30,
+            fontWeight: 600,
+            color: '#A6A6A6',
+        },
         overline: { fontFamily },
     };
 };
@@ -41,6 +82,11 @@ const createPaletteSystem = () => ({
 })
 const createComponentSystem = () => ({
     MuiButton: {
+        styleOverrides: {
+            root: {
+                fontFamily: 'Inter',
+            },
+        },
         variants: [
             {
                 props: { variant: 'contained' },
