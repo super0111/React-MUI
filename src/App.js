@@ -21,6 +21,7 @@ export const App = ({ root }) => {
       <Route path="/dashboard" element={<Pages.Dashboard />} />
       <Route path="/uploadFile" element={<Pages.UploadFile />} />
       <Route path="/newCampaign" element={<Pages.NewCampaign />} />
+      <Route path="/myAccount" element={<Pages.MyAccount />} />
 
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>

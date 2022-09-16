@@ -4,15 +4,17 @@ import { useNavigate } from 'react-router-dom';
 
 import { Container, AppBar, Box, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography, Button } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import Dropdown from "./Dropdown"
 
-const drawerWidth = 200;
+const drawerWidth = 160;
 const navItems = ["Home", "About us", "Resources", "Pricing"];
 
 const Navbar = (props) => {
   const { window, currentPage } = props;
   const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [resourcesShow, setResourcesShow] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -49,46 +51,61 @@ const Navbar = (props) => {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        enablemint
+    <Box sx={{ textAlign: 'center' }}>
+      <Typography variant="h6" sx={{ my: 2, color: "black", fontWeight: 700, marginTop: "30px" }}
+        onClick={handleDrawerToggle}
+      >
+        Enablemint
       </Typography>
-      <Typography
-          variant="h6"
-          component="div"
-          sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-        >
-         
-        </Typography>
       <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            if (item === "Resources") {<Dropdown />}else
-            {
-              <ListItemButton sx={{ textAlign: "center" }}>
+            { item === "Resources" ?
+            <Box display="flex" flexDirection="column" justifyContent="start" sx={{width: "100%"}}>
+              <ListItemButton sx={{ textAlign: "left" }} onClick={()=>setResourcesShow(!resourcesShow)}>
+                <ListItemText primary="Resources" />
+                { resourcesShow === true ? <BiChevronUp /> : <BiChevronDown /> }
+              </ListItemButton>
+              {
+                resourcesShow && 
+                <Box display="flex" flexDirection="column" 
+                  sx={{marginTop: "-10px"}}
+                >
+                  <Button 
+                    sx={{
+                      marginLeft: "-30px",
+                      color: "#373737",
+                      fontSize: "13px",
+                      fontWeight: 500,
+                      marginBottom: "-13px",
+                    }}
+                    onClick={()=>navigate("/help-center")}
+                  >
+                    Help Center
+                  </Button>
+                  <Button 
+                    sx={{
+                      marginLeft: "-30px",
+                      color: "#373737",
+                      fontSize: "13px",
+                      fontWeight: 500,
+                    }}
+                    onClick={()=>navigate("/contact-us")}
+                  >
+                    Contact Us
+                  </Button>
+                </Box>
+              }
+            </Box>
+            : 
+              <ListItemButton sx={{ textAlign: "left" }}>
                 <ListItemText primary={item} />
               </ListItemButton>
             }
           </ListItem>
         ))}
       </List>
-          {/* <ListItem disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary="About us" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary="Resources" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary="Pricing" />
-            </ListItemButton>
-          </ListItem> */}
-      {/* </List> */}
     </Box>
   );
 
@@ -136,18 +153,7 @@ const Navbar = (props) => {
                 }
               }}
             >
-                {/* <Box sx={{ display: { xs: "none", sm: "block" } }}> */}
-                  {navItems.map((item) => getNavItem(item))}
-                {/* </Box> */}
-                {/* <Button sx={{ color: '#fff' }} onClick={()=>navigate("/about-us")}>
-                  About us
-                </Button>
-                <Button sx={{ color: '#fff' }} onClick={()=>setResources(true)}>
-                  Resources
-                </Button>
-                <Button sx={{ color: '#fff' }} onClick={()=>navigate("/pricing")}>
-                  Pricing
-                </Button> */}
+              {navItems.map((item) => getNavItem(item))}
             </Box>
             <Box>
               <Button sx={{ color: '#fff' }}
@@ -181,7 +187,6 @@ const Navbar = (props) => {
           container={container}
           variant="temporary"
           open={mobileOpen}
-          onClose={handleDrawerToggle}
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
           }}

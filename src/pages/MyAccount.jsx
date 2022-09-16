@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { Container, Box, Typography, Button, TextField } from '@mui/material';
-import OutlinedInput from '@mui/material/OutlinedInput';
+import { Container, Box, Typography, Button } from '@mui/material';
 import Slider from "../components/Slider";
 import { styled } from '@mui/system';
 
@@ -18,8 +17,7 @@ const InputField = styled('input')({
   color: "#A6A6A6",
 });
 
-
-const NewCampaignApp = () => {
+const MyAccountApp = () => {
   return (
     <Box sx={{background: "#F5F5F5", height: "100vh"}}>
       <Container sx={{
@@ -118,16 +116,16 @@ const TitleField = () => {
   return (
     <Box>
       <img src='/assets/dashboard/Color-Vector (4).png' style={{width: "38px", height: "25px", margin: "0 15px 6px 0px"}} />
-      New Campaign
+      My Account
     </Box>
   )
 }
-const textField = "Create a new campaign slot to organize and track your segmented target audiences";
+const textField = "Update or change your account settings accordingly to your preferences ";
 
-const NewCampaign = () => {
+const MyAccount = () => {
   return (
-    <Slider Component={NewCampaignApp} TitleField={TitleField} textField={textField} />
+    <Slider Component={MyAccountApp} TitleField={TitleField} textField={textField} />
   )
 }
 
-export default NewCampaign
+export default MyAccount

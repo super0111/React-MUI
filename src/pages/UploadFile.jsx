@@ -65,14 +65,17 @@ const UploadFileApp = () => {
             }}>
               Drop your file
             </Typography>
-            <Box display="flex" justifyContent="center" alignItems="center" sx={{
-              width: "60px",
-              height: "60px",
-              borderRadius: "50%",
-              background: "#388E3C",
-            }}>
-              <img style={{width: "25px", height: "25px"}} src="/assets/dashboard/+.png" />
-            </Box>
+            <label style={{cursor: "pointer"}}>
+              <input type="file" style={{display:'none'}} />
+              <Box display="flex" justifyContent="center" alignItems="center" sx={{
+                width: "60px",
+                height: "60px",
+                borderRadius: "50%",
+                background: "#388E3C",
+              }}>
+                <img style={{width: "25px", height: "25px"}} src="/assets/dashboard/+.png" />
+              </Box>
+            </label>
           </Box>
           <Box sx={{
             display: "flex",
@@ -113,14 +116,17 @@ const UploadFileApp = () => {
             }}>
               Drop your file
             </Typography>
-            <Box display="flex" justifyContent="center" alignItems="center" sx={{
-              width: "60px",
-              height: "60px",
-              borderRadius: "50%",
-              background: "#388E3C",
-            }}>
-              <img style={{width: "25px", height: "25px"}} src="/assets/dashboard/+.png" />
-            </Box>
+            <label style={{cursor: "pointer"}}>
+              <input type="file" style={{display:'none'}} />
+              <Box display="flex" justifyContent="center" alignItems="center" sx={{
+                width: "60px",
+                height: "60px",
+                borderRadius: "50%",
+                background: "#388E3C",
+              }}>
+                <img style={{width: "25px", height: "25px"}} src="/assets/dashboard/+.png" />
+              </Box>
+            </label>
           </Box>
         </Box>
 

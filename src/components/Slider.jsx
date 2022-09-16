@@ -215,7 +215,7 @@ const Slider = (props) => {
             <Typography
               variant="h6"
               component="div"
-              sx={{ color: 'white',}}
+              sx={{ color: 'white', cursor: "pointer"}}
             >
               <img src="/assets/logo-1@2x.png" alt='logo' style={{ width: "55px", marginRight: open? "5px" : "0px",}} />
               { open === true && "enablemint" }
@@ -382,7 +382,7 @@ const Slider = (props) => {
                   button
                   onClick={() => {
                     handleActive(index);
-                    navigate(['/feedback', '/myAcount', '/help-center'].filter((url, j)=>(  
+                    navigate(['/feedback', '/myAccount', '/help-center'].filter((url, j)=>(  
                       index === j
                     )).join(''));
                   }}
@@ -402,15 +402,13 @@ const Slider = (props) => {
                         justifyContent: 'center',
                       }}
                     >
-                      {
-                        [ 
-                          <img style={{width: "20px"}} src='/assets/dashboard/Vector (3).png' />, 
-                          <img style={{width: "20px"}} src='/assets/dashboard/Vector (4).png' />,
-                          <img style={{width: "20px"}} src='/assets/dashboard/Vector (5).png' />,
-                        ].map((icon, i) => (
-                          index === i && icon
-                        ))
-                      }
+                      {[
+                        <img style={{width: "20px"}} src='/assets/dashboard/Vector (3).png' />, 
+                        <img style={{width: "20px"}} src='/assets/dashboard/Vector (4).png' />,
+                        <img style={{width: "20px"}} src='/assets/dashboard/Vector (5).png' />,
+                      ].map((icon, i) => (
+                        index === i && icon
+                      ))}
                     </ListItemIcon>
                     <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
                   </ListItemButton>
@@ -438,7 +436,11 @@ const Slider = (props) => {
                 >
                   <img style={{width: "20px"}} src='/assets/dashboard/Vector (6).png' />
                 </ListItemIcon>
-                <ListItemText primary="Log Out" sx={{ opacity: open ? 1 : 0, marginLeft: open && "15px" }} />
+                <ListItemText 
+                  primary="Log Out" 
+                  sx={{ opacity: open ? 1 : 0, marginLeft: open && "15px" }} 
+                  onClick={()=>navigate("/")}
+                />
               </ListItemButton>
             </ListItem>
           </List>
