@@ -1,10 +1,8 @@
-import { useState } from "react";
 import { Box, Card, TextField, Button, Typography, TextareaAutosize, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 import { Navbar } from "../components";
 import { Footer } from "../components/Footer";
-import "../assets/styles/ContactUs.css";
 
 const items = [
     { title: "Need Help?", text: "Our Help Center offers a library of articles and tutorials that answer our customers most asked questions.", btn: "Go to Help Center" },
@@ -23,9 +21,7 @@ const formItems = [
 
 const ContactUs = () => {
     const navigate = useNavigate();
-
     const handleSubmit = (event) => {
-
     }
 
     return <>
@@ -35,79 +31,71 @@ const ContactUs = () => {
                 <img src="/assets/contact_us/image 7.png" alt="header-img" />
             </div>
             <div className="container">
-                <Typography
-                    sx={{
-                        fontFamily: 'Inter',
-                        fontStyle: "normal",
-                        fontWeight: 700,
-                        fontSize: "40px",
-                        lineHeight: "60px",
-                        textAlign: "left",
-                        color: "#191A15",
-                        paddingTop: "174px",
-                        ['@media (max-width:576px)']: { // eslint-disable-line no-useless-computed-key
-                            paddingTop: "155px",
-                            fontSize: "30px",
-                            lineHeight: "10px",
-                        },
-                    }}                
-                >
+                <Typography sx={{
+                    fontFamily: 'Inter',
+                    fontStyle: "normal",
+                    fontWeight: 700,
+                    fontSize: "40px",
+                    lineHeight: "60px",
+                    textAlign: "left",
+                    color: "#191A15",
+                    paddingTop: "174px",
+                    ['@media (max-width:576px)']: { // eslint-disable-line no-useless-computed-key
+                        paddingTop: "155px",
+                        fontSize: "30px",
+                        lineHeight: "10px",
+                    },
+                }}>
                     Contact Us
                 </Typography>
                 <Box sx={{zIndex: "100"}}>
-                    <Typography
-                        sx={{
-                            width: "477px",
-                            fontFamily: 'Inter',
-                            fontStyle: "normal",
-                            fontWeight: 400,
-                            fontSize: "16px",
-                            lineHeight: "19px",
-                            textAlign: "left",
-                            color: "#000000",
-                            margin: "30px 0 60px 0",
-                            zIndex: "100",
-                            ['@media (max-width:576px)']: { // eslint-disable-line no-useless-computed-key
-                                width: "100%",
-                                fontSize: "14px",
-                                lineHeight: "14px",
-                            }
-                        }}                
-                    >
+                    <Typography sx={{
+                        width: "477px",
+                        fontFamily: 'Inter',
+                        fontStyle: "normal",
+                        fontWeight: 400,
+                        fontSize: "16px",
+                        lineHeight: "19px",
+                        textAlign: "left",
+                        color: "#000000",
+                        margin: "30px 0 60px 0",
+                        zIndex: "100",
+                        ['@media (max-width:576px)']: { // eslint-disable-line no-useless-computed-key
+                            width: "100%",
+                            fontSize: "14px",
+                            lineHeight: "14px",
+                        }
+                    }}>
                         Whether you are interested in enablemint’s software, or need a little more assistance - 
                         we’re here for you. Check out our Resources or contact us directly. Here’s how you you can reach us....
                     </Typography>
                 </Box>
 
-                <Box
-                    sx={{ 
+                <Box sx={{ 
+                    display: "flex",
+                    justifyContent: "start",
+                    ['@media (max-width:768px)']: { // eslint-disable-line no-useless-computed-key
                         display: "flex",
-                        justifyContent: "start",
-                        ['@media (max-width:768px)']: { // eslint-disable-line no-useless-computed-key
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                    }
+                }}>
+                    { items.map((item, i)=> (
+                        <Card key={i} sx={{ 
                             display: "flex",
                             flexDirection: "column",
-                            justifyContent: "center",
+                            justifyContent: "space-between",
                             alignItems: "center",
-                        }
-                    }}
-                >
-                    { items.map((item, i)=> (
-                        <Card
-                            sx={{ 
-                                display: "flex",
-                                flexDirection: "column",
-                                justifyContent: "space-between",
-                                alignItems: "center",
-                                width: "300.45px",
-                                height: "188px",
-                                background: "#FFFFFF",
-                                boxShadow: "1px 9px 9px rgb(5 5 5 / 5%)",
-                                borderRadius: "20px",
-                                padding: "18px 38px",
-                                margin: "10px",
-                                zIndex: "100",
-                            }}
-                        >
+                            width: "300.45px",
+                            height: "188px",
+                            background: "#FFFFFF",
+                            boxShadow: "1px 9px 9px rgb(5 5 5 / 5%)",
+                            borderRadius: "20px",
+                            padding: "18px 38px",
+                            margin: "10px",
+                            zIndex: "100",
+                        }}>
                             <Typography 
                                 sx={{ 
                                     fontFamily: 'Inter',
@@ -133,20 +121,20 @@ const ContactUs = () => {
                                 }}>
                                 {item.text}
                             </Typography>
-                            <Button 
-                                sx={{
-                                    width: "170px",
-                                    background: "#388E3C",
-                                    borderRadius: "10px",
-                                    fontFamily: 'Inter',
-                                    fontStyle: "normal",
-                                    fontWeight: 500,
-                                    fontSize: "16px",
-                                    lineHeight: "19px",
-                                    textAlign: "center",
-                                    color: "#F8F8FA",
-                                }}
-                            >{item.btn}</Button>
+                            <Button sx={{
+                                width: "170px",
+                                background: "#388E3C",
+                                borderRadius: "10px",
+                                fontFamily: 'Inter',
+                                fontStyle: "normal",
+                                fontWeight: 500,
+                                fontSize: "16px",
+                                lineHeight: "19px",
+                                textAlign: "center",
+                                color: "#F8F8FA",
+                            }}>
+                                {item.btn}
+                            </Button>
                         </Card>
                     )) }
                 </Box>
@@ -329,60 +317,56 @@ const ContactUs = () => {
 
                 <img className="map" src="/assets/contact_us/map.png" alt="map" />
 
-                <form onSubmit={handleSubmit}>
-                    <Typography
-                        sx={{
-                            fontFamily: 'Inter',
-                            fontStyle: "normal",
-                            fontWeight: 500,
-                            fontSize: "30px",
-                            textAlign: "center",
-                            color: "#FFFFFF",
-                            marginBottom: "30px",
-                        }}
-                    >
+                <form className="contactUs-form" onSubmit={handleSubmit}>
+                    <Typography sx={{
+                        fontFamily: 'Inter',
+                        fontStyle: "normal",
+                        fontWeight: 500,
+                        fontSize: "30px",
+                        textAlign: "center",
+                        color: "#FFFFFF",
+                        marginBottom: "30px",
+                    }}>
                         Contact Sales 
                     </Typography>
                     <Grid container spacing={2}
                         sx={{ margin: '5px 0', width: "100% !important" }}
                     >
-                        {
-                            formItems.map((item, i)=>(
-                                <Grid item md={6} xs={12}
-                                    sx={{
-                                        margin: "5px 0",
-                                        paddingLeft:"8px !important",
-                                        paddingRight:"8px !important"
-                                    }}
-                                >
-                                    <Box key={i} display="flex" flexDirection="column">
-                                        <Typography
-                                            sx={{
-                                                fontFamily: 'Inter',
-                                                fontStyle: "normal",
-                                                fontWeight: 500,
-                                                fontSize: "15px",
-                                                lineHeight: "16px",
-                                                color: "#FFFFFF",
-                                                marginBottom: "15px"
-                                            }}
-                                        >
-                                            {item.name}
-                                        </Typography>
-                                        <TextField
-                                            sx={{ 
-                                                background: "#FFFFFF",
-                                                borderRadius: "10px", 
-                                            }}
-                                            variant="outlined"
-                                            type={`${item.type}`}
-                                            placeholder={`${item.placeholder}`}
-                                            required
-                                        />
-                                    </Box>
-                                </Grid>
-                            ))
-                        }
+                        { formItems.map((item, i)=>(
+                            <Grid item key={i} md={6} xs={12}
+                                sx={{
+                                    margin: "5px 0",
+                                    paddingLeft:"8px !important",
+                                    paddingRight:"8px !important"
+                                }}
+                            >
+                                <Box key={i} display="flex" flexDirection="column">
+                                    <Typography
+                                        sx={{
+                                            fontFamily: 'Inter',
+                                            fontStyle: "normal",
+                                            fontWeight: 500,
+                                            fontSize: "15px",
+                                            lineHeight: "16px",
+                                            color: "#FFFFFF",
+                                            marginBottom: "15px"
+                                        }}
+                                    >
+                                        {item.name}
+                                    </Typography>
+                                    <TextField
+                                        sx={{ 
+                                            background: "#FFFFFF",
+                                            borderRadius: "10px", 
+                                        }}
+                                        variant="outlined"
+                                        type={`${item.type}`}
+                                        placeholder={`${item.placeholder}`}
+                                        required
+                                    />
+                                </Box>
+                            </Grid>
+                        ))}
                     </Grid>
 
                     <Box display="flex" flexDirection="column"

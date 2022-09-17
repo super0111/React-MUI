@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -8,8 +9,13 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Container, Box, Typography } from '@mui/material';
 import Slider from "../components/Slider";
+import LinkedInModal from '../components/Modal/LinkedInModal';
+import WebsiteModal from '../components/Modal/WebsiteModal';
 
 const UploadFileApp = () => {
+  const [websiteModal, setWebsiteModal] = useState(false);
+  const [linkedInModal, setLinkedInModal] = useState(false);
+  
   return (
     <Box sx={{background: "#F5F5F5", paddingBottom: "70px !important"}}>
       <Container sx={{
@@ -65,17 +71,18 @@ const UploadFileApp = () => {
             }}>
               Drop your file
             </Typography>
-            <label style={{cursor: "pointer"}}>
-              <input type="file" style={{display:'none'}} />
-              <Box display="flex" justifyContent="center" alignItems="center" sx={{
+            <Box display="flex" justifyContent="center" alignItems="center" 
+              sx={{
                 width: "60px",
                 height: "60px",
                 borderRadius: "50%",
                 background: "#388E3C",
-              }}>
-                <img style={{width: "25px", height: "25px"}} src="/assets/dashboard/+.png" />
-              </Box>
-            </label>
+                cursor: "pointer"
+              }}
+              onClick={()=>setWebsiteModal(true)}
+            >
+              <img style={{width: "25px", height: "25px"}} src="/assets/dashboard/+.png" />
+            </Box>
           </Box>
           <Box sx={{
             display: "flex",
@@ -116,20 +123,20 @@ const UploadFileApp = () => {
             }}>
               Drop your file
             </Typography>
-            <label style={{cursor: "pointer"}}>
-              <input type="file" style={{display:'none'}} />
-              <Box display="flex" justifyContent="center" alignItems="center" sx={{
+            <Box display="flex" justifyContent="center" alignItems="center" 
+              sx={{
                 width: "60px",
                 height: "60px",
                 borderRadius: "50%",
                 background: "#388E3C",
-              }}>
-                <img style={{width: "25px", height: "25px"}} src="/assets/dashboard/+.png" />
-              </Box>
-            </label>
+                cursor: "pointer"
+              }}
+              onClick={()=>setLinkedInModal(true)}
+            >
+              <img style={{width: "25px", height: "25px"}} src="/assets/dashboard/+.png" />
+            </Box>
           </Box>
         </Box>
-
         <TableContainer component={Paper} 
             sx={{ 
               boxShadow: "none",
@@ -147,7 +154,7 @@ const UploadFileApp = () => {
                   <TableCell sx={{padding: "5px", color: "white", width: "12%" }} align="center">Campaign</TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody>
+              <TableBody sx={{backgroundColor: "white"}}>
                   <TableRow>
                     <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
                     <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
@@ -178,8 +185,10 @@ const UploadFileApp = () => {
                   </TableRow>
               </TableBody>
             </Table>
-          </TableContainer>
+        </TableContainer>
       </Container>
+      <WebsiteModal  websiteModal={websiteModal} setWebsiteModal={setWebsiteModal}/>
+      <LinkedInModal linkedInModal={linkedInModal} setLinkedInModal={setLinkedInModal} />
     </Box>
   )
 }

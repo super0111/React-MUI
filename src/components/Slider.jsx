@@ -130,15 +130,10 @@ const Slider = (props) => {
       <AppBar 
         position="fixed" 
         open={open}
-        sx={
-          open === true ? {
-          backgroundColor: "white",
+        sx={{
+          backgroundColor: open === true ? "white" : "#161C28",
           boxShadow: "none !important",
-          height: "75px",
-        } : {
-          backgroundColor: "#161C28",
-          boxShadow: "none !important",
-          height: "75px",
+          height: "80px",
         }}
       >
         <Toolbar>
@@ -217,7 +212,7 @@ const Slider = (props) => {
               component="div"
               sx={{ color: 'white', cursor: "pointer"}}
             >
-              <img src="/assets/logo-1@2x.png" alt='logo' style={{ width: "55px", marginRight: open? "5px" : "0px",}} />
+              <img src="/assets/logo-1@2x.png" alt='logo' style={{ width: open === true ? "55px" : "45px", marginRight: open? "5px" : "0px",}} />
               { open === true && "enablemint" }
             </Typography>
           </div>
@@ -439,7 +434,7 @@ const Slider = (props) => {
                 <ListItemText 
                   primary="Log Out" 
                   sx={{ opacity: open ? 1 : 0, marginLeft: open && "15px" }} 
-                  onClick={()=>navigate("/")}
+                  onClick={()=>navigate("/logout")}
                 />
               </ListItemButton>
             </ListItem>

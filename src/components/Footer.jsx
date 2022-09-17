@@ -103,6 +103,7 @@ export const Footer = () => {
                 label={formik.touched.email && formik.errors.email}
                 InputLabelProps={{ shrink: true }}
                 required
+                focused={false}
                 sx={{
                   width: "100%",
                   marginTop: "20px",

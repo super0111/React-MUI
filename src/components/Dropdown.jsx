@@ -45,6 +45,7 @@ const Dropdown = ({ currentPage }) => {
         Resources
       </Button>
       <Menu
+        sx={{background: "whtie !important"}}
         id="resources-menu"
         anchorEl={anchorEl}
         open={open}
