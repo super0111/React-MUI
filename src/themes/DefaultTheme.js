@@ -85,6 +85,10 @@ const createComponentSystem = () => ({
         styleOverrides: {
             root: {
                 fontFamily: 'Inter',
+                fontStyle: 'normal',
+                fontWeight: 500,
+                fontSize: 18,
+                lineHeight: '22px',
             },
         },
         variants: [
