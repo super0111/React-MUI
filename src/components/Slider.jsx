@@ -212,7 +212,7 @@ const Slider = (props) => {
               component="div"
               sx={{ color: 'white', cursor: "pointer"}}
             >
-              <img src="/assets/logo-1@2x.png" alt='logo' style={{ width: "55px", marginRight: open? "5px" : "0px",}} />
+              <img src="/assets/logo-1@2x.png" alt='logo' style={{ width: open === true ? "55px" : "45px", marginRight: open? "5px" : "0px",}} />
               { open === true && "enablemint" }
             </Typography>
           </div>

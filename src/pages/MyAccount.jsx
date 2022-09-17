@@ -19,7 +19,7 @@ const InputField = styled('input')({
 
 const MyAccountApp = () => {
   return (
-    <Box sx={{background: "#F5F5F5", height: "100vh"}}>
+    <Box sx={{background: "#F5F5F5"}}>
       <Container sx={{
         padding: "100px 60px 30px 60px !important",
         ['@media (max-width:900px)']: { // eslint-disable-line no-useless-computed-key 
@@ -282,6 +282,9 @@ const MyAccountApp = () => {
               fontSize: "16px",
               lineHeight: "19px",
               color: "#FFFFFF",
+              "&:hover": {
+                backgroundColor: '#58b75c',
+              },
               margin: "5px 0",
               ['@media (max-width:950px)']: { // eslint-disable-line no-useless-computed-key 
                 width: "100%",
@@ -308,6 +311,9 @@ const MyAccountApp = () => {
                 fontSize: "16px",
                 lineHeight: "19px",
                 color: "#FFFFFF",
+                "&:hover": {
+                  backgroundColor: '#58b75c',
+                },
                 ['@media (max-width:950px)']: { // eslint-disable-line no-useless-computed-key 
                   width: "100%",
                 }
@@ -374,6 +380,9 @@ const MyAccountApp = () => {
               lineHeight: "19px",
               color: "#FFFFFF",
               margin: "5px 0",
+              "&:hover": {
+                backgroundColor: '#58b75c',
+              },
               ['@media (max-width:1024px)']: { // eslint-disable-line no-useless-computed-key 
                 width: "100%",
               }  
@@ -393,6 +402,9 @@ const MyAccountApp = () => {
               lineHeight: "19px",
               color: "#FFFFFF",
               margin: "5px 0 5px 15px",
+              "&:hover": {
+                backgroundColor: '#58b75c',
+              },
               ['@media (max-width:1024px)']: { // eslint-disable-line no-useless-computed-key 
                 width: "100%",
                 margin: "5px 0px",

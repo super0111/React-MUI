@@ -18,7 +18,7 @@ const InputField = styled('input')({
   color: "#A6A6A6",
 });
 
-const style = {
+const Modalstyle = {
   position: 'absolute',
   top: '50%',
   left: '60%',
@@ -28,7 +28,14 @@ const style = {
   overflowY: "scroll",
   background: "#FFFFFF",
   borderRadius: "24px",
-  padding: "20px 45px",
+  padding: "30px 45px 40px 45px",
+  ['@media (max-width:770px)']: { // eslint-disable-line no-useless-computed-key 
+    width: "80%",
+    left: '50%',
+  },
+  ['@media (max-width:550px)']: { // eslint-disable-line no-useless-computed-key 
+    padding: "30px 16px",
+  }
 };
 
 const items = [
@@ -37,7 +44,7 @@ const items = [
   { text: "LinkedIn Cookie 3", },
 ]
 
-const websiteModal = ({ websiteModal, setWebsiteModal }) => {
+const WebsiteModal = ({ websiteModal, setWebsiteModal }) => {
   return (
     <Modal
       aria-labelledby="transition-modal-title"
@@ -51,7 +58,7 @@ const websiteModal = ({ websiteModal, setWebsiteModal }) => {
       }}
     >
       <Fade in={websiteModal}>
-        <Box sx={style}>
+        <Box sx={Modalstyle}>
           <Typography sx={{
             fontFamily: 'Inter',
             fontStyle: "normal",
@@ -95,6 +102,7 @@ const websiteModal = ({ websiteModal, setWebsiteModal }) => {
               <InputField placeholder="Enter Description" />
             </Box>
           ))}
+
           <Box sx={{display: "flex", alignItems: "center", margin: "20px 0 0px 0",}}>
             <Typography sx={{
               fontFamily: 'Inter',
@@ -128,9 +136,10 @@ const websiteModal = ({ websiteModal, setWebsiteModal }) => {
             borderRadius: "10px",
             padding: "12px 43px",
             color: "#FFFFFF",
-            margin: "20px 0 0px 0"
+            margin: "20px 0 0px 0",
+            wordBreak: "break-all",
           }}>
-            There is a limit to how much you can automate on LinkedIn (see more)
+            There is a limit to how much you can automate on LinkedIn (see more) <br/><br/>
             It is reccomended that you process ~40 Companies with <BiChevronLeft /> 500 employees per day. If you exceed this amount you will have to update your LinkedIn Cookie Session more frequently.
           </Typography>
     
@@ -147,11 +156,10 @@ const websiteModal = ({ websiteModal, setWebsiteModal }) => {
                 textAlign: "left",
               }}
             >
-              Campaign Mapping
+              Number of Companies to Process per Day
             </Typography>
             <InputField placeholder="Enter Number" />
           </Box>
-
           <Box sx={{margin: "12px 0 20px 0 !important"}}>
             <Typography
               sx={{
@@ -169,7 +177,6 @@ const websiteModal = ({ websiteModal, setWebsiteModal }) => {
             </Typography>
             <InputField placeholder="DROPDOWN OF LIST OF CAMPAIGNS + new (will automatically make new campaign)" />
           </Box>
-
           <Box sx={{margin: "12px 0 20px 0 !important"}}>
             <Typography
               sx={{
@@ -185,34 +192,55 @@ const websiteModal = ({ websiteModal, setWebsiteModal }) => {
             >
               Launch Schedule
             </Typography>
-            <Box sx={{display: "flex",}}>
+            <Box sx={{
+              display: "flex",
+              ['@media (max-width:550px)']: { // eslint-disable-line no-useless-computed-key 
+                flexDirection: "column"
+              }
+            }}>
               <Button sx={{
+                width: "198.75px",
+                height: "61px",
                 background: "#FFFFFF",
-                borderRadius: "24px",
+                border: "1px solid #388E3C",
+                borderRadius: "32px",
                 fontFamily: 'Inter',
                 fontStyle: "normal",
                 fontWeight: 400,
                 fontSize: "16px",
                 lineHeight: "19px",
                 color: '#A6A6A6',
-                marginRight: "12px"
+                marginRight: "12px",
+                ['@media (max-width:1100px)']: { // eslint-disable-line no-useless-computed-key 
+                  width: "100%",
+                  margin: "5px 0"
+                }
               }}>
                 Once
               </Button>
               <Button sx={{
+                width: "198.75px",
+                height: "61px",
                 background: "#FFFFFF",
-                borderRadius: "24px",
+                border: "1px solid #388E3C",
+                borderRadius: "32px",
                 fontFamily: 'Inter',
                 fontStyle: "normal",
                 fontWeight: 400,
                 fontSize: "16px",
                 lineHeight: "19px",
                 color: '#A6A6A6',
-                marginRight: "12px"
+                marginRight: "12px",
+                ['@media (max-width:1100px)']: { // eslint-disable-line no-useless-computed-key 
+                  width: "100%",
+                  margin: "5px 0"
+                }
               }}>
                 Manually
               </Button>
               <Button sx={{
+                width: "198.75px",
+                height: "61px",
                 background: "#388E3C",
                 border: "1px solid #388E3C",
                 borderRadius: "32px",
@@ -222,42 +250,84 @@ const websiteModal = ({ websiteModal, setWebsiteModal }) => {
                 fontSize: "16px",
                 lineHeight: "19px",
                 color: '#FFFFFF',
+                "&:hover": {
+                  backgroundColor: '#58b75c',
+                },
+                ['@media (max-width:1100px)']: { // eslint-disable-line no-useless-computed-key 
+                  width: "100%",
+                  margin: "5px 0"
+                }
               }}>
                 Daily
               </Button>
             </Box>
           </Box>
-            
-          <Box sx={{display: "flex",}}>
-            <Button sx={{
-              background: "#388E3C",
-              border: "1px solid #388E3C",
-              borderRadius: "32px",
+          
+          <Box sx={{margin: "12px 0 20px 0 !important"}}>
+            <Typography sx={{
               fontFamily: 'Inter',
               fontStyle: "normal",
               fontWeight: 400,
               fontSize: "16px",
               lineHeight: "19px",
-              color: '#FFFFFF',
+              color: "#191A15",
+              marginBottom: "10px",
+              textAlign: "left",
+            }}> 
+              Notifications
+            </Typography>
+            <Box sx={{
+              display: "flex",
+              ['@media (max-width:1100px)']: { // eslint-disable-line no-useless-computed-key 
+                flexDirection: "column"
+              }
             }}>
-              Cookie Expiry
-            </Button>
-            <Button sx={{
-              background: "#FFFFFF",
-              borderRadius: "24px",
-              fontFamily: 'Inter',
-              fontStyle: "normal",
-              fontWeight: 400,
-              fontSize: "16px",
-              lineHeight: "19px",
-              color: '#A6A6A6',
-              marginRight: "12px"
-            }}>
-              None
-            </Button>
+              <Button sx={{
+                width: "198.75px",
+                height: "61px",
+                background: "#388E3C",
+                border: "1px solid #388E3C",
+                borderRadius: "32px",
+                fontFamily: 'Inter',
+                fontStyle: "normal",
+                fontWeight: 400,
+                fontSize: "16px",
+                lineHeight: "19px",
+                color: '#FFFFFF',
+                "&:hover": {
+                  backgroundColor: '#58b75c',
+                },
+                ['@media (max-width:1100px)']: { // eslint-disable-line no-useless-computed-key 
+                  width: "100%",
+                  margin: "5px 0"
+                }
+              }}>
+                Cookie Expiry
+              </Button>
+              <Button sx={{
+                width: "198.75px",
+                height: "61px",
+                background: "#FFFFFF",
+                border: "1px solid #388E3C",
+                borderRadius: "32px",
+                fontFamily: 'Inter',
+                fontStyle: "normal",
+                fontWeight: 400,
+                fontSize: "16px",
+                lineHeight: "19px",
+                color: '#A6A6A6',
+                marginLeft: "12px",
+                ['@media (max-width:1100px)']: { // eslint-disable-line no-useless-computed-key 
+                  width: "100%",
+                  margin: "5px 0"
+                }
+              }}>
+                None
+              </Button>
+            </Box>
           </Box>
 
-          <Box sx={{display: "flex", alignItems: "center", margin: "20px 0 0px 0",}}>
+          <Box sx={{display: "flex", flexDirection: 'column', margin: "20px 0 0px 0",}}>
             <Typography sx={{
               fontFamily: 'Inter',
               fontStyle: "normal",
@@ -272,12 +342,22 @@ const websiteModal = ({ websiteModal, setWebsiteModal }) => {
             <Box sx={{
               display: "flex",
               justifyContent: "space-between",
+              marginTop: '16px',
+              ['@media (max-width:1100px)']: { // eslint-disable-line no-useless-computed-key 
+                flexDirection: "column"
+              }
             }}>
               <Box sx={{
+                width: "406px",
+                height: "97px",
                 border: "1px solid #388E3C",
                 borderRadius: "32px",
                 display: "flex",
-                alignItems: "center"
+                alignItems: "center",
+                padding: "18px 36px",
+                ['@media (max-width:1100px)']: { // eslint-disable-line no-useless-computed-key 
+                  width: "100%"
+                }
               }}>
                 <Box display="flex" justifyContent="center" alignItems="center" 
                   sx={{
@@ -297,23 +377,39 @@ const websiteModal = ({ websiteModal, setWebsiteModal }) => {
                   fontSize: "20px",
                   lineHeight: "24px",
                   color: "#191A15",
+                  marginLeft: '16px',
+                  wordBreak: "break-all"
                 }}>
                   Upload your .csv file here
                 </Typography>
               </Box>
-              <Button sx={{
-                background: "#388E3C",
-                borderRadius: "10px",
-                fontFamily: 'Inter',
-                fontStyle: "normal",
-                fontWeight: 500,
-                fontSize: "16px",
-                lineHeight: "19px",
-                textAlign: "center",
-                color: "#F8F8FA",
-              }}>
-                Save
-              </Button>
+              <Box display="flex" justifyContent="end" alignItems="end"
+                sx={{
+                  ['@media (max-width:1100px)']: { // eslint-disable-line no-useless-computed-key 
+                    justifyContent: "start",
+                    marginTop: "10px",
+                  }
+                }}
+              >
+                <Button sx={{
+                  width: "149px",
+                  height: "43px",
+                  background: "#388E3C",
+                  borderRadius: "10px",
+                  fontFamily: 'Inter',
+                  fontStyle: "normal",
+                  fontWeight: 500,
+                  fontSize: "16px",
+                  lineHeight: "19px",
+                  textAlign: "center",
+                  color: "#F8F8FA",
+                  "&:hover": {
+                    backgroundColor: '#58b75c',
+                  },
+                }}>
+                  Save
+                </Button>
+              </Box>
             </Box>
           </Box>
         </Box>
@@ -322,4 +418,4 @@ const websiteModal = ({ websiteModal, setWebsiteModal }) => {
   )
 }
 
-export default websiteModal
+export default WebsiteModal
