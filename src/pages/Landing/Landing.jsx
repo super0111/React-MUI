@@ -24,7 +24,7 @@ export const Landing = () => {
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <Box p={3}>
+                    <Box p={5}>
                         <img src={LandingImage} alt='' width="100%" />
                     </Box>
                 </Grid>

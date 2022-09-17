@@ -97,8 +97,8 @@ const createComponentSystem = () => ({
                 style: ({ theme }) => ({
                     background: theme.palette.primary.main,
                     borderRadius: 70,
-                    py: 3,
-                    px: 5,
+                    padding: 20,
+                    // px: 5,
                 })
             }
         ]
