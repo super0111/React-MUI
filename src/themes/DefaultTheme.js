@@ -46,8 +46,22 @@ const createTypographySystem = (fontFamily) => {
         },
         subtitle1: { fontFamily },
         subtitle2: { fontFamily },
-        body1: { fontFamily },
-        body2: { fontFamily },
+        body1: {
+					fontFamily: 'Inter',
+					fontStyle: 'normal',
+					fontWeight: 500,
+					fontSize: 18,
+					lineHeight: '180%',
+					color: '#A6A6A6',
+				},
+        body2: {
+					fontFamily: 'Inter',
+					fontStyle: 'normal',
+					fontWeight: 500,
+					fontSize: 16,
+					lineHeight: '180%',
+					color: '#A6A6A6',
+				},
         button: { fontFamily, textTransform: "normalize" },
         caption: {
             fontFamily,
@@ -82,6 +96,9 @@ const createPaletteSystem = () => ({
 		// secondary: {
 
 		// }
+		warning: {
+			main: '#FFC728',
+		},
 })
 const createComponentSystem = () => ({
     MuiButton: {
@@ -105,7 +122,17 @@ const createComponentSystem = () => ({
                 })
             }
         ]
-    }
+    },
+		MuiTypography: {
+			styleOverrides: {
+				root: {
+						'& .bold, & > .bold': {
+							fontWeight: 700,
+							color: `${createPaletteSystem().background.paper} !important`,
+						}
+				}
+			}
+		}
 })
 export const theme = createTheme({
     components: createComponentSystem(),
