@@ -16,11 +16,15 @@ export const App = ({ root }) => {
       <Route path="/about-us" element={<Pages.AboutUsPage />} />
       <Route path="/pricing" element={<Pages.Pricing />} />
       <Route path="/help-center" element={<Pages.HelpCenter />} />
+      <Route path="/help-center" element={<Pages.HelpCenter />} />
       <Route path="/contact-us" element={<Pages.ContactUs />} />
 
       <Route path="/dashboard" element={<Pages.Dashboard />} />
       <Route path="/uploadFile" element={<Pages.UploadFile />} />
       <Route path="/newCampaign" element={<Pages.NewCampaign />} />
+      <Route path="/campaignA" element={<Pages.CampaignA />} />
+      <Route path="/campaignB" element={<Pages.CampaignB />} />
+      <Route path="/campaignX" element={<Pages.CampaignX />} />
       <Route path="/myAccount" element={<Pages.MyAccount />} />
       <Route path="/feedback" element={<Pages.Feedback />} />
       <Route path="/feedbackSubmit" element={<Pages.FeedbackSubmit />} />

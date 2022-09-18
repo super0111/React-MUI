@@ -1,6 +1,8 @@
 import * as React from 'react';
-import { Backdrop, Box, Button, Modal, Fade, Typography } from '@mui/material';
+import { Backdrop, Box, Button, Modal, Fade, Typography, FormHelperText, MenuItem, FormControl, Select } from '@mui/material';
 import { BiChevronLeft } from "react-icons/bi";
+
+import InputLabel from '@mui/material/InputLabel';
 
 import { styled } from '@mui/system';
 
@@ -45,6 +47,18 @@ const items = [
 ]
 
 const WebsiteModal = ({ websiteModal, setWebsiteModal }) => {
+
+
+  const [age, setAge] = React.useState('');
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+
+
+
+  const [mappingSelect, setMappingSelect] = React.useState('');
+
   return (
     <Modal
       aria-labelledby="transition-modal-title"
@@ -175,7 +189,22 @@ const WebsiteModal = ({ websiteModal, setWebsiteModal }) => {
             >
               Campaign Mapping
             </Typography>
-            <InputField placeholder="DROPDOWN OF LIST OF CAMPAIGNS + new (will automatically make new campaign)" />
+            <FormControl sx={{ m: 1, minWidth: 120 }}>
+              <Select
+                value={age}
+                onChange={handleChange}
+                displayEmpty
+                inputProps={{ 'aria-label': 'Without label' }}
+              >
+                <MenuItem value="">
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value={10}>Ten</MenuItem>
+                <MenuItem value={20}>Twenty</MenuItem>
+                <MenuItem value={30}>Thirty</MenuItem>
+              </Select>
+              <FormHelperText>Without label</FormHelperText>
+            </FormControl>
           </Box>
           <Box sx={{margin: "12px 0 20px 0 !important"}}>
             <Typography
