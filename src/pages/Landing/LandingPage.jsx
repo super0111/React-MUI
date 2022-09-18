@@ -9,8 +9,8 @@ const Section = styled(Box)(({ theme }) => ({
   paddingTop: 60,
   paddingBottom: 60,
   [theme.breakpoints.up('md')]: {
-    paddingLeft: 120,
-    paddingRight: 120,
+    paddingLeft: 130,
+    paddingRight: 130,
   },
   [theme.breakpoints.down('md')]: {
     paddingLeft: 20,
