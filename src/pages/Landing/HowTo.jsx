@@ -6,7 +6,11 @@ import Frame3 from '../../assets/images/frame-3.png'
 const Component = ({ img, title, body }) => {
     return (
         <Box>
-            <Box>
+            <Box sx={{
+                '& > img': {
+                    width: { md: 'auto', xs: '100%' },
+                }
+            }}>
                 <img src={img} alt="" />
             </Box>
             <Box>
