@@ -6,7 +6,10 @@ import { Navbar, Footer } from "../../components";
 
 import { Landing, Categories, HowTo, Features, Customers } from './'
 const Section = styled(Box)(() => ({
-  py: 5,
+  paddingTop: 60,
+  paddingBottom: 60,
+  paddingLeft: 120,
+  paddingRight: 120,
 }))
 export const LandingPage = () => {
   // const initialIndustries = ['Real Estate', 'Healthcare', 'Retail', 'Hospitality', 'Education']
@@ -27,14 +30,14 @@ export const LandingPage = () => {
     <>
       <div className="landing-page-div">
         <Navbar currentPage="home" />
-        <Box mt={14} p={20}>
+        <Box mt={14}>
           <Section>
             <Landing />
           </Section>
           <Section>
             <Categories />
           </Section>
-          <Section>
+          <Section px={`0 !important`}>
             <Features />
           </Section>
           <Section>
