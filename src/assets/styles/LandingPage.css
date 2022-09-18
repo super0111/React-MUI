@@ -1376,7 +1376,7 @@ body {
     height: 785px;
     object-fit: cover;
 }
-
+/* 
 .landing-page-div {
     flex-grow: 1;
     position: relative;
@@ -1392,4 +1392,4 @@ body {
 
 .landing-page-div:hover {
     padding-bottom: 100%;
-}
+} */
