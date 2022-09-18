@@ -9,7 +9,14 @@ const Feature = ({ icon, title, body }) => {
     return (
         <Box display="flex" gap={3}>
             <Box>
-                <IconButton>
+                <IconButton
+                    sx={{
+                        borderRadius: 0,
+                        background: `#FFFFFF`,
+                        boxShadow: `0px 4px 9px rgba(0, 0, 0, 0.05)`,
+                        p: 3,
+                    }}
+                >
                     <img src={icon} alt="" />
                 </IconButton>
             </Box>
@@ -40,21 +47,27 @@ export const Features = () => {
                 </Grid>
                 <Grid item xs={12} md={5}>
                     <Box height="100%" display="flex" flexDirection="column" justifyContent="space-between">
-                        <Feature
-                            icon={Graph}
-                            title="Automate your lead generation"
-                            body="A single input - unlimited companies & contacts. Hands-off approach with scheduled daily launches"
-                        />
-                        <Feature
-                            icon={PieChart}
-                            title="Customized lead generation"
-                            body="	Curate leads specifically for your niche generated in real time "
-                        />
-                        <Feature
-                            icon={Command}
-                            title="No-Code solution anyone can use"
-                            body="Prebuilt workflows with a single input build to save you hours on identifying quality leads"
-                        />
+                        <Box mb={5}>
+                            <Feature
+                                icon={Graph}
+                                title="Automate your lead generation"
+                                body="A single input - unlimited companies & contacts. Hands-off approach with scheduled daily launches"
+                            />
+                        </Box>
+                        <Box mb={5}>
+                            <Feature
+                                icon={PieChart}
+                                title="Customized lead generation"
+                                body="	Curate leads specifically for your niche generated in real time "
+                            />
+                        </Box>
+                        <Box mb={5}>
+                            <Feature
+                                icon={Command}
+                                title="No-Code solution anyone can use"
+                                body="Prebuilt workflows with a single input build to save you hours on identifying quality leads"
+                            />
+                        </Box>
                     </Box>
                 </Grid>
             </Grid>
