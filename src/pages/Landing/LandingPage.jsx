@@ -54,7 +54,7 @@ export const LandingPage = () => {
           </Section>
           <Section>
             <Box px={{ md: 20, xs: 0 }}>
-              <Grid container>
+              <Grid container spacing={5}>
                 <Grid item xs={12} md={6}>
                   <Box display="flex" justifyContent="center">
                     <Typography variant='h4' sx={{ fontSize: 36, maxWidth: 400 }}>

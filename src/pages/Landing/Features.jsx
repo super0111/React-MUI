@@ -29,7 +29,7 @@ const Feature = ({ icon, title, body }) => {
 }
 export const Features = () => {
     return (
-        <Box py={10} px={20} bgcolor="#F9F8FE">
+        <Box py={10} px={{ md: 20, xs: '20px' }} bgcolor="#F9F8FE">
             <Grid container>
                 <Grid item xs={12} md={7}>
                     <Box>
@@ -46,7 +46,7 @@ export const Features = () => {
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={5}>
-                    <Box height="100%" display="flex" flexDirection="column" justifyContent="space-between">
+                    <Box height="100%" display="flex" flexDirection="column" justifyContent="space-between" pt={{ md: 0, xs: 5 }}>
                         <Box mb={5}>
                             <Feature
                                 icon={Graph}
