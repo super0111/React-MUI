@@ -99,6 +99,9 @@ const createPaletteSystem = () => ({
 		warning: {
 			main: '#FFC728',
 		},
+		success: {
+			main: '#388E3C',
+		}
 })
 const createComponentSystem = () => ({
     MuiButton: {
