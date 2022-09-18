@@ -5,7 +5,7 @@ import LandingImage from '../../assets/images/landing-bg.png'
 
 export const Landing = () => {
     return (
-        <Box>
+        <Box mt={10}>
             <Grid container>
                 <Grid item xs={12} md={6}>
                     <Box display="flex" flexDirection="column" gap={10}>
@@ -24,7 +24,7 @@ export const Landing = () => {
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <Box p={3}>
+                    <Box p={5}>
                         <img src={LandingImage} alt='' width="100%" />
                     </Box>
                 </Grid>
