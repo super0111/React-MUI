@@ -22,7 +22,7 @@ const Feature = ({ icon, title, body }) => {
 }
 export const Features = () => {
     return (
-        <Box py={10} px={20}>
+        <Box py={10} px={20} bgcolor="#F9F8FE">
             <Grid container>
                 <Grid item xs={12} md={7}>
                     <Box>
