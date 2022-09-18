@@ -30,7 +30,7 @@ const Feature = ({ icon, title, body }) => {
 export const Features = () => {
     return (
         <Box py={10} px={{ md: 20, xs: '20px' }} bgcolor="#F9F8FE">
-            <Grid container>
+            <Grid container spacing={5}>
                 <Grid item xs={12} md={7}>
                     <Box>
                         <Typography variant="h3">How can enablemint help?</Typography>
