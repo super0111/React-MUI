@@ -1,15 +1,21 @@
 // import { useState } from "react";
 // import { Link } from "react-router-dom";
 
-import { Box, Typography, Button, styled } from "@mui/material";
+import { Box, Typography, Button, styled, Grid } from "@mui/material";
 import { Navbar, Footer } from "../../components";
 
 import { Landing, Categories, HowTo, Features, Customers } from './'
-const Section = styled(Box)(() => ({
+const Section = styled(Box)(({ theme }) => ({
   paddingTop: 60,
   paddingBottom: 60,
-  paddingLeft: 120,
-  paddingRight: 120,
+  [theme.breakpoints.up('md')]: {
+    paddingLeft: 120,
+    paddingRight: 120,
+  },
+  [theme.breakpoints.down('md')]: {
+    paddingLeft: 20,
+    paddingRight: 20,
+  }
 }))
 export const LandingPage = () => {
   // const initialIndustries = ['Real Estate', 'Healthcare', 'Retail', 'Hospitality', 'Education']
@@ -46,7 +52,24 @@ export const LandingPage = () => {
           <Section>
             <Customers />
           </Section>
-          <Section></Section>
+          <Section>
+            <Box px={{ md: 20, xs: 0 }}>
+              <Grid container>
+                <Grid item xs={12} md={6}>
+                  <Box display="flex" justifyContent="center">
+                    <Typography variant='h4' sx={{ fontSize: 36, maxWidth: 400 }}>
+                      Get up and running in less than 2 minutes.
+                    </Typography>
+                  </Box>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <Box display="flex" justifyContent="center">
+                    <Button variant="secondary">Get Started for Free</Button>
+                  </Box>
+                </Grid>
+              </Grid>
+            </Box>
+          </Section>
         </Box>
         <Footer />
       </div>
