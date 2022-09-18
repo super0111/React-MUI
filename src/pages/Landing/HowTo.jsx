@@ -8,8 +8,10 @@ const Component = ({ img, title, body }) => {
         <Box>
             <Box sx={{
                 '& > img': {
-                    width: { md: 'auto', xs: '100%' },
-                }
+                    width: { sm: 'auto', xs: '100%' },
+                },
+                display: 'flex',
+                justifyContent: { lg: 'left', xs: 'center'},
             }}>
                 <img src={img} alt="" />
             </Box>
