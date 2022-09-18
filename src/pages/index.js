@@ -11,7 +11,9 @@ export { default as LogoutPage } from "./LogoutPage";
 export { default as LandingPage } from './Landing'
 export { default as HelpCenter } from "./HelpCenter/HelpCenter";
 export { default as HelpCenterArticle } from "./HelpCenter/HelpCenterArticle";
+export { default as HelpCenterArticleBody } from "./HelpCenter/HelpCenterArticleBody";
 export { default as ContactUs } from "./ContactUs";
+export { default as Cancellation } from "./Cancellation/Cancellation";
 
 export { default as Dashboard } from "./Dashboard";
 export { default as UploadFile } from "./UploadFile";
