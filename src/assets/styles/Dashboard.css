@@ -65,3 +65,10 @@
     padding-bottom: 80px;
 }
 }
+
+.slick-arrow {
+  /* border: 1px solid red; */
+}
+.slick-arrow::before{
+  display: none;
+}
