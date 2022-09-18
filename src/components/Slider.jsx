@@ -93,7 +93,7 @@ const Slider = (props) => {
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
   const [active, setActive] = useState(['/dashboard', '/uploadFile',].indexOf(location.pathname));
-  const [isCampaignShow, setIsCampaignShow] = useState(false);
+  const [isCampaignShow, setIsCampaignShow] = useState(true);
   const matches = useMediaQuery('(min-width:685px)');
 
   const handleActive = (index) => {
@@ -103,6 +103,10 @@ const Slider = (props) => {
   useEffect(() => {
     setOpen(matches);
   }, [matches])
+  useEffect(() => {
+    if(open===false)
+    setIsCampaignShow(false)
+  }, [open])
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -332,6 +336,7 @@ const Slider = (props) => {
                       color: "#FFFFFF",
                       margin: "10px 0 10px 30px",
                     }}
+                    onClick={()=>navigate("/campaignA")}
                   >
                     Campaign A
                   </Typography>
@@ -344,6 +349,7 @@ const Slider = (props) => {
                       color: "#FFFFFF",
                       margin: "10px 0 10px 30px",
                     }}
+                    onClick={()=>navigate("/campaignB")}
                   >
                     Campaign B
                   </Typography>
@@ -356,6 +362,7 @@ const Slider = (props) => {
                       color: "#FFFFFF",
                       margin: "10px 0 10px 30px",
                     }}
+                    onClick={()=>navigate("/campaignX")}
                   >
                     Campaign X
                   </Typography>

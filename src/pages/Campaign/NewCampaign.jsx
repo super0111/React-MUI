@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Container, Box, Typography, Button, TextField } from '@mui/material';
 import OutlinedInput from '@mui/material/OutlinedInput';
-import Slider from "../components/Slider";
+import Slider from "../../components/Slider";
 import { styled } from '@mui/system';
 
 const InputField = styled('input')({
