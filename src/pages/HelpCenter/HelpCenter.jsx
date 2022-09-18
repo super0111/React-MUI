@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { TextField, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { Navbar, Footer } from "../components";
-import "../assets/styles/HelpCenter.css";
+import { Navbar, Footer } from "../../components";
+import "../../assets/styles/HelpCenter.css";
 
 const HelpCenter = () => {
     const navigate = useNavigate();
-
     const handleSubmit = (event) => {
-
     }
 
     return <>
