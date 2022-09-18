@@ -62,8 +62,8 @@ const createTypographySystem = (fontFamily) => {
 const createPaletteSystem = () => ({
     text: {
         primary: '#191A15',
-        // secondary: '',
-        // disabled: '',
+        secondary: '#434343',
+        disabled: '#A6A6A6',
     },
     background: {
         default: '#F5F5F5',
@@ -79,6 +79,9 @@ const createPaletteSystem = () => ({
         // dark: '',
         // contrastText: '',
     },
+		// secondary: {
+
+		// }
 })
 const createComponentSystem = () => ({
     MuiButton: {
@@ -111,4 +114,4 @@ export const theme = createTheme({
     spacing: 6,
 });
 
-export const palette = theme.pallet
+export const palette = theme.palette
