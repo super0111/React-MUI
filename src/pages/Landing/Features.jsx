@@ -11,6 +11,9 @@ const Feature = ({ icon, title, body }) => {
             <Box>
                 <IconButton
                     sx={{
+                        '& > img': {
+                            width: { md: 'auto', xs: '100%' }
+                        },
                         borderRadius: 0,
                         background: `#FFFFFF`,
                         boxShadow: `0px 4px 9px rgba(0, 0, 0, 0.05)`,
@@ -29,7 +32,7 @@ const Feature = ({ icon, title, body }) => {
 }
 export const Features = () => {
     return (
-        <Box py={10} px={{ md: 20, xs: '20px' }} bgcolor="#F9F8FE">
+        <Box py={10} px={{ md: 20, xs: '48px' }} bgcolor="#F9F8FE">
             <Grid container spacing={5}>
                 <Grid item xs={12} md={7}>
                     <Box>

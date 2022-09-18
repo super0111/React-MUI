@@ -13,8 +13,8 @@ const Section = styled(Box)(({ theme }) => ({
     paddingRight: 130,
   },
   [theme.breakpoints.down('md')]: {
-    paddingLeft: 20,
-    paddingRight: 20,
+    paddingLeft: 48,
+    paddingRight: 48,
   }
 }))
 export const LandingPage = () => {
@@ -57,7 +57,7 @@ export const LandingPage = () => {
               <Grid container spacing={5}>
                 <Grid item xs={12} md={6}>
                   <Box display="flex" justifyContent="center">
-                    <Typography variant='h4' sx={{ fontSize: 36, maxWidth: 400 }}>
+                    <Typography variant='h4' sx={{ fontSize: 36, maxWidth: 400, textAlign: { md: 'left', xs: 'center' } }}>
                       Get up and running in less than 2 minutes.
                     </Typography>
                   </Box>

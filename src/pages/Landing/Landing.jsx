@@ -5,15 +5,21 @@ import LandingImage from '../../assets/images/landing-bg.png'
 
 export const Landing = () => {
     return (
-        <Box mt={10}>
+        <Box mt={{ md: 10, xs: 0 }}>
             <Grid container spacing={10}>
                 <Grid item xs={12} md={6}>
                     <Box display="flex" flexDirection="column" gap={10}>
                         <Typography variant="h1">
                             A Newly Minted Approach to Sales & Marketing Enablement
                         </Typography>
-                        <Box>
-                            <img src={Separator} width="90%" alt='' />
+                        <Box
+                            sx={{
+                                '& > img': {
+                                    width: { md: '90%', xs: '100%' },
+                                },
+                            }}
+                        >
+                            <img src={Separator} alt='' />
                         </Box>
                         <Typography variant="h6" sx={{ fontWeight: 500 }}>
                             More qualified B2B leads,<br/>less wasted cost & efforts
