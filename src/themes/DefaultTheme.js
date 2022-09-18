@@ -3,20 +3,23 @@ import { createTheme } from '@mui/material'
 const createTypographySystem = (fontFamily) => {
     return {
         h1: {
-            fontFamily,
-            fontSize: 55,
-            fontWeight: 700,
-            fontStyle: 'normal',
-            lineHeight: '110%',
+					color: '#191A15',
+					fontFamily,
+					fontSize: 55,
+					fontWeight: 700,
+					fontStyle: 'normal',
+					lineHeight: '110%',
         },
         h2: {
-            fontFamily,
-            fontSize: 50,
-            fontWeight: 700,
-            fontStyle: 'normal',
-            lineHeight: '110%',
+					color: '#191A15',
+					fontFamily,
+					fontSize: 50,
+					fontWeight: 700,
+					fontStyle: 'normal',
+					lineHeight: '110%',
         },
         h3: {
+					color: '#191A15',
             fontFamily,
             fontSize: 45,
             fontWeight: 700,
@@ -24,6 +27,7 @@ const createTypographySystem = (fontFamily) => {
             lineHeight: '110%',
         },
         h4: {
+					color: '#191A15',
             fontFamily,
             fontSize: 40,
             fontWeight: 700,
@@ -31,6 +35,7 @@ const createTypographySystem = (fontFamily) => {
             lineHeight: '110%',
         },
         h5: {
+					color: '#191A15',
             fontFamily,
             fontSize: 30,
             fontWeight: 700,
@@ -38,6 +43,7 @@ const createTypographySystem = (fontFamily) => {
             lineHeight: '110%',
         },
         h6: {
+					color: '#191A15',
             fontFamily,
             fontSize: 25,
             fontWeight: 700,
@@ -123,16 +129,27 @@ const createComponentSystem = () => ({
                     padding: 20,
                     // px: 5,
                 })
-            }
+            },
+						{
+							props: { variant: 'secondary' },
+							style: ({ theme }) => ({
+									background: theme.palette.primary.main,
+									borderRadius: 10,
+									color: theme.palette.common.white,
+									padding: 20,
+									// px: 5,
+							})
+					}
         ]
     },
 		MuiTypography: {
 			styleOverrides: {
 				root: {
-						'& .bold, & > .bold': {
-							fontWeight: 700,
-							color: `${createPaletteSystem().background.paper} !important`,
-						}
+					// color: createPaletteSystem().text.primary,
+					'& .bold, & > .bold': {
+						fontWeight: 700,
+						color: `${createPaletteSystem().background.paper} !important`,
+					}
 				}
 			}
 		}
