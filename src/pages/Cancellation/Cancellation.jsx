@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import { Grid, Typography, Box, Button, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from "@mui/material";
+import { Grid, Typography, Box, Button, Radio, RadioGroup, FormControlLabel, FormControl, } from "@mui/material";
 
 import BackgroundImage from '../../assets/images/users/Ellipse 460.png'; // Import using relative path
 
@@ -13,6 +14,7 @@ const labels = [
 ]
 
 const Cancellation = () => {
+  const navigate = useNavigate();
   return (
     <Grid container spacing={2}>
       <Grid item md={6} xs={12} sx={{
@@ -20,6 +22,9 @@ const Cancellation = () => {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         padding: "50px 50px 100px 50px !important",
+        ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
+          padding: "30px 30px 50px 30px !important",
+        },
       }}>
         <Typography
           variant="h6"
@@ -41,7 +46,13 @@ const Cancellation = () => {
           fontSize: "32px",
           lineHeight: "39px",
           color: "#FFFFFF",
-          margin: "80px 0 25px 0"
+          margin: "80px 0 25px 0",
+          wordBreak: 'break-all',
+          ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
+            margin: "50px 0 20px 0",
+            fontSize: '25px',
+            lineHeight: '25px',
+          },
         }}>
           Reason For Leaving Us?
         </Typography>
@@ -49,14 +60,14 @@ const Cancellation = () => {
         <FormControl>
           <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
-            defaultValue="female"
+            defaultValue="1"
             name="radio-buttons-group"
           >
             { labels.map((item, i)=>(
               <FormControlLabel 
                 key={item}
                 value={item.value} 
-                control={<Radio />}  
+                control={ i === 0 ? <Radio defaultSelected /> : <Radio />}  
                 label={
                   <Typography sx={{
                     fontFamily: 'Inter',
@@ -65,6 +76,11 @@ const Cancellation = () => {
                     fontSize: '24px',
                     lineHeight: '29px',
                     color: '#FFFFFF',
+                    wordBreak: 'break-all',
+                    ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
+                      fontSize: '20px',
+                      lineHeight: '22px',
+                    },
                   }}>
                     {item.text}
                   </Typography>
@@ -88,8 +104,14 @@ const Cancellation = () => {
             lineHeight: '19px',
             textAlign: 'center',
             color: "#FFFFFF",
-            '&:hover': {background: "#378E3C",}
-          }}>
+            '&:hover': {background: "#378E3C",},
+            ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
+              marginTop: '20px',
+              width: "100%",
+            },
+          }}
+          onClick={()=>navigate("/cancellation/cancellationContinue")}
+        >
             Continue
           </Button>
         </Box>
@@ -109,6 +131,10 @@ const Cancellation = () => {
             textAlign: 'center',
             color: "#FFFFFF",
             marginTop: "16px",
+            ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
+              marginTop: '16px',
+              width: "100%",
+            },
           }}>
             I want to say
           </Button>
@@ -121,7 +147,11 @@ const Cancellation = () => {
             fontSize: "14px",
             lineHeight: "17px",
             color: "#FFFFFF",
-            marginTop: "85px"
+            marginTop: "85px",
+            wordBreak: 'break-all',
+            ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
+              marginTop: "35px",
+            },
           }}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </Typography>

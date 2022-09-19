@@ -64,50 +64,11 @@ export default connect(
     };
 
     return (
-        <div className="sign-up-workflow-page-1_siup">
-            <img className="ellipse-icon6_siup" alt="" />
-            <img
-                className="ellipse-icon7_siup"
-                alt=""
-                src="assets/sign_up_1/ellipse-361.svg"
-            />
-            <img
-                className="ellipse-icon8_siup"
-                alt=""
-                src="assets/sign_up_1/ellipse-371.svg"
-            />
-            <img className="ellipse-icon9_siup" alt="" />
-            <img
-                className="ellipse-icon10_siup"
-                alt=""
-                src="assets/sign_up_1/ellipse-391.svg"
-            />
-            <img
-                className="ellipse-icon11_siup"
-                alt=""
-                src="assets/sign_up_1/ellipse-460.svg"
-            />
-            <div className="by-creating-your-account-you_siup">
-                By creating your account, you are agreeing to the{" "}
-                <a href="/terms-of-service" style={{ color: "#388E3C" }}>
-                    Terms of Service
-                </a>{" "}
-                and{" "}
-                <a href="/privacy-policy" style={{ color: "#388E3C" }}>
-                    Privacy Policy
-                </a>
-            </div>
-            <div className="enablemint-div1_siup">enablemint</div>
-            <img
-                className="logo-1-icon1_siup"
-                alt=""
-                src="assets/sign_up_1/logo-1@2x.png"
-            />
+        <div>
+            
             <form onSubmit={formik.handleSubmit}>
-                <div className="group-div9_siup">
-                    <div className="email-div1_siup">Email</div>
+                <div >
                     <TextField
-                        className="rectangle-textfield1_siup"
                         sx={{ width: 440 }}
                         color="success"
                         variant="outlined"
@@ -127,9 +88,7 @@ export default connect(
                         required
                     />
                 </div>
-                <div className="password-div_siup">Password</div>
                 <TextField
-                    className="rectangle-textfield2_siup"
                     sx={{ width: 440 }}
                     color="success"
                     variant="outlined"
@@ -159,30 +118,14 @@ export default connect(
                     margin="none"
                     required
                 />
-                <div className="group-div10_siup">
-                    <div className="group-div11_siup">
-                        <button
-                            type="submit"
-                            className="sign-up-div_siup"
-                            disabled={formik.isSubmitting}
-                        >
-                            Sign Up
-                        </button>
-                    </div>
-                </div>
+                <button
+                    type="submit"
+                    disabled={formik.isSubmitting}
+                >
+                    Sign Up
+                </button>
             </form>
-            <div className="already-have-an-account-login_siup">
-                <span className="already-have-an_siup">{`Already have an account? `}</span>
-                <a href="/login">
-                    <b>Login</b>
-                </a>
-            </div>
-            <img
-                className="asset-15-1_siup"
-                alt=""
-                src="assets/sign_up_1/asset-15-1@2x.png"
-            />
-            <b className="create-your-account_siup">Create your account</b>
+            
         </div>
     );
 });

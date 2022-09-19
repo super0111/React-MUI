@@ -21,6 +21,8 @@ export const App = ({ root }) => {
       </Route>
       <Route path="/contact-us" element={<Pages.ContactUs />} />
       <Route path="/cancellation" element={<Pages.Cancellation />} />
+      <Route path="/cancellation/cancellationContinue" element={<Pages.CancellationContinue />} />
+      <Route path="/cancellation/cancellationSuccess" element={<Pages.CancellationSuccess />} />
 
       <Route path="/dashboard" element={<Pages.Dashboard />} />
       <Route path="/uploadFile" element={<Pages.UploadFile />} />

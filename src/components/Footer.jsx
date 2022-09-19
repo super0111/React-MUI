@@ -184,7 +184,8 @@ export const Footer = () => {
                     fontSize: "16px",
                     lineHeight: "16px",
                     color: "#A6A6A6",
-                    margin: "9px 0"
+                    margin: "9px 0",
+                    cursor: "pointer",
                   }}>
                     {item.text}
                   </Typography>
@@ -212,7 +213,8 @@ export const Footer = () => {
                     fontSize: "16px",
                     lineHeight: "16px",
                     color: "#A6A6A6",
-                    margin: "9px 0"
+                    margin: "9px 0",
+                    cursor: "pointer",
                   }}
                   onClick={()=>navigate(`${item.router}`)}
                 >
@@ -242,7 +244,8 @@ export const Footer = () => {
                     fontSize: "16px",
                     lineHeight: "16px",
                     color: "#A6A6A6",
-                    margin: "9px 0"
+                    margin: "9px 0",
+                    cursor: "pointer",
                   }}>
                     {item.text}
                   </Typography>
