@@ -6,7 +6,13 @@ import Frame3 from '../../assets/images/frame-3.png'
 const Component = ({ img, title, body }) => {
     return (
         <Box>
-            <Box>
+            <Box sx={{
+                '& > img': {
+                    width: { sm: 'auto', xs: '100%' },
+                },
+                display: 'flex',
+                justifyContent: { lg: 'left', xs: 'center'},
+            }}>
                 <img src={img} alt="" />
             </Box>
             <Box>
@@ -19,7 +25,7 @@ const Component = ({ img, title, body }) => {
 export const HowTo = () => {
     return (
         <Box>
-            <Box display="flex" justifyContent="space-between">
+            <Box display="flex" flexDirection={{ md: 'row', xs: 'column' }} gap={3} justifyContent="space-between">
                 <Typography variant="h3">How does it work</Typography>
                 <Box>
                     <Button variant="contained">Get Started</Button>

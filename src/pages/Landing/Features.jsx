@@ -11,9 +11,6 @@ const Feature = ({ icon, title, body }) => {
             <Box>
                 <IconButton
                     sx={{
-                        '& > img': {
-                            width: { md: 'auto', xs: '100%' }
-                        },
                         borderRadius: 0,
                         background: `#FFFFFF`,
                         boxShadow: `0px 4px 9px rgba(0, 0, 0, 0.05)`,

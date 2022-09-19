@@ -56,14 +56,14 @@ export const LandingPage = () => {
             <Box px={{ md: 20, xs: 0 }}>
               <Grid container spacing={5}>
                 <Grid item xs={12} md={6}>
-                  <Box display="flex" justifyContent="center">
-                    <Typography variant='h4' sx={{ fontSize: 36, maxWidth: 400, textAlign: { md: 'left', xs: 'center' } }}>
+                  <Box display="flex" justifyContent={{ md: 'center', xs: 'start' }}>
+                    <Typography variant='h4' sx={{ fontSize: 36, maxWidth: 430 }}>
                       Get up and running in less than 2 minutes.
                     </Typography>
                   </Box>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <Box display="flex" justifyContent="center">
+                  <Box display="flex" justifyContent={{ md: 'center', xs: 'start' }}>
                     <Button variant="secondary">Get Started for Free</Button>
                   </Box>
                 </Grid>

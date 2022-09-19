@@ -30,8 +30,8 @@ export const Landing = () => {
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <Box p={5}>
-                        <img src={LandingImage} alt='' width="100%" />
+                    <Box px={5} py={10} height="100%">
+                        <img src={LandingImage} alt='' width="100%" height="100%" />
                     </Box>
                 </Grid>
             </Grid>

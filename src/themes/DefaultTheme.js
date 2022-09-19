@@ -1,81 +1,102 @@
-import { createTheme } from '@mui/material'
+import { createTheme, responsiveFontSizes } from '@mui/material'
 
 const createTypographySystem = (fontFamily) => {
     return {
         h1: {
-					color: '#191A15',
-					fontFamily,
-					fontSize: 55,
-					fontWeight: 700,
-					fontStyle: 'normal',
-					lineHeight: '110%',
+            color: '#191A15',
+            fontFamily,
+            fontSize: 55,
+            fontWeight: 700,
+            fontStyle: 'normal',
+            // lineHeight: '110%',
+            lineHeight: 1.1,
         },
         h2: {
-					color: '#191A15',
-					fontFamily,
-					fontSize: 50,
-					fontWeight: 700,
-					fontStyle: 'normal',
-					lineHeight: '110%',
+            color: '#191A15',
+            fontFamily,
+            fontSize: 50,
+            fontWeight: 700,
+            fontStyle: 'normal',
+            // lineHeight: '110%',
+            lineHeight: 1.1,
         },
         h3: {
-					color: '#191A15',
+            color: '#191A15',
             fontFamily,
             fontSize: 45,
             fontWeight: 700,
             fontStyle: 'normal',
-            lineHeight: '110%',
+            // lineHeight: '110%',
+            lineHeight: 1.1,
         },
         h4: {
-					color: '#191A15',
+            color: '#191A15',
             fontFamily,
             fontSize: 40,
             fontWeight: 700,
             fontStyle: 'normal',
-            lineHeight: '110%',
+            // lineHeight: '110%',
+            lineHeight: 1.1,
         },
         h5: {
-					color: '#191A15',
+            color: '#191A15',
             fontFamily,
             fontSize: 30,
             fontWeight: 700,
             fontStyle: 'normal',
-            lineHeight: '110%',
+            // lineHeight: '110%',
+            lineHeight: 1.1,
         },
         h6: {
-					color: '#191A15',
+            color: '#191A15',
             fontFamily,
             fontSize: 25,
             fontWeight: 700,
             fontStyle: 'normal',
-            lineHeight: '110%',
+            // lineHeight: '110%',
+            lineHeight: 1.1,
         },
-        subtitle1: { fontFamily },
-        subtitle2: { fontFamily },
+        subtitle1: {
+            fontFamily,
+            // lineHeight: '110%',
+        },
+        subtitle2: {
+            fontFamily,
+            // lineHeight: '110%',
+        },
         body1: {
-					fontFamily: 'Inter',
-					fontStyle: 'normal',
-					fontWeight: 500,
-					fontSize: 18,
-					lineHeight: '180%',
-					color: '#A6A6A6',
+            fontFamily: 'Inter',
+            fontStyle: 'normal',
+            fontWeight: 500,
+            fontSize: 18,
+            // lineHeight: '180%',
+            lineHeight: 1.8,
+            color: '#A6A6A6',
 				},
         body2: {
-					fontFamily: 'Inter',
-					fontStyle: 'normal',
-					fontWeight: 500,
-					fontSize: 16,
-					lineHeight: '180%',
-					color: '#A6A6A6',
-				},
-        button: { fontFamily, textTransform: "normalize" },
+            fontFamily: 'Inter',
+            fontStyle: 'normal',
+            fontWeight: 500,
+            fontSize: 16,
+            // lineHeight: '180%',
+            lineHeight: 1.8,
+            color: '#A6A6A6',
+		},
+        button: {
+            fontFamily,
+            textTransform: "normalize",
+            // lineHeight: '100%',
+        },
         caption: {
             fontFamily,
             fontSize: 30,
             fontWeight: 600,
             color: '#A6A6A6',
         },
-        overline: { fontFamily },
+        overline: {
+            fontFamily,
+            // lineHeight: '100%',
+        },
     };
 };
 
@@ -154,11 +175,13 @@ const createComponentSystem = () => ({
 			}
 		}
 })
-export const theme = createTheme({
+let theme = createTheme({
     components: createComponentSystem(),
     typography: createTypographySystem("Inter, sans-serif"),
     palette: createPaletteSystem(),
     spacing: 6,
 });
 
+theme = responsiveFontSizes(theme)
+export { theme }
 export const palette = theme.palette
