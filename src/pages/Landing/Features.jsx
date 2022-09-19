@@ -34,12 +34,20 @@ export const Features = () => {
                 <Grid item xs={12} md={7}>
                     <Box>
                         <Typography variant="h3">How can enablemint help?</Typography>
-                        <Box mt={15}>
+                        <Box mt={15} sx={{
+                            ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
+                                marginTop: '40px',
+                            },
+                        }}>
                             <Typography variant="body2">
                                 Highly Targeted and Effective Demand Generation is possible through enablemint. Our mission is to help Sales & Marketing teams uncover Demand Generation opportunities with our easy-to-use, no-code automation workflows & tools.
                             </Typography>
                         </Box>
-                        <Box mt={12} display="flex" gap={13}>
+                        <Box mt={12} display="flex" gap={13} sx={{
+                            ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
+                                gap: "25px",
+                            },
+                        }}>
                             <StarFeedback rate={5} text={'databricks'} />
                             <StarFeedback rate={4} text={'chainalysis'} />
                         </Box>

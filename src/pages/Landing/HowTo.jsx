@@ -31,7 +31,12 @@ export const HowTo = () => {
                     <Button variant="contained">Get Started</Button>
                 </Box>
             </Box>
-            <Box mt={15}>
+            <Box mt={15} sx={{
+            ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
+                paddingTop: "0px !important",
+                paddingBottom: "0px !important",
+            },
+        }}>
                 <Grid container spacing={7}>
                     <Grid item xs={12} md={4}>
                         <Component

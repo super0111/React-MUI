@@ -39,7 +39,7 @@ export const Customers = () => {
                         sx={{
                             '& > div': {
                                 pt: 5,
-                            }
+                            },
                         }}
                     >
                         <Testimonial

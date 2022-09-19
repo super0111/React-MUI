@@ -10,6 +10,7 @@ const createTypographySystem = (fontFamily) => {
             fontStyle: 'normal',
             // lineHeight: '110%',
             lineHeight: 1.1,
+            wordBreak: "break-all",
         },
         h2: {
             color: '#191A15',
@@ -19,6 +20,7 @@ const createTypographySystem = (fontFamily) => {
             fontStyle: 'normal',
             // lineHeight: '110%',
             lineHeight: 1.1,
+            wordBreak: "break-all",
         },
         h3: {
             color: '#191A15',
@@ -28,6 +30,7 @@ const createTypographySystem = (fontFamily) => {
             fontStyle: 'normal',
             // lineHeight: '110%',
             lineHeight: 1.1,
+            wordBreak: "break-all",
         },
         h4: {
             color: '#191A15',
@@ -37,6 +40,7 @@ const createTypographySystem = (fontFamily) => {
             fontStyle: 'normal',
             // lineHeight: '110%',
             lineHeight: 1.1,
+            wordBreak: "break-all",
         },
         h5: {
             color: '#191A15',
@@ -46,6 +50,7 @@ const createTypographySystem = (fontFamily) => {
             fontStyle: 'normal',
             // lineHeight: '110%',
             lineHeight: 1.1,
+            wordBreak: "break-all",
         },
         h6: {
             color: '#191A15',
@@ -55,6 +60,7 @@ const createTypographySystem = (fontFamily) => {
             fontStyle: 'normal',
             // lineHeight: '110%',
             lineHeight: 1.1,
+            wordBreak: "break-all",
         },
         subtitle1: {
             fontFamily,
@@ -72,15 +78,16 @@ const createTypographySystem = (fontFamily) => {
             // lineHeight: '180%',
             lineHeight: 1.8,
             color: '#A6A6A6',
+            wordBreak: "break-all",
 				},
         body2: {
             fontFamily: 'Inter',
             fontStyle: 'normal',
             fontWeight: 500,
             fontSize: 16,
-            // lineHeight: '180%',
             lineHeight: 1.8,
             color: '#A6A6A6',
+            wordBreak: "break-all",
 		},
         button: {
             fontFamily,
@@ -92,6 +99,7 @@ const createTypographySystem = (fontFamily) => {
             fontSize: 30,
             fontWeight: 600,
             color: '#A6A6A6',
+            wordBreak: "break-all",
         },
         overline: {
             fontFamily,

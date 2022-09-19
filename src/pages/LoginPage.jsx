@@ -1,13 +1,14 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
-import { TextField, InputAdornment, Icon, IconButton } from "@mui/material";
+import { Grid, Typography, Box, Button, TextField, InputAdornment, IconButton, Icon } from "@mui/material";
+
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import "../assets/styles/Login.css";
-
+import BackgroundImage from '../assets/images/users/Ellipse 460.png'; // Import using relative path
 
 export const LoginPage = () => {
     const navigate = useNavigate()
+
 ;    const validationSchema = yup.object({
         email: yup
             .string('Enter your email')
@@ -42,84 +43,194 @@ export const LoginPage = () => {
     }
 
     return (
-        <div className="login-div1_log">
-            <img className="ellipse-icon9_log" alt="" />
-            <img className="ellipse-icon10_log" alt="" src="assets/login/ellipse-361.svg" />
-            <img className="ellipse-icon11_log" alt="" src="assets/login/ellipse-371.svg" />
-            <img className="ellipse-icon12_log" alt="" />
-            <img className="ellipse-icon13_log" alt="" src="assets/login/ellipse-391.svg" />
-            <img className="ellipse-icon14_log" alt="" src="assets/login/ellipse-460.svg" />
+        <Grid container spacing={2} sx={{height: "100vh"}}>
+            <Grid item md={6} xs={12} sx={{
+                backgroundImage: `url(${BackgroundImage})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                padding: "50px 50px 100px 50px !important",
+                ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
+                    padding: "30px 30px 50px 30px !important",
+                },
+            }}>
+                <Typography
+                variant="h6"
+                component="div"
+                sx={{ 
+                    color: 'white', 
+                    fontSize: "20px",
+                    lineHeight: "24px",
+                    cursor: "pointer",
+                }}
+                >
+                    <img src="/assets/logo-1@2x.png" alt='logo' style={{ width: "50px", marginRight: "5px",}} />
+                    enablemint
+                </Typography>
 
-            <div className="enablemint-div2_log">enablemint</div>
-            <img className="logo-1-icon2_log" alt="" src="assets/login/logo-12@2x.png" />
-            <form onSubmit={formik.handleSubmit}>
-                <div className="group-div86_log">
-                    <div className="email-div_log">Email</div>
-                    <b className="login-b_log">Login</b>
-                    <TextField
-                        size="medium"
-                        variant="outlined"
-                        className="rectangle-textfield_log"
-                        sx={{ width: 440 }}
-                        color="success"
-                        id="email"
-                        name="email"
-                        type="email"
-                        autoComplete='off'
-                        placeholder="Enter your email"
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        value={formik.values.email}
-                        error={formik.touched.email && Boolean(formik.errors.email)}
-                        label={formik.touched.email && formik.errors.email}
-                        margin="none"
-                        InputLabelProps={{ shrink: true }}
-                        required
-                    />
-                </div>
-                <div className="password-div_log">Password</div>
-                <TextField
-                    id="password"
-                    className="rectangle-textfield1_log"
-                    sx={{ width: 440 }}
-                    color="success"
-                    variant="outlined"
-                    name="password"
-                    type="password"
-                    InputProps={{
-                        endAdornment: (
-                            <InputAdornment position="end">
-                                <IconButton aria-label="toggle password visibility" onClick={changePasswordVisibility}>
-                                    <Icon>visibility</Icon>
-                                </IconButton>
-                            </InputAdornment>
-                        ),
-                    }}
-                    placeholder="Enter your password"
-                    size="medium"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.password}
-                    error={formik.touched.password && Boolean(formik.errors.password)}
-                    label={formik.touched.password && formik.errors.password}
-                    InputLabelProps={{ shrink: true }}
-                    margin="none"
-                    required
-                />
-                <div className="group-div87_log">
-                    <div className="group-div88_log">
-                        <button type="submit" className="login-div2_log" disabled={formik.isSubmitting}>Login</button>
-                    </div>
-                </div>
-            </form>
-            <a href="/reset-password" className="forgot-your-password_log">
-                {`Forgot your password? `}
-            </a>
-            <div className="dont-have-an-account-signup_log">
-                <span className="dont-have-an_log">{`Don’t have an account? `}</span>
-                <a href="/signup"><b>Signup</b></a>
-            </div>
-            <img className="asset-3-1_log" alt="" src="assets/login/asset-3-1@2x.png" />
-        </div>
+                <Box sx={{
+                    width: "70%", margin: "120px 0 0 50px !important",
+                    ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
+                        width: "100%", margin: "20px 0 0 0px !important",
+                    },  
+                }}>
+                    <form onSubmit={formik.handleSubmit}>
+                        <Typography
+                            sx={{
+                                fontFamily: 'Inter',
+                                fontStyle: "normal",
+                                fontWeight: 700,
+                                fontSize: "32px !important",
+                                lineHeight: "39px",
+                                color: "#FFFFFF",
+                                textAlign: 'center',
+                                marginBottom: '30px',
+                            }}
+                        >
+                            Login
+                        </Typography>
+                        <Typography
+                            sx={{
+                                fontFamily: 'Inter',
+                                fontStyle: "normal",
+                                fontWeight: 400,
+                                fontSize: "16px",
+                                lineHeight: "19px",
+                                color: "white",
+                                marginBottom: "10px",
+                                textAlign: "left",
+                            }}
+                        >
+                            Email
+                        </Typography>
+                        <TextField
+                            variant="outlined"
+                            id="email"
+                            name="email"
+                            type="email"
+                            autoComplete='off'
+                            placeholder="Enter your email"
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            value={formik.values.email}
+                            error={formik.touched.email && Boolean(formik.errors.email)}
+                            label={formik.touched.email && formik.errors.email}
+                            InputLabelProps={{ shrink: true }}
+                            required
+                            sx={{
+                                width: '100%',
+                                background: "#FFFFFF",
+                                borderRadius: "10px",
+                            }}
+                        />
+                        <Typography
+                            sx={{
+                                fontFamily: 'Inter',
+                                fontStyle: "normal",
+                                fontWeight: 400,
+                                fontSize: "16px",
+                                lineHeight: "19px",
+                                color: "white",
+                                marginBottom: "10px",
+                                textAlign: "left",
+                                marginTop: "40px",
+                            }}
+                        >
+                            Password
+                        </Typography>
+                        <TextField
+                            id="password"
+                            variant="outlined"
+                            name="password"
+                            type="password"
+                            InputProps={{
+                                endAdornment: (
+                                    <InputAdornment position="end">
+                                        <IconButton aria-label="toggle password visibility" onClick={changePasswordVisibility}>
+                                            <Icon>visibility</Icon>
+                                        </IconButton>
+                                    </InputAdornment>
+                                ),
+                            }}
+                            placeholder="Enter your password"
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            value={formik.values.password}
+                            error={formik.touched.password && Boolean(formik.errors.password)}
+                            label={formik.touched.password && formik.errors.password}
+                            InputLabelProps={{ shrink: true }}
+                            margin="none"
+                            required
+                            sx={{
+                                width: '100%',
+                                background: "#FFFFFF",
+                                borderRadius: "10px",
+                            }}
+                        />
+                        <Typography 
+                            sx={{
+                                fontFamily: 'Inter',
+                                fontStyle: "normal",
+                                fontWeight: 500,
+                                fontSize: "14px !important",
+                                lineHeight: "17px",
+                                color: "#A6A6A6",
+                                textAlign: "end",
+                                marginTop: "14px",
+                                cursor: "pointer",
+                            }}
+                            onClick={()=>navigate("/reset-password")}
+                        >
+                            Forgot your password? 
+                        </Typography>
+
+                        <Box display="flex" justifyContent="center">
+                            <Button type="submit" sx={{
+                                marginTop: "40px",
+                                width: "100%",
+                                height: "50px",
+                                background: "#388E3C",
+                                borderRadius: "11px",
+                                fontFamily: 'Inter',
+                                fontStyle: 'normal',
+                                fontWeight: 600,
+                                fontSize: '16px',
+                                lineHeight: '19px',
+                                textAlign: 'center',
+                                color: "#FFFFFF",
+                                '&:hover': {
+                                    background: "#388E3C",
+                                }
+                            }}>
+                                Login
+                            </Button>
+                        </Box>
+                        <Typography sx={{
+                            fontFamily: 'Inter',
+                            fontStyle: "normal",
+                            fontWeight: 500,
+                            fontSize: "14px !important",
+                            lineHeight: "17px",
+                            color: "#FFFFFF",
+                            textAlign: 'center',
+                            marginTop: '40px'
+                        }}>
+                            Don’t have an account? 
+                            <span style={{marginLeft: '10px', cursor: "pointer"}} onClick={()=>navigate("/signUp")}>Signup</span>
+                        </Typography>
+                    </form>
+                </Box>
+
+            </Grid>
+            <Grid item md={6} xs={12}  sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
+                    margin: "20px 0"
+                },
+            }}>
+                <img style={{width: '55%'}} src="/assets/users/Asset 3 1.png" />
+            </Grid>
+        </Grid>
     );
 };
