@@ -401,7 +401,6 @@ const WebsiteModal = ({ websiteModal, setWebsiteModal }) => {
                   lineHeight: "24px",
                   color: "#191A15",
                   marginLeft: '16px',
-                  wordBreak: "break-all"
                 }}>
                   Upload your .csv file here
                 </Typography>

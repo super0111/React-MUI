@@ -47,7 +47,6 @@ const Cancellation = () => {
           lineHeight: "39px",
           color: "#FFFFFF",
           margin: "80px 0 25px 0",
-          wordBreak: 'break-all',
           ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
             margin: "50px 0 20px 0",
             fontSize: '25px',

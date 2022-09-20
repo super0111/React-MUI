@@ -1,173 +1,158 @@
 import { useState } from "react";
-import { TextField, Button } from "@mui/material";
+import { Container, Typography, Box, Button, Grid, } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { Navbar, Footer } from "../../components";
+import { styled } from '@mui/system';
 import "../../assets/styles/HelpCenter.css";
+import TouchUs from "./TouchUs";
+
+const SearchField = styled('input')({
+    width: '100%',
+    height: "50px",
+    background: "#FFFFFF",
+    borderRadius: "10px",
+    padding: "15px 20px",
+    fontFamily: 'Inter',
+    fontStyle: "normal",
+    fontWeight: 500,
+    fontSize: "14px",
+    lineHeight: "17px",
+    color: "#A6A6A6",
+    border: "none", 
+    outline: "none",
+});
+
+const helps = [
+    { url: "/assets/help_center/rocket@2x.png", title: "Getting Started", text: "Learn more about how to get started with enablemint with our quick tips and guides to all that you can do on our platform." },
+    { url: "/assets/help_center/Vector (1).png", title: "Tutorials", text: "Check out video tutorials with step-by-step instructions for setting up and using various tools that enablemint offers." },
+    { url: "/assets/help_center/billing.svg", title: "Billing", text: "Questions about Billing or your Subscription? We got you covered. Learn more about our policies and plans." },
+    { url: "/assets/help_center/settings.svg", title: "Account Settings", text: "Learn more about your account and how to navigate, change or update your account settings to your prefernces." },                                                         
+]
 
 const HelpCenter = () => {
     const navigate = useNavigate();
-    const handleSubmit = (event) => {
-    }
-
     return <>
         <Navbar currentPage="help-center" />
-        <div className="hc_help-center-div">
-            <img className="hc_ellipse-icon" alt="" src="assets/help_center/ellipse-37.svg" />
-            <img className="hc_ellipse-icon1" alt="" src="assets/help_center/ellipse-38.svg" />
-            <div className="hc_group-div">
-                <div className="hc_group-div1">
-                    <b className="hc_welcome-to-help-center">Welcome to Help Center</b>
-                </div>
-            </div>
-            <div className="hc_group-div2">
-                <div className="hc_rectangle-div" />
-                <b className="hc_getting-started-b">Getting Started</b>
-                <img className="hc_rocket-icon" alt="" src="assets/help_center/rocket@2x.png" />
-                <div className="hc_lorem-ipsum-dolor-sit-amet-co">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </div>
-            </div>
-            <div className="hc_group-div3">
-                <div className="hc_rectangle-div" />
-                <b className="hc_getting-started-b">Getting Started</b>
-                <img className="hc_rocket-icon" alt="" src="assets/help_center/rocket@2x.png" />
-                <div className="hc_lorem-ipsum-dolor-sit-amet-co">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </div>
-            </div>
-            <form className="hc_group-form" id="contact-form" onSubmit={handleSubmit}>
-                <div className="hc_frame-div">
-                    <div className="hc_group-div4">
-                        <div className="hc_group-div5">
-                            <div className="hc_group-div6">
-                                <div className="hc_message-div">Message</div>
-                                <TextField
-                                    className="hc_rectangle-textfield"
-                                    sx={{ width: 440 }}
-                                    color="success"
-                                    variant="outlined"
-                                    multiline
-                                    rows={5}
-                                    margin="none"
-                                    required
-                                />
-                                <div className="hc_what-are-you-say">What are you say ?</div>
-                            </div>
-                        </div>
-                        <Button
-                            className="hc_group-button"
-                            sx={{ width: 440 }}
-                            variant="contained"
-                            color="success"
-                        >
-                            Contact Us
-                        </Button>
-                        <div className="hc_group-div7">
-                            <div className="hc_email-div">Email</div>
-                            <div className="hc_rectangle-div2" />
-                            <div className="hc_enter-your-email">Enter your email</div>
-                        </div>
-                        <div className="hc_group-div7">
-                            <div className="hc_email-div">Email</div>
-                            <TextField
-                                className="hc_rectangle-textfield1"
-                                sx={{ width: 440 }}
-                                color="success"
-                                variant="outlined"
-                                type="email"
-                                placeholder="Enter your email"
-                                size="medium"
-                                margin="none"
-                                required
-                            />
-                            <div className="hc_enter-your-email">Enter your email</div>
-                        </div>
-                        <div className="hc_group-div9">
-                            <div className="hc_email-div">Name</div>
-                            <TextField
-                                className="hc_rectangle-textfield1"
-                                sx={{ width: 440 }}
-                                color="success"
-                                variant="outlined"
-                                type="text"
-                                placeholder="Enter your name"
-                                size="medium"
-                                margin="none"
-                                required
-                            />
-                            <div className="hc_enter-your-email">Enter your email</div>
-                        </div>
-                    </div>
-                    <div className="hc_group-div10">
-                        <div className="hc_get-in-touch-with-us">Get in touch with us</div>
-                    </div>
-                </div>
-            </form>
-            <img className="hc_ellipse-icon2" alt="" src="assets/help_center/ellipse-36.svg" />
-            <img className="hc_ellipse-icon3" alt="" src="assets/help_center/ellipse-39.svg" />
-            <img className="hc_ellipse-icon3" alt="" src="assets/help_center/ellipse-42.svg" />
+        <Box sx={{
+            background: '#F5F5F5',
+        }}>
+            <Container sx={{
+                padding: "150px 0",
+                position: 'relative',
+                ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key 
+                padding: "120px 0",
+                },
+            }}>
+                <Typography sx={{
+                fontFamily: 'Inter',
+                fontStyle: "normal",
+                fontWeight: 700,
+                fontSize: "40px",
+                lineHeight: "60px",
+                textAlign: "center",
+                color: "#191A15",
+                marginBottom: "55px",
+                ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key 
+                    fontSize: "25px",
+                    lineHeight: "28px",
+                    marginBottom: "25px",
+                },
+                }}>
+                Welcome to Help Center
+                </Typography>
+                <Box sx={{
+                position: "relative",
+                width: '60%',
+                margin: 'auto !important',
+                ['@media (max-width:600px)']: { // eslint-disable-line no-useless-computed-key 
+                    width: '94%',
+                },
+                }}>
+                <SearchField placeholder="What can we help you with today?" />
+                <Button sx={{
+                    width: "80px",
+                    height: "40px",
+                    background: "#388E3C",
+                    borderRadius: "10px",
+                    fontFamily: 'Inter',
+                    fontStyle: "normal",
+                    fontWeight: 500,
+                    fontSize: "16px",
+                    lineHeight: "19px",
+                    color: "#F8F8FA",
+                    position: "absolute",
+                    right: "5px",
+                    bottom: "5px",
+                    '&:hover': {
+                    background: "#388E3C",
+                    }
+                }}>
+                    Search
+                </Button>
+                </Box>
 
-            <div className="hc_group-div18">
-                <div className="hc_group-div19">
-                    <b className="hc_welcome-to-help-center1">Welcome to Help Center</b>
-                </div>
-            </div>
-            <a href="/" className="hc_group-a">
-                <div className="hc_rectangle-div" />
-                <b className="hc_getting-started-b">Getting Started</b>
-                <img className="hc_rocket-icon" alt="" src="assets/help_center/rocket@2x.png" />
-                <div className="hc_lorem-ipsum-dolor-sit-amet-co">
-                    Learn more about how to get started with enablemint with our quick
-                    tips and guides to all that you can do on our platform.
-                </div>
-            </a>
-            <a href="/" className="hc_group-a1">
-                <div className="hc_rectangle-div" />
-                <b className="hc_account-settings-b">Account Settings</b>
-                <img className="hc_rocket-icon" alt="" src="assets/help_center/settings.svg" />
-                <div className="hc_learn-more-about-your-account">
-                    Learn more about your account and how to navigate, change or update
-                    your account settings to your prefernces.
-                </div>
-            </a>
-            <a href="/" className="hc_group-a2">
-                <div className="hc_rectangle-div" />
-                <b className="hc_getting-started-b">Billing</b>
-                <img className="hc_rocket-icon" alt="" src="assets/help_center/billing.svg" />
-                <div className="hc_learn-more-about-your-account">
-                    Questions about Billing or your Subscription? We got you covered.
-                    Learn more about our policies and plans.
-                </div>
-            </a>
-            <a href="/" className="hc_group-a3">
-                <div className="hc_rectangle-div" />
-                <b className="hc_getting-started-b">Tutorials</b>
-                <div className="hc_learn-more-about-your-account">
-                    Check out video tutorials with step-by-step instructions for setting
-                    up and using various tools that enablemint offers.
-                </div>
-            </a>
-            <img className="hc_ondemand-video-icon" alt="" src="assets/help_center/ondemand-video.svg" />
-            <TextField
-                className="hc_group-textfield"
-                color="success"
-                variant="outlined"
-                type="text"
-                placeholder="What can we help you with today?"
-                size="medium"
-                margin="none"
-            />
-            <Button
-                className="hc_group-button1"
-                variant="contained"
-                color="success"
-            >
-                Search
-            </Button>
-            <Footer />
-        </div>
+                <Grid container spacing={2} sx={{
+                    margin: "120px 0",
+                }}>
+                    { helps.map((item, i)=>(
+                        <Grid KEY={i} item xs={6} sx={{
+                            display: "flex", justifyContent: 'center'
+                        }}>
+                            <Box 
+                                sx={{
+                                    display: "flex",
+                                    flexDirection: 'column',
+                                    justifyContent: "center",
+                                    alignItems: 'center',
+                                    padding: "20px 40px",
+                                    width: '356px',
+                                    background: "#FFFFFF",
+                                    boxShadow: "0px 4px 9px rgba(0, 0, 0, 0.05)",
+                                    borderRadius: "20px",
+                                    margin: "13px 0",
+                                    cursor: 'pointer',
+                                    '&:hover': {
+                                        boxShadow: "8px 7px 6px rgb(0 0 0 / 5%)",
+                                    }
+                                }}
+                                onClick={()=>navigate("/help-center-article")}
+                            >
+                                <Box component="img" src={item.url} sx={{
+                                    width: "40px", height: "40px",
+                                }} />
+                                <Typography sx={{
+                                    fontFamily: 'Inter',
+                                    fontStyle: "normal",
+                                    fontWeight: 700,
+                                    fontSize: "16px",
+                                    lineHeight: "19px",
+                                    color: "#000000",
+                                    margin: "12px 0"
+                                }}>
+                                    {item.title}
+                                </Typography>
+                                <Typography sx={{
+                                    fontFamily: 'Inter',
+                                    fontStyle: "normal",
+                                    fontWeight: 400,
+                                    fontSize: "11px",
+                                    lineHeight: "13px",
+                                    color: "#000000",
+                                    marginTop: '8px',
+                                    textAlign: 'center',
+                                }}>
+                                    {item.text}
+                                </Typography>
+                            </Box>
+                        </Grid>   
+
+                    )) }
+                </Grid>
+
+                <TouchUs />
+            </Container>
+        </Box>
+        <Footer />
     </>;
 };
 

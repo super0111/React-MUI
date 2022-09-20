@@ -1,14 +1,14 @@
-export { AboutUsPage } from "./AboutUsPage";
-export { default as Pricing } from "./Pricing";
-export { LoginPage } from "./LoginPage";
-export { ForgetPassword } from "./ForgetPassword";
-export { default as SignUpFlow1 } from "./SignUpFlow1";
-export { default as SignUpFlow2 } from "./SignUpFlow2";
-export { default as SignUpFlow3 } from "./SignUpFlow3";
-export { default as SignUpFlow4 } from "./SignUpFlow4";
-export { default as LogoutPage } from "./LogoutPage";
+export { LoginPage } from "./Auth/LoginPage";
+export { ForgetPassword } from "./Auth/ForgetPassword";
+export { default as SignUpFlow1 } from "./Auth/SignUpFlow1";
+export { default as SignUpFlow2 } from "./Auth/SignUpFlow2";
+export { default as SignUpFlow3 } from "./Auth/SignUpFlow3";
+export { default as SignUpFlow4 } from "./Auth/SignUpFlow4";
+export { default as LogoutPage } from "./Auth/LogoutPage";
 
-export { default as LandingPage } from './Landing'
+export { default as LandingPage } from './Landing';
+export { AboutUsPage } from "./AboutUs/AboutUsPage";
+export { default as Pricing } from "./Pricing";
 export { default as HelpCenter } from "./HelpCenter/HelpCenter";
 export { default as HelpCenterArticle } from "./HelpCenter/HelpCenterArticle";
 export { default as HelpCenterArticleBody } from "./HelpCenter/HelpCenterArticleBody";

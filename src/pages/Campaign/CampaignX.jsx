@@ -136,7 +136,6 @@ const CampaignXApp = () => {
               fontSize: "20px",
               lineHeight: "24px",
               color: "#388E3C",
-              wordBreak: "break-all",
               marginTop: "35px",
             }}>
               Upload Input File (see formatting)
@@ -172,7 +171,6 @@ const CampaignXApp = () => {
                   lineHeight: "24px",
                   color: "#191A15",
                   marginLeft: '16px',
-                  wordBreak: "break-all"
                 }}>
                   Upload your .csv file here
                 </Typography>

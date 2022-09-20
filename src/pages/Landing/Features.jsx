@@ -1,9 +1,6 @@
 import { Box, Grid, Typography, IconButton } from '@mui/material'
 import React from 'react'
-import { StarFeedback } from '../../components/StarFeedback'
-import Graph from '../../assets/images/graph-icon.png'
-import PieChart from '../../assets/images/pie-chart-icon.png'
-import Command from '../../assets/images/command-icon.png'
+import { StarFeedback } from '../../components/StarFeedback';
 
 const Feature = ({ icon, title, body }) => {
     return (
@@ -21,7 +18,16 @@ const Feature = ({ icon, title, body }) => {
                 </IconButton>
             </Box>
             <Box>
-                <Typography variant="h5">{title}</Typography>
+                <Typography sx={{
+                    color: '#191A15',
+                    fontSize: 27,
+                    fontWeight: 700,
+                    fontStyle: 'normal',
+                    lineHeight: 1.1,
+                    ['@media (max-width:769px)']: { // eslint-disable-line no-useless-computed-key
+                        fontSize: "20px",
+                    },
+                }}>{title}</Typography>
                 <Typography variant="body1" mt={1}>{body}</Typography>
             </Box>
         </Box>
@@ -29,9 +35,19 @@ const Feature = ({ icon, title, body }) => {
 }
 export const Features = () => {
     return (
-        <Box py={10} px={{ md: 20, xs: '48px' }} bgcolor="#F9F8FE">
+        <Box py={10} px={{ md: 20, xs: '48px' }} bgcolor="#F9F8FE" sx={{
+            ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
+                paddingLeft: "20px !important",
+                paddingRight: "20px !important",
+            },
+        }}>
             <Grid container spacing={5}>
-                <Grid item xs={12} md={7}>
+                <Grid item xs={12} md={7} sx={{
+                    maxWidth: "55% !important",
+                    ['@media (max-width:900px)']: { // eslint-disable-line no-useless-computed-key
+                        maxWidth: "100% !important",
+                    },
+                }}>
                     <Box>
                         <Typography variant="h3">How can enablemint help?</Typography>
                         <Box mt={15} sx={{
@@ -39,8 +55,9 @@ export const Features = () => {
                                 marginTop: '40px',
                             },
                         }}>
-                            <Typography variant="body2">
-                                Highly Targeted and Effective Demand Generation is possible through enablemint. Our mission is to help Sales & Marketing teams uncover Demand Generation opportunities with our easy-to-use, no-code automation workflows & tools.
+                            <Typography variant="body2" sx={{maxWidth: "95%"}}>
+                                Highly Targeted and Effective Demand Generation is possible through enablemint.
+                                Our mission is to help Sales & Marketing teams uncover Demand Generation opportunities with our easy-to-use, no-code automation workflows & tools.
                             </Typography>
                         </Box>
                         <Box mt={12} display="flex" gap={13} sx={{
@@ -57,21 +74,21 @@ export const Features = () => {
                     <Box height="100%" display="flex" flexDirection="column" justifyContent="space-between" pt={{ md: 0, xs: 5 }}>
                         <Box mb={5}>
                             <Feature
-                                icon={Graph}
+                                icon="/assets/activity-1.svg"
                                 title="Automate your lead generation"
                                 body="A single input - unlimited companies & contacts. Hands-off approach with scheduled daily launches"
                             />
                         </Box>
                         <Box mb={5}>
                             <Feature
-                                icon={PieChart}
+                                icon="/assets/piechart-1.svg"
                                 title="Customized lead generation"
                                 body="	Curate leads specifically for your niche generated in real time "
                             />
                         </Box>
                         <Box mb={5}>
                             <Feature
-                                icon={Command}
+                                icon="assets/command-1.svg"
                                 title="No-Code solution anyone can use"
                                 body="Prebuilt workflows with a single input build to save you hours on identifying quality leads"
                             />

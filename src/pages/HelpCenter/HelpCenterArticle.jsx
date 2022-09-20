@@ -256,7 +256,6 @@ const HelpCenterArticle = () => {
                     color: "#000000",
                     textAlign: "start",
                     margin: "12px 0",
-                    wordBreak: "break-all",
                     ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key 
                       fontSize: "13px",
                       lineHeight: "15px",
@@ -272,17 +271,17 @@ const HelpCenterArticle = () => {
                   }}>
                     { item.articles.map((item, i)=>(
                       <Typography key={i} sx={{
-                        fontFamily: 'Inter',
+                        fontFamily: 'Inter !important',
                         fontStyle: "normal",
                         fontWeight: 400,
-                        fontSize: "14px",
-                        lineHeight: "17px",
+                        fontSize: "14px !important",
+                        lineHeight: "17px !important",
                         color: "#6D6D6D",
                         margin: "14px 0",
                         cursor: "pointer",
                         ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key 
-                          fontSize: "12px",
-                          lineHeight: "12px",
+                          fontSize: "12px !important",
+                          lineHeight: "12px !important",
                         }
                       }}
                       onClick={()=>handleArticleSelect(item.text)}  
@@ -354,10 +353,10 @@ const HelpCenterArticle = () => {
                 </Typography>
 
                 <Typography sx={{
-                  fontFamily: 'Inter',
+                  // fontFamily: 'Inter !important',
                   fontStyle: "normal",
                   fontWeight: 400,
-                  fontSize: "12px",
+                  fontSize: "12px !important",
                   lineHeight: "15px",
                   color: "#000000",
                   marginTop: "24px",

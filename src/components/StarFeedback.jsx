@@ -1,8 +1,6 @@
 import { Box, Typography } from '@mui/material'
 import StarIcon from '@mui/icons-material/Star';
 import { palette } from '../themes/DefaultTheme';
-// import StarBorderIcon from '@mui/icons-material/StarBorder';
-// import StarHalfIcon from '@mui/icons-material/StarHalf';
 
 export const StarFeedback = ({ rate, text }) => {
     return (
@@ -21,7 +19,7 @@ export const StarFeedback = ({ rate, text }) => {
                 <Typography
                     variant="body2"
                     className="bold"
-                    sx={{ fontSize: 18, fontWeight: 700, color: palette.background.paper }} >
+                    sx={{ fontSize: 18, fontWeight: 700, color: palette.background.paper1 }} >
                     4.9 / 5 rating
                 </Typography>
             </Box>

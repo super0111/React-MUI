@@ -37,13 +37,19 @@ export const LandingPage = () => {
       <div className="landing-page-div">
         <Navbar currentPage="home" />
         <Box mt={14}>
-          <Section>
+          <Section sx={{
+            backgroundImage: `url(/assets/ellipse-38.svg)`,
+            backgroundSize: "cover",
+            ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
+              paddingLeft: "20px !important",
+              paddingRight: "20px !important",
+            },
+          }}>
             <Landing />
           </Section>
           <Section sx={{
             ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
-                paddingTop: "20px !important",
-                paddingBottom: "20px !important",
+                padding: "20px 45px 20px 30px !important",
             },
         }}>
             <Categories />
@@ -53,24 +59,26 @@ export const LandingPage = () => {
           </Section>
           <Section sx={{
             ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
-                paddingTop: "20px !important",
-                paddingBottom: "20px !important",
+                padding: "20px !important",
             },
         }}>
             <HowTo />
           </Section>
           <Section sx={{
             ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
-                paddingTop: "0px !important",
-                paddingBottom: "0px !important",
+                padding: "0px 20px 0 20px !important",
             },
         }}>
             <Customers />
           </Section>
-          <Section>
+          <Section sx={{
+            ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
+              padding: "30px 20px !important",
+            },
+          }}>
             <Box px={{ md: 20, xs: 0 }}>
               <Grid container spacing={5}>
-                <Grid item xs={12} md={6}
+                <Grid item md={12} lg={6}
                   sx={{
                     ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
                       paddingTop: "0px !important" 
@@ -89,11 +97,11 @@ export const LandingPage = () => {
                     </Typography>
                   </Box>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid item md={12} lg={6}>
                   <Box display="flex" justifyContent={{ md: 'center', xs: 'start' }}>
                     <Button variant="secondary" sx={{
                       '&:hover': {
-                        background: "#57b95b"
+                        background: "#377d3a",
                       }
                     }}>Get Started for Free</Button>
                   </Box>

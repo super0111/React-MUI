@@ -25,7 +25,6 @@ const FeedbackSubmitApp = () => {
             fontWeight: 700,
             fontSize: "48px",
             lineHeight: "60px",
-            wordBreak: "break-all",
             textAlign: "center",
             color: "#191A15",
             ['@media (max-width:992px)']: { // eslint-disable-line no-useless-computed-key 

@@ -80,52 +80,52 @@ const CarouselItem = styled(Box)(() => ({
 
 export const Categories = () => {
     return (
-        <Box>
+        <Box sx={{}}>
             <Box>
-                <Typography variant="h4">500k+ qualified leads identified in</Typography>
+                <Typography variant="h4" sx={{textAlign: "center"}}>500k+ qualified leads identified in</Typography>
             </Box>
-			<Box
-				mt={10}
-				sx={{
-					'& .MuiTypography-root': {
-						color: palette.text.disabled,
-						display: 'inline-block',
-					}
-				}}
-			>
-				<Slider {...settings}>
-					<CarouselItem>
-						<Typography variant="h5">Real Estate</Typography>
-					</CarouselItem>
-					<CarouselItem>
-						<Typography variant="h5">Healthcare</Typography>
-					</CarouselItem>
-					<CarouselItem>
-						<Typography variant="h5">Retail</Typography>
-					</CarouselItem>
-					<CarouselItem>
-						<Typography variant="h5">Hospitality</Typography>
-					</CarouselItem>
-					<CarouselItem>
-						<Typography variant="h5">Education</Typography>
-					</CarouselItem>
-					<CarouselItem>
-						<Typography variant="h5">Real Estate</Typography>
-					</CarouselItem>
-					<CarouselItem>
-						<Typography variant="h5">Healthcare</Typography>
-					</CarouselItem>
-					<CarouselItem>
-						<Typography variant="h5">Retail</Typography>
-					</CarouselItem>
-					<CarouselItem>
-						<Typography variant="h5">Hospitality</Typography>
-					</CarouselItem>
-					<CarouselItem>
-						<Typography variant="h5">Education</Typography>
-					</CarouselItem>
-				</Slider>
-			</Box>
+						<Box
+							mt={10}
+							sx={{
+								'& .MuiTypography-root': {
+									color: palette.text.disabled,
+									display: 'inline-block',
+								}
+							}}
+						>
+							<Slider {...settings}>
+								<CarouselItem>
+									<Typography variant="h5">Real Estate</Typography>
+								</CarouselItem>
+								<CarouselItem>
+									<Typography variant="h5">Healthcare</Typography>
+								</CarouselItem>
+								<CarouselItem>
+									<Typography variant="h5">Retail</Typography>
+								</CarouselItem>
+								<CarouselItem>
+									<Typography variant="h5">Hospitality</Typography>
+								</CarouselItem>
+								<CarouselItem>
+									<Typography variant="h5">Education</Typography>
+								</CarouselItem>
+								<CarouselItem>
+									<Typography variant="h5">Real Estate</Typography>
+								</CarouselItem>
+								<CarouselItem>
+									<Typography variant="h5">Healthcare</Typography>
+								</CarouselItem>
+								<CarouselItem>
+									<Typography variant="h5">Retail</Typography>
+								</CarouselItem>
+								<CarouselItem>
+									<Typography variant="h5">Hospitality</Typography>
+								</CarouselItem>
+								<CarouselItem>
+									<Typography variant="h5">Education</Typography>
+								</CarouselItem>
+							</Slider>
+						</Box>
         </Box>
     )
 }
