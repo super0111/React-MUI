@@ -81,7 +81,7 @@ const UploadFileApp = () => {
               }}
               onClick={()=>setWebsiteModal(true)}
             >
-              <img style={{width: "25px", height: "25px"}} src="/assets/dashboard/+.png" />
+              <Box component="img" sx={{width: "25px", height: "25px"}} src="/assets/dashboard/+.png" />
             </Box>
           </Box>
           <Box sx={{
