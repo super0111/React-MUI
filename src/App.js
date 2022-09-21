@@ -16,9 +16,7 @@ export const App = ({ root }) => {
       <Route path="/about-us" element={<Pages.AboutUsPage />} />
       <Route path="/pricing" element={<Pages.Pricing />} />
       <Route path="/help-center" element={<Pages.HelpCenter />} />
-      <Route path="/help-center-article" element={<Pages.HelpCenterArticle />} >
-        <Route path="queen" element={<Pages.HelpCenterArticleBody />} />
-      </Route>
+      <Route path="/help-center-article" element={<Pages.HelpCenterArticle />} />
       <Route path="/contact-us" element={<Pages.ContactUs />} />
       <Route path="/cancellation" element={<Pages.Cancellation />} />
       <Route path="/cancellation/cancellationContinue" element={<Pages.CancellationContinue />} />

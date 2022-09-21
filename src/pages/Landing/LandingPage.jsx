@@ -39,24 +39,29 @@ export const LandingPage = () => {
       <div className="landing-page-div">
         <Navbar currentPage="home" />
         <Box mt={14}>
-          <Section sx={{
-            backgroundImage: `url(/assets/ellipse-38.svg)`,
-            backgroundSize: "cover",
-            ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
-              paddingLeft: "20px !important",
-              paddingRight: "20px !important",
-            },
+          <Box sx={{
+              backgroundImage: `url(/assets/Header_Bg.png)`,
+              backgroundSize: "100% 100%",
+              backgroundRepeat: "no-repeat",
           }}>
-            <Landing />
-          </Section>
-          <Section sx={{
-            ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
-                padding: "20px 45px 20px 30px !important",
-            },
-        }}>
-            <Categories />
-          </Section>
-          <Section px={`0 !important`}>
+            <Section sx={{
+              ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
+                paddingLeft: "20px !important",
+                paddingRight: "20px !important",
+              },
+            }}>
+              <Landing />
+            </Section>
+            <Section sx={{
+              ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
+                  padding: "20px 45px 20px 30px !important",
+              },
+            }}>
+              <Categories />
+            </Section>
+          </Box>
+          
+          <Section px={`0 !important`} sx={{paddingTop: "0px !important"}}>
             <Features />
           </Section>
           <Section sx={{

@@ -19,7 +19,11 @@ const InputField = styled('input')({
 
 const MyAccountApp = () => {
   return (
-    <Box sx={{background: "#F5F5F5"}}>
+    <Box sx={{
+      backgroundImage: `url(/assets/Header_Bg.png)`,
+      backgroundSize: "100% 100%",
+      backgroundRepeat: "no-repeat",
+    }}>
       <Container sx={{
         padding: "100px 60px 30px 60px !important",
         ['@media (max-width:900px)']: { // eslint-disable-line no-useless-computed-key 
@@ -31,6 +35,7 @@ const MyAccountApp = () => {
           flexDirection: "column",
           width: "100%",
           background: "#FFFFFF",
+          boxShadow: "-1px 1px 3px #e2e2e2",
           borderRadius: "15px !important",
           padding: { md: "35px 45px !important", sm: "25px 15px!important" },
           ['@media (max-width:600px)']: { // eslint-disable-line no-useless-computed-key 

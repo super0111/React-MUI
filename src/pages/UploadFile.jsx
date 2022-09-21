@@ -17,7 +17,12 @@ const UploadFileApp = () => {
   const [linkedInModal, setLinkedInModal] = useState(false);
   
   return (
-    <Box sx={{background: "#F5F5F5", paddingBottom: "70px !important"}}>
+    <Box sx={{
+      backgroundImage: `url(/assets/Header_Bg.png)`,
+      backgroundSize: "100% 100%",
+      backgroundRepeat: "no-repeat",
+      paddingBottom: "70px !important",
+    }}>
       <Container sx={{
         padding: "0 60px !important",
         ['@media (max-width:684px)']: { // eslint-disable-line no-useless-computed-key 

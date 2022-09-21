@@ -4,7 +4,11 @@ import Slider from "../components/Slider";
 
 const FeedbackSubmitApp = () => {
   return (
-    <Box sx={{background: "#F5F5F5", height: "100vh"}}>
+    <Box sx={{
+      backgroundImage: `url(/assets/Header_Bg.png)`,
+      backgroundSize: "100% 100%",
+      backgroundRepeat: "no-repeat",
+    }}>
       <Container sx={{
          padding: "150px 15px 60px 15px !important",
       }}>

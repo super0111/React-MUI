@@ -1,4 +1,4 @@
-import { Box, Card, TextField, Button, Typography, Grid } from "@mui/material";
+import { Box, Card, Container, Button, Typography, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { Navbar } from "../../components";
 import { Footer } from "../../components/Footer";
@@ -15,11 +15,30 @@ const ContactUs = () => {
 
     return <>
         <Navbar currentPage="contact-us" />
-        <div className="contactUs">
-            <div className="headerImg">
-                <img src="/assets/contact_us/image 7.png" alt="header-img" />
-            </div>
-            <div className="container">
+        <Box sx={{
+            backgroundImage: `url(/assets/Header_Bg.png)`,
+            backgroundSize: "100% 100%",
+            backgroundRepeat: "no-repeat",
+            position: "relative",
+            paddingBottom: "255px",
+            [`@media (max-width: 768px)`]: {
+                paddingBottom: "150px",
+            },
+            [`@media (max-width: 400px)`]: {
+                paddingBottom: "80px",
+            },
+        }}>
+            <Box component="img" src="/assets/contact_us/image 7.png" alt="header-img" sx={{
+                position: "absolute",
+                right: 0,
+                top: "80px",
+                width: "50%",
+                zIndex: 1,
+                [`@media (max-width: 600px)`]: {
+                    top: "68px",
+                },
+            }} />
+            <Container>
                 <Typography sx={{
                     fontFamily: 'Inter',
                     fontStyle: "normal",
@@ -304,11 +323,16 @@ const ContactUs = () => {
                     </Grid>
                 </Grid>
 
-                <img className="map" src="/assets/contact_us/map.png" alt="map" />
+                <Box component="img" src="/assets/contact_us/map.png" alt="map" sx={{
+                    width: "85%",
+                    margin: "auto",
+                    marginTop: "60px",
+                    marginBottom: "60px",
+                }} />
                 
                 <ContactForm />
-            </div>
-        </div>
+            </Container>
+        </Box>
         <Footer />
     </>;
 };

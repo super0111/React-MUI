@@ -21,7 +21,12 @@ const InputField = styled('input')({
 
 const NewCampaignApp = () => {
   return (
-    <Box sx={{background: "#F5F5F5", height: "100vh"}}>
+    <Box sx={{
+      backgroundImage: `url(/assets/Header_Bg.png)`,
+      backgroundSize: "100% 100%",
+      backgroundRepeat: "no-repeat", 
+      height: "100vh",
+    }}>
       <Container sx={{
         padding: "130px 60px 0 60px !important",
         ['@media (max-width:684px)']: { // eslint-disable-line no-useless-computed-key 

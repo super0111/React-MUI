@@ -17,7 +17,11 @@ const items = [
 
 const DashboardApp = () => {
   return (
-    <Box sx={{background: "#F5F5F5",}}>
+    <Box sx={{
+      backgroundImage: `url(/assets/Header_Bg.png)`,
+      backgroundSize: "100% 100%",
+      backgroundRepeat: "no-repeat",
+    }}>
       <Container>
         <Box sx={{
           padding: "150px 80px 100px 80px !important",

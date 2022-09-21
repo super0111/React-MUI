@@ -11,7 +11,6 @@ export { AboutUsPage } from "./AboutUs/AboutUsPage";
 export { default as Pricing } from "./Pricing";
 export { default as HelpCenter } from "./HelpCenter/HelpCenter";
 export { default as HelpCenterArticle } from "./HelpCenter/HelpCenterArticle";
-export { default as HelpCenterArticleBody } from "./HelpCenter/HelpCenterArticleBody";
 export { default as ContactUs } from "./ContactUs";
 export { default as Cancellation } from "./Cancellation/Cancellation";
 export { default as CancellationContinue } from "./Cancellation/CancellationContinue";

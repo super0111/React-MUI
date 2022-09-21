@@ -28,7 +28,11 @@ const contactLists = [
 
 const CampaignXApp = () => {
   return (
-    <Box sx={{background: "#F5F5F5", height: "100vh"}}>
+    <Box sx={{
+      backgroundImage: `url(/assets/Header_Bg.png)`,
+      backgroundSize: "100% 100%",
+      backgroundRepeat: "no-repeat",
+    }}>
       <Container sx={{
         padding: "130px 60px 100px 60px !important",
         ['@media (max-width:684px)']: { // eslint-disable-line no-useless-computed-key 

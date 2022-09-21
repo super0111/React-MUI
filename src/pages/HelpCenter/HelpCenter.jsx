@@ -34,7 +34,9 @@ const HelpCenter = () => {
     return <>
         <Navbar currentPage="help-center" />
         <Box sx={{
-            background: '#F5F5F5',
+            backgroundImage: `url(/assets/Header_Bg.png)`,
+            backgroundSize: "100% 100%",
+            backgroundRepeat: "no-repeat",
         }}>
             <Container sx={{
                 padding: "150px 0",

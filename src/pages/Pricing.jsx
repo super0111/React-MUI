@@ -91,7 +91,9 @@ export default connect(
         <Navbar currentPage="help-center" />
         <Box>
             <Box sx={{
-                    background: '#F5F5F5',
+                    backgroundImage: `url(/assets/Header_Bg.png)`,
+                    backgroundSize: "100% 100%",
+                    backgroundRepeat: "no-repeat",
                     padding: "150px 0 20px 0",
                     position: 'relative',
                     ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key 

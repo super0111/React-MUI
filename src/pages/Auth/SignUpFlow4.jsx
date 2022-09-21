@@ -94,12 +94,19 @@ export default connect(
     };
 
     return (
-        <Grid container spacing={2} sx={{height: "100vh"}}>
+        <Grid container spacing={2} sx={{
+            backgroundImage: `url(/assets/Header_Bg.png)`,
+            backgroundSize: "100% 100%",
+            backgroundRepeat: "no-repeat",
+        }}>
             <Grid item md={6} xs={12} sx={{
                 backgroundImage: `url(${BackgroundImage})`,
                 backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
+                backgroundSize: "100% 100%",
                 padding: "50px 50px 100px 50px !important",
+                ['@media (max-width:900px)']: { // eslint-disable-line no-useless-computed-key
+                    backgroundSize: "cover",
+                },
                 ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
                     padding: "30px 30px 50px 30px !important",
                 },
