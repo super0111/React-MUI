@@ -5,6 +5,23 @@ import * as yup from "yup";
 import { BiRightArrowAlt } from "react-icons/bi";
 import "../assets/styles/LandingPage.css";
 
+import { styled } from '@mui/system';
+
+const InputField = styled('input')({
+  width: "100%",
+  padding: "15px 20px",
+  background: "#FFFFFF",
+  fontFamily: 'Inter',
+  fontStyle: "normal",
+  fontWeight: 400,
+  fontSize: "16px",
+  lineHeight: "19px",
+  color: "#161C28",
+  marginTop: "23px",
+  border: "2px solid #A6A6A6",
+  borderRadius: "70px",
+});
+
 const accounts = [
   { text: "About us" },
   { text: "Pricing" },
@@ -15,7 +32,7 @@ const accounts = [
 const support = [
   { text: "Help Center", router: "help-center" },
   { text: "Contact us", router: "/contactUs" },
-  { text: "Calcellation Policy", router: "/cancellation" },
+  { text: "Cancellation Policy", router: "/cancellation" },
 ]
 
 const legal = [
@@ -91,7 +108,7 @@ export const Footer = () => {
                 width: "300px",
               }
             }}>
-              <TextField
+              <InputField 
                 name="email"
                 type="email"
                 placeholder="Enter your email here"
@@ -103,18 +120,6 @@ export const Footer = () => {
                 InputLabelProps={{ shrink: true }}
                 required
                 focused={false}
-                sx={{
-                  width: "100%",
-                  marginTop: "20px",
-                  border: "2px solid #A6A6A6",
-                  borderRadius: "70px",
-                  color: "white !important",
-                  'input': {
-                    '&::placeholder': {
-                      color: '#A6A6A6'
-                    }
-                  }
-                }}
               />
               <Button sx={{
                   minWidth: "46px !important",
@@ -125,7 +130,7 @@ export const Footer = () => {
                   top: "27px",
                   right: "10px",
                   "&:hover": {
-                    background: "#388E3C",
+                    background: "#1E5620",
                   },
                 }}
               >
@@ -254,9 +259,15 @@ export const Footer = () => {
             </Box>
           </Box>
           <Box sx={{display: "flex", justifyContent: "end", alignItems: "center" }}>
-              <img style={{ width: "20px", height: "20px", margin: "0 5px" }} src="/assets/socialicon/facebook.png" />
-              <img style={{ width: "24px", height: "24px", margin: "0 5px" }} src="/assets/socialicon/Twitter.png" />
-              <img style={{ width: "24px", height: "24px", margin: "0 5px" }} src="/assets/socialicon/LinkedIn.png" />
+              <a href="https://facebook.com/" target="_blank">
+                <img style={{ width: "20px", height: "20px", margin: "0 5px", cursor: "pointer" }} src="/assets/socialicon/facebook.png" />
+              </a>
+              <a href="https://twitter.com/" target="_blank">
+                <img style={{ width: "24px", height: "24px", margin: "0 5px", cursor: "pointer" }} src="/assets/socialicon/Twitter.png" />
+              </a>
+              <a href="https://www.linkedin.com/" target="_blank">
+                <img style={{ width: "24px", height: "24px", margin: "0 5px", cursor: "pointer" }} src="/assets/socialicon/LinkedIn.png" />
+              </a>
           </Box>
         </Box>
       </Container>

@@ -97,7 +97,7 @@ const FeedbackApp = () => {
               <TextField
                 sx={{ 
                   background: "#FFFFFF",
-                  borderRadius: "10px", 
+                  borderRadius: "12px", 
                 }}
                 variant="outlined"
                 type="text"
@@ -124,7 +124,7 @@ const FeedbackApp = () => {
               <TextField
                 sx={{ 
                   background: "#FFFFFF",
-                  borderRadius: "10px", 
+                  borderRadius: "12px", 
                 }}
                 variant="outlined"
                 type="text"
@@ -157,7 +157,7 @@ const FeedbackApp = () => {
                 onChange={(e)=>setMessageValue(e.target.value)}
                 style={{
                   background: "#FFFFFF",
-                  borderRadius: "10px",
+                  borderRadius: "12px",
                   padding: "16px",
                   height: "80px",
                   fontWeight: 500,
@@ -175,7 +175,7 @@ const FeedbackApp = () => {
                 width: "100%",
                 height: "60px",
                 background: "#388E3C",
-                borderRadius: "10px",
+                borderRadius: "12px",
                 fontFamily: 'Inter',
                 fontStyle: "normal",
                 fontWeight: 600,

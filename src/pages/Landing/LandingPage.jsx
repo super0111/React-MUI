@@ -2,6 +2,7 @@
 // import { Link } from "react-router-dom";
 
 import { Box, Typography, Button, styled, Grid } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import { Navbar, Footer } from "../../components";
 
 import { Landing, Categories, HowTo, Features, Customers } from './'
@@ -18,6 +19,7 @@ const Section = styled(Box)(({ theme }) => ({
   },
 }))
 export const LandingPage = () => {
+  const navigate = useNavigate();
   // const initialIndustries = ['Real Estate', 'Healthcare', 'Retail', 'Hospitality', 'Education']
   // const nextIndustries = ['Manufacturing', 'Engineering', 'VMS', 'Software', 'Professional Services']
   // const [industries, setIndustries] = useState(initialIndustries);
@@ -72,11 +74,16 @@ export const LandingPage = () => {
             <Customers />
           </Section>
           <Section sx={{
+            ['@media (max-width:900px)']: { // eslint-disable-line no-useless-computed-key
+              padding: "0px 60px 60px 60px !important",
+            },
             ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
               padding: "30px 20px !important",
             },
           }}>
-            <Box px={{ md: 20, xs: 0 }}>
+            <Box px={{ md: 20, xs: 0 }} sx={{
+              padding: '0 60px 0 60px !important'
+            }}>
               <Grid container spacing={5}>
                 <Grid item md={12} lg={6}
                   sx={{
@@ -89,6 +96,13 @@ export const LandingPage = () => {
                     <Typography variant='h4' 
                       sx={{ 
                         fontSize: 36, maxWidth: 430, 
+                        ['@media (max-width:1290px)']: { // eslint-disable-line no-useless-computed-key
+                          maxWidth: "100%",
+                          fontSize: "30px !important" 
+                        },
+                        ['@media (max-width:1200px)']: { // eslint-disable-line no-useless-computed-key
+                          textAlign: 'center' 
+                        },
                         ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
                           fontSize: "25px", maxWidth: "100%", 
                         },
@@ -97,13 +111,24 @@ export const LandingPage = () => {
                     </Typography>
                   </Box>
                 </Grid>
-                <Grid item md={12} lg={6}>
-                  <Box display="flex" justifyContent={{ md: 'center', xs: 'start' }}>
+                <Grid item md={12} lg={6} sx={{
+                   ['@media (max-width:900px)']: { // eslint-disable-line no-useless-computed-key
+                    width: '100%',
+                  },
+                }}>
+                  <Box display="flex" justifyContent={{ md: 'center', }} sx={{
+                      ['@media (max-width:900px)']: { // eslint-disable-line no-useless-computed-key
+                        width: '100%',
+                        justifyContent: 'center',
+                      },
+                  }}>
                     <Button variant="secondary" sx={{
                       '&:hover': {
                         background: "#377d3a",
-                      }
-                    }}>Get Started for Free</Button>
+                      },
+                    }}
+                    onClick={()=>navigate("/signUp")}
+                    >Get Started for Free</Button>
                   </Box>
                 </Grid>
               </Grid>

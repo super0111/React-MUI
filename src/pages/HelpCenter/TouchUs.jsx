@@ -12,14 +12,16 @@ const TouchUs = () => {
   
 
   const validationSchema = yup.object({
+    name: yup
+    .string("Enter your name")
+    .required("Name is required"),
     email: yup
         .string("Enter your email")
         .email("Enter a valid email")
         .required("Email is required"),
-    password: yup
-        .string("Enter your password")
-        .required("Password is required")
-        .min(8),
+    message: yup
+        .string("Enter your message")
+        .required("Message is required")
 });
 
 const formik = useFormik({
@@ -38,21 +40,20 @@ const formik = useFormik({
   return (
     <Box sx={{
       width: "50%", 
-      margin: "120px 0 0 50px !important",
       padding: "44px 60px",
       background: "#222938",
       borderRadius: "20px",
       margin: "auto",
       ['@media (max-width: 768px)']: { // eslint-disable-line no-useless-computed-key
-          width: "80%", margin: "20px 0 0 0px !important",
+          width: "80%",
           margin: "auto",
           padding: "20px 30px",
       }, 
       ['@media (max-width:500px)']: { // eslint-disable-line no-useless-computed-key
           width: "100%", 
-          margin: "20px 0 0 0px !important",
-          padding: "20px 16px",
-      }, 
+          margin: "0px 0 0 0px !important",
+          padding: "20px 16px !important",
+      },
     }}>
       <form onSubmit={formik.handleSubmit}>
         <Typography
@@ -101,7 +102,7 @@ const formik = useFormik({
                 sx={{
                     width: '100%',
                     background: "#FFFFFF",
-                    borderRadius: "10px",
+                    borderRadius: "12px",
                 }}
             />
         </Box>
@@ -136,7 +137,7 @@ const formik = useFormik({
             sx={{
                 width: '100%',
                 background: "#FFFFFF",
-                borderRadius: "10px",
+                borderRadius: "12px",
             }}
         />
         <Box sx={{display: "flex", flexDirection: 'column', justifyContent: "space-between", marginTop: '16px'}}>
@@ -171,7 +172,7 @@ const formik = useFormik({
               sx={{
                   width: '100%',
                   background: "#FFFFFF",
-                  borderRadius: "10px",
+                  borderRadius: "12px",
               }}
           />
         </Box>

@@ -22,7 +22,7 @@ const InputField = styled('input')({
   background: "#FFFFFF",
   border: "none",
   outline: "none",
-  borderRadius: "10px",
+  borderRadius: "12px",
   fontFamily: 'Inter',
   fontStyle: "normal",
   fontWeight: 500,

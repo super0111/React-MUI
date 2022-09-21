@@ -56,7 +56,7 @@ const GetStarted = () => {
         display: "flex", alignItems: "center",
         background: "#FFFFFF",
         boxShadow: "0px 4px 9px rgba(0, 0, 0, 0.05)",
-        borderRadius: "10px",
+        borderRadius: "12px",
         padding: '5px 8px',
         margin: 'auto',
         marginTop: '40px',
@@ -66,7 +66,7 @@ const GetStarted = () => {
           width: "133.08px",
           height: "46.58px",
           background: monthly === true ? "#388E3C" : "white" ,
-          borderRadius: "10px",
+          borderRadius: "12px",
           fontFamily: 'Inter',
           fontStyle: "normal",
           fontWeight: 500,
@@ -83,7 +83,7 @@ const GetStarted = () => {
           width: "133.08px",
           height: "46.58px",
           background: monthly===true ? "whtie" : "#388E3C",
-          borderRadius: "10px",
+          borderRadius: "12px",
           fontFamily: 'Inter',
           fontStyle: "normal",
           fontWeight: 500,
@@ -303,6 +303,9 @@ const GetStarted = () => {
             ['@media (max-width:1200px)']: { // eslint-disable-line no-useless-computed-key
               padding: "55px 20px 10px 20px"
             },
+            ['@media (max-width:900px)']: { // eslint-disable-line no-useless-computed-key
+              marginTop: '-60px',
+            },
             ['@media (max-width:600px)']: { // eslint-disable-line no-useless-computed-key
               marginTop: '0px',
             } 
@@ -313,7 +316,7 @@ const GetStarted = () => {
               left: '10px',
               padding:"0px 10px",
               background: 'white',
-              borderRadius: "10px",
+              borderRadius: "12px",
               fontFamily: 'Inter',
               fontStyle: 'normal',
               fontWeight: 600,
@@ -371,7 +374,7 @@ const GetStarted = () => {
             </Box>
               <Box sx={{
                 background: "#FFFFFF",
-                borderRadius: "10px",
+                borderRadius: "12px",
                 padding: '27px',
               }}>
                 { growth.map((item, i)=>(

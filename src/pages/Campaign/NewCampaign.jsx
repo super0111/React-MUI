@@ -92,7 +92,7 @@ const NewCampaignApp = () => {
                 width: "140px",
                 height: "38px",
                 background: "#388E3C",
-                borderRadius: "10px",
+                borderRadius: "12px",
                 fontFamily: 'Inter',
                 fontWtyle: "normal",
                 fontWeight: 500,

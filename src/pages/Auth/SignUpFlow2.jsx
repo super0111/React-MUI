@@ -163,7 +163,7 @@ export default connect(
                                     sx={{
                                         width: '100%',
                                         background: "#FFFFFF",
-                                        borderRadius: "10px",
+                                        borderRadius: "12px",
                                     }}
                                 />
                             </Box>
@@ -199,7 +199,7 @@ export default connect(
                                     sx={{
                                         width: '100%',
                                         background: "#FFFFFF",
-                                        borderRadius: "10px",
+                                        borderRadius: "12px",
                                     }}
                                 />
                             </Box>
@@ -236,7 +236,7 @@ export default connect(
                                 sx={{
                                     width: '100%',
                                     background: "#FFFFFF",
-                                    borderRadius: "10px",
+                                    borderRadius: "12px",
                                 }}
                             />
                         </Box>
@@ -272,7 +272,7 @@ export default connect(
                                 sx={{
                                     width: '100%',
                                     background: "#FFFFFF",
-                                    borderRadius: "10px",
+                                    borderRadius: "12px",
                                 }}
                             />
                         </Box>

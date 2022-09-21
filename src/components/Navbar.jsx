@@ -40,7 +40,12 @@ const Navbar = (props) => {
         <Button
           key={_item}
           id={_item}
-          sx={{ mr: 0.4, color: "#fff", ":hover": { color: "#388E3C", bgcolor: "#19d27014" } }}
+          sx={{ 
+            mr: 0.4, color: "#fff", ":hover": { color: "#388E3C", bgcolor: "#19d27014",},
+            ['@media (max-width:769px)']: { // eslint-disable-line no-useless-computed-key 
+              padding: "6px 0px !important",
+            },
+          }}
           ref={(ref) => { if (ref) changeColor(ref); }}
           onClick={() => { changeLocation(_item) }}
         >
@@ -52,7 +57,12 @@ const Navbar = (props) => {
 
   const drawer = (
     <Box sx={{ textAlign: 'center' }}>
-      <Typography sx={{ fontSize: "25px", my: 2, color: "white", fontWeight: 700, marginTop: "30px" }}
+      <Typography sx={{ 
+        fontSize: "25px", my: 2, color: "white", fontWeight: 700, marginTop: "30px",
+        ['@media (max-width:769px)']: { // eslint-disable-line no-useless-computed-key 
+          fontSize: "23px !important",
+        },
+        }}
         onClick={handleDrawerToggle}
       >
         Enablemint
@@ -139,16 +149,25 @@ const Navbar = (props) => {
             <Typography
               variant="h6"
               component="div"
-              sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, color: "white", cursor:"pointer" }}
+              sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, color: "white", cursor:"pointer",
+                ['@media (max-width:769px)']: { // eslint-disable-line no-useless-computed-key 
+                  fontSize: "20px !important",
+                },
+              }}
               onClick={()=>navigate("/")}
             >
-              <img src="/assets/logo-1@2x.png" alt='logo' style={{width: "55px", marginRight: "5px",}} />
+              <Box component="img" src="/assets/logo-1@2x.png" sx={{
+                width: "55px", marginRight: "5px",
+                ['@media (max-width:769px)']: { // eslint-disable-line no-useless-computed-key 
+                  width: "45px", height: "45px"
+                },
+              }} />
               enablemint
             </Typography>
             <Box sx={{ 
                 display: { xs: 'none', sm: 'block' }, 
                 marginRight: "120px", 
-                ['@media (max-width:680px)']: { // eslint-disable-line no-useless-computed-key 
+                ['@media (max-width:855px)']: { // eslint-disable-line no-useless-computed-key 
                   marginRight: "0px", 
                 }
               }}
@@ -156,7 +175,18 @@ const Navbar = (props) => {
               {navItems.map((item) => getNavItem(item))}
             </Box>
             <Box>
-              <Button sx={{ color: '#fff' }}
+              <Button sx={{ 
+                color: '#fff', 
+                marginRight: "15px",
+                '&:hover': {
+                  padding: '9px 8px',
+                  color: "rgb(56, 142, 60)",
+                  backgroundColor: "rgba(25, 210, 112, 0.08)",
+                },
+                ['@media (max-width:769px)']: { // eslint-disable-line no-useless-computed-key 
+                  marginRight: "5px",
+                },
+              }}
                 onClick={()=>navigate("/login")}
               >
                 Login
@@ -166,7 +196,7 @@ const Navbar = (props) => {
                   width: "80px",
                   height: "40px",
                   background: "#388E3C",
-                  borderRadius: "10px",
+                  borderRadius: "12px",
                   fontFamily: 'Inter',
                   fontStyle: "normal",
                   fontWeight: "500",
@@ -175,7 +205,12 @@ const Navbar = (props) => {
                   color: '#F8F8FA',
                   '&:hover': {
                     background: "#377d3a",
-                  }
+                  },
+                  ['@media (max-width:769px)']: { // eslint-disable-line no-useless-computed-key 
+                    fontSize: "15px",
+                    width: "80px",
+                    height: "33px",
+                  },
                 }}
                 onClick={()=>navigate("/signup")}
               >

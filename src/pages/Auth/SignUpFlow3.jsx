@@ -154,7 +154,7 @@ export default connect(
                       height: "280px",
                       overflow: "auto",
                       background: "#FFFFFF",
-                      borderRadius: "10px",
+                      borderRadius: "12px",
                       padding: "14px 12px",
                       margin: "0 5px",
                       ['@media (max-width:680px)']: { // eslint-disable-line no-useless-computed-key
@@ -214,7 +214,7 @@ export default connect(
                       height: "280px",
                       overflow: "auto",
                       background: "#FFFFFF",
-                      borderRadius: "10px",
+                      borderRadius: "12px",
                       padding: "14px 12px",
                       margin: "0 5px",
                       ['@media (max-width:680px)']: { // eslint-disable-line no-useless-computed-key
@@ -275,7 +275,7 @@ export default connect(
                       height: "280px",
                       overflow: "auto",
                       background: "#FFFFFF",
-                      borderRadius: "10px",
+                      borderRadius: "12px",
                       padding: "14px 12px",
                       margin: "0 5px",
                       ['@media (max-width:680px)']: { // eslint-disable-line no-useless-computed-key

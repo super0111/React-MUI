@@ -209,7 +209,7 @@ const createComponentSystem = () => ({
                     props: { variant: 'secondary' },
                     style: ({ theme }) => ({
                             background: theme.palette.primary.main,
-                            borderRadius: 10,
+                            borderRadius: 12,
                             color: theme.palette.common.white,
                             padding: 20,
                     })

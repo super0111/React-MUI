@@ -1,8 +1,8 @@
-import { Box, Card, TextField, Button, Typography, TextareaAutosize, Grid } from "@mui/material";
+import { Box, Card, TextField, Button, Typography, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-
-import { Navbar } from "../components";
-import { Footer } from "../components/Footer";
+import { Navbar } from "../../components";
+import { Footer } from "../../components/Footer";
+import ContactForm from "./ContactForm";
 
 const items = [
     { title: "Need Help?", text: "Our Help Center offers a library of articles and tutorials that answer our customers most asked questions.", btn: "Go to Help Center" },
@@ -10,19 +10,8 @@ const items = [
     { title: "Join our Affiliate Program", text: "Get rewarded for every sale you make while promoting our product. Make up to 35% comissions in a single month.", btn: "Contact Sales" },
 ]
 
-const formItems = [
-    { name: "Full Name", placeholder: "Enter your name", type: "text" },
-    { name: "Last Name", placeholder: "Enter your last name", type: "text" },
-    { name: "Email", placeholder: "Enter your email", type: "email" },
-    { name: "Phone", placeholder: "Enter your phone number", type: "text" },
-    { name: "Company", placeholder: "Enter your company name", type: "text" },
-    { name: "Website", placeholder: "Enter website URL", type: "text" },
-]
-
 const ContactUs = () => {
     const navigate = useNavigate();
-    const handleSubmit = (event) => {
-    }
 
     return <>
         <Navbar currentPage="contact-us" />
@@ -124,7 +113,7 @@ const ContactUs = () => {
                             <Button sx={{
                                 width: "170px",
                                 background: "#388E3C",
-                                borderRadius: "10px",
+                                borderRadius: "12px",
                                 fontFamily: 'Inter',
                                 fontStyle: "normal",
                                 fontWeight: 500,
@@ -196,7 +185,7 @@ const ContactUs = () => {
                                 }
                             }}
                         >
-                            <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+                            <Box display="flex" flexDirection="column" sx={{margin: "15px 0"}} justifyContent="center" alignItems="center">
                                 <Typography
                                     sx={{
                                         fontFamily: 'Inter',
@@ -316,146 +305,8 @@ const ContactUs = () => {
                 </Grid>
 
                 <img className="map" src="/assets/contact_us/map.png" alt="map" />
-
-                <form className="contactUs-form" onSubmit={handleSubmit}>
-                    <Typography sx={{
-                        fontFamily: 'Inter',
-                        fontStyle: "normal",
-                        fontWeight: 500,
-                        fontSize: "30px",
-                        textAlign: "center",
-                        color: "#FFFFFF",
-                        marginBottom: "30px",
-                    }}>
-                        Contact Sales 
-                    </Typography>
-                    <Grid container spacing={2}
-                        sx={{ margin: '5px 0', width: "100% !important" }}
-                    >
-                        { formItems.map((item, i)=>(
-                            <Grid item key={i} md={6} xs={12}
-                                sx={{
-                                    margin: "5px 0",
-                                    paddingLeft:"8px !important",
-                                    paddingRight:"8px !important"
-                                }}
-                            >
-                                <Box key={i} display="flex" flexDirection="column">
-                                    <Typography
-                                        sx={{
-                                            fontFamily: 'Inter',
-                                            fontStyle: "normal",
-                                            fontWeight: 500,
-                                            fontSize: "15px",
-                                            lineHeight: "16px",
-                                            color: "#FFFFFF",
-                                            marginBottom: "15px"
-                                        }}
-                                    >
-                                        {item.name}
-                                    </Typography>
-                                    <TextField
-                                        sx={{ 
-                                            background: "#FFFFFF",
-                                            borderRadius: "10px", 
-                                        }}
-                                        variant="outlined"
-                                        type={`${item.type}`}
-                                        placeholder={`${item.placeholder}`}
-                                        required
-                                    />
-                                </Box>
-                            </Grid>
-                        ))}
-                    </Grid>
-
-                    <Box display="flex" flexDirection="column"
-                        sx={{ 
-                            margin: "auto", 
-                            marginTop: "15px",
-                            padding: "0 8px"
-                        }}
-                    >
-                        <Typography
-                            sx={{
-                                fontFamily: 'Inter',
-                                fontStyle: "normal",
-                                fontWeight: 500,
-                                fontSize: "15px",
-                                color: "#FFFFFF",
-                                marginBottom: "15px"
-                            }}
-                        >
-                            Heading
-                        </Typography>
-                        <TextField
-                            sx={{
-                                background: "#FFFFFF",
-                                borderRadius: "10px", 
-                            }}
-                            variant="outlined"
-                            type="text"
-                            placeholder="Heading"
-                            required
-                        />
-                    </Box>
-                    <Box display="flex" flexDirection="column"
-                        sx={{ margin: "auto",  marginTop: "25px", padding: "0 8px"}}
-                    >
-                        <Typography
-                            sx={{
-                                fontFamily: 'Inter',
-                                fontStyle: "normal",
-                                fontWeight: 500,
-                                fontSize: "15px",
-                                color: "#FFFFFF",
-                                marginBottom: "10px"
-                            }}
-                        >
-                            Message
-                        </Typography>
-                        <TextareaAutosize
-                            aria-label="minimum height"
-                            minRows={3}
-                            placeholder="What would you like to say?"
-                            style={{
-                                background: "#FFFFFF",
-                                borderRadius: "10px",
-                                padding: "16px",
-                                height: "150px",
-                                fontWeight: 500,
-                                fontSize: "14px",
-                                lineHeight: "17px",
-                                color: "#A6A6A6",
-                            }}
-                        />
-                    </Box>
-                    <Box display="flex" justifyContent="center"
-                        sx={{padding: "0 8px"}}
-                    >
-                        <Button
-                            variant="contained"
-                            sx={{
-                                width: "440px",
-                                height: "60px",
-                                background: "#388E3C",
-                                borderRadius: "10px",
-                                fontFamily: 'Inter',
-                                fontStyle: "normal",
-                                fontWeight: 600,
-                                fontSize: "16px",
-                                lineHeight: "19px",
-                                color: "#FFFFFF",
-                                marginTop: "25px",
-                                "&:hover": {
-                                    backgroundColor: '#58b75c',
-                                }
-                            }}
-                        >
-                            Contact Us
-                        </Button>
-                    </Box>
-                </form>
+                
+                <ContactForm />
             </div>
         </div>
         <Footer />

@@ -164,7 +164,7 @@ export default connect(
                                 width: "232px",
                                 height: "60px",
                                 background: "#388E3C",
-                                borderRadius: "10px",
+                                borderRadius: "12px",
                                 fontFamily: 'Inter',
                                 fontStyle: "normal",
                                 fontWeight: 600,

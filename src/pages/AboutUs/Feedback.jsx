@@ -23,14 +23,16 @@ const Feedback = () => {
   
 
   const validationSchema = yup.object({
+    name: yup
+    .string("Enter your Name")
+    .required("Name is required"),
     email: yup
         .string("Enter your email")
         .email("Enter a valid email")
         .required("Email is required"),
-    password: yup
-        .string("Enter your password")
-        .required("Password is required")
-        .min(8),
+    message: yup
+        .string("Enter your message")
+        .required("Message is required"),
 });
 
 const formik = useFormik({
@@ -120,7 +122,7 @@ const formik = useFormik({
                       sx={{
                           width: '100%',
                           background: "#FFFFFF",
-                          borderRadius: "10px",
+                          borderRadius: "12px",
                       }}
                   />
               </Box>
@@ -155,7 +157,7 @@ const formik = useFormik({
                   sx={{
                       width: '100%',
                       background: "#FFFFFF",
-                      borderRadius: "10px",
+                      borderRadius: "12px",
                   }}
               />
               <Box sx={{display: "flex", flexDirection: 'column', justifyContent: "space-between", marginTop: '16px'}}>
@@ -190,7 +192,7 @@ const formik = useFormik({
                     sx={{
                         width: '100%',
                         background: "#FFFFFF",
-                        borderRadius: "10px",
+                        borderRadius: "12px",
                     }}
                 />
               </Box>
