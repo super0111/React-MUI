@@ -165,12 +165,7 @@ const createPaletteSystem = () => ({
     primary: {
         main: '#388E3C',
         light: '#FFC728',
-        // dark: '',
-        // contrastText: '',
     },
-		// secondary: {
-
-		// }
 		warning: {
 			main: '#FFC728',
 		},
