@@ -42,7 +42,6 @@ const legal = [
 
 export const Footer = () => {
   const navigate = useNavigate();
-
   const validationSchema = yup.object({
     email: yup
       .string("Enter your email")
