@@ -3,9 +3,8 @@ import { Container, Box, Typography, TextField, Button } from "@mui/material";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { BiRightArrowAlt } from "react-icons/bi";
-import "../assets/styles/LandingPage.css";
-
 import { styled } from '@mui/system';
+import "../assets/styles/LandingPage.css";
 
 const InputField = styled('input')({
   width: "100%",
