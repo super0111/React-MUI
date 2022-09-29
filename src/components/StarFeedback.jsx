@@ -7,11 +7,8 @@ export const StarFeedback = ({ rate, text }) => {
         <Box>
             <Box display="flex">
                 {new Array(5).fill(1).map((_, key) => (
-                    <StarIcon
-                        key={key}
-                        sx={{
-                            color: key < rate ? palette.warning.main : palette.text.disabled,
-                        }}
+                    <StarIcon key={key}
+                        sx={{  color: key < rate ? palette.warning.main : palette.text.disabled }}
                     />
                 ))}
             </Box>
