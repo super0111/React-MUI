@@ -37,8 +37,7 @@ const Navbar = (props) => {
       return <Dropdown key={item} currentPage={currentPage} />;
     } else {
       return (
-        <Button
-          key={_item}
+        <Button key={_item}
           id={_item}
           sx={{ 
             mr: 0.4, color: "#fff", ":hover": { color: "#388E3C", bgcolor: "#19d27014",},
