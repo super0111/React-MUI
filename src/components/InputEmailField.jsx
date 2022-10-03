@@ -9,13 +9,11 @@ export const InputEmailField = (props) => {
 
     const handleChange = event => {
         const val = event.target.value;
-
         if (isEmail(val)) {
             setIsValid(true);
         } else {
             setIsValid(false);
         }
-
         setValue(val);
         props.handleChange(val, isValid);
     }
