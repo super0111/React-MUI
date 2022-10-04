@@ -99,8 +99,7 @@ const LinkedInModal = ({ linkedInModal, setLinkedInModal }) => {
 
           { items.map((item, i)=>(
             <Box key={i} sx={{margin: "12px 0 20px 0 !important"}}>
-              <Typography
-                sx={{
+              <Typography sx={{
                   fontFamily: 'Inter',
                   fontStyle: "normal",
                   fontWeight: 400,
