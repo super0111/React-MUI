@@ -1,0 +1,817 @@
+.hc_ellipse-icon,
+.hc_ellipse-icon1 {
+  position: absolute;
+  top: 0;
+  left: 123px;
+  width: 1317px;
+  height: 1904px;
+}
+
+.hc_ellipse-icon1 {
+  left: 0;
+  width: 1440px;
+  height: 1853px;
+}
+
+.hc_welcome-to-help-center {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 60px;
+  display: none;
+  width: 624px;
+}
+
+.hc_group-div,
+.hc_group-div1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+}
+
+.hc_group-div {
+  top: -532px;
+  left: 7577px;
+  font-size: 40px;
+  color: #191a15;
+}
+
+.hc_rectangle-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 9px rgba(0, 0, 0, 0.05);
+  width: 356px;
+  height: 188px;
+}
+
+.hc_getting-started-b {
+  position: absolute;
+  top: 76px;
+  left: 117px;
+  display: inline-block;
+  width: 125px;
+  height: 16px;
+}
+
+.hc_rocket-icon {
+  position: absolute;
+  top: 24px;
+  left: 158px;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.hc_lorem-ipsum-dolor-sit-amet-co {
+  position: absolute;
+  top: 113px;
+  left: 46px;
+  font-size: 11px;
+  text-align: center;
+  display: inline-block;
+  width: 253px;
+  height: 54px;
+}
+
+.hc_group-div2 {
+  top: 460px;
+  left: 340px;
+  width: 356px;
+  height: 188px;
+}
+
+.hc_group-div2,
+.hc_group-div3,
+.hc_message-div {
+  position: absolute;
+  text-align: left;
+}
+
+.hc_group-div3 {
+  top: 460px;
+  left: 744px;
+  width: 356px;
+  height: 188px;
+}
+
+.hc_message-div {
+  top: 0;
+  left: 0;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: Inter;
+  color: #fff;
+  display: inline-block;
+  width: 78px;
+}
+
+.hc_rectangle-textfield {
+  position: absolute;
+  top: 42px;
+  left: 0;
+}
+
+.hc_what-are-you-say {
+  position: absolute;
+  top: 62px;
+  left: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: Inter;
+  color: #a6a6a6;
+  text-align: left;
+  display: inline-block;
+  width: 130px;
+}
+
+.hc_group-div5,
+.hc_group-div6 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 440px;
+  height: 122px;
+}
+
+.hc_group-div5 {
+  top: 230px;
+}
+
+.hc_email-div,
+.hc_group-button {
+  position: absolute;
+  top: 372px;
+  left: 0;
+}
+
+.hc_email-div {
+  top: 0;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: Inter;
+  color: #fff;
+  text-align: left;
+  display: inline-block;
+  width: 51px;
+}
+
+.hc_rectangle-div2 {
+  position: absolute;
+  top: 42px;
+  left: 0;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 440px;
+  height: 50px;
+}
+
+.hc_enter-your-email {
+  position: absolute;
+  top: 59px;
+  left: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: Inter;
+  color: #a6a6a6;
+  text-align: left;
+  display: inline-block;
+  width: 112px;
+  height: 16px;
+}
+
+.hc_group-div7 {
+  position: absolute;
+  top: 118px;
+  left: 0;
+  width: 440px;
+  height: 92px;
+}
+
+.hc_rectangle-textfield1 {
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 42px;
+  left: 0;
+}
+
+.hc_group-div4,
+.hc_group-div9 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 440px;
+  height: 92px;
+}
+
+.hc_group-div4 {
+  top: 108px;
+  left: 86px;
+  height: 432px;
+}
+
+.hc_get-in-touch-with-us {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 30px;
+  font-weight: 500;
+  font-family: Inter;
+  color: #fff;
+  text-align: left;
+  display: inline-block;
+  width: 290px;
+}
+
+.hc_group-div10 {
+  position: absolute;
+  top: 47px;
+  left: 159px;
+  width: 288px;
+  height: 36px;
+}
+
+.hc_ellipse-icon2,
+.hc_frame-div,
+.hc_group-form {
+  position: absolute;
+  width: 612px;
+  height: 607px;
+}
+
+.hc_frame-div {
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  background-color: #222938;
+  overflow: hidden;
+}
+
+.hc_ellipse-icon2,
+.hc_group-form {
+  top: 1016px;
+  left: 414px;
+}
+
+.hc_ellipse-icon2 {
+  top: 0;
+  left: 0;
+  width: 1317px;
+  height: 1354px;
+}
+
+.hc_ellipse-icon3,
+.hc_rectangle-div3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 1270px;
+}
+
+.hc_rectangle-div3 {
+  background-color: #161c28;
+  height: 107px;
+}
+
+.hc_about-us-div,
+.hc_login-div,
+.hc_pricing-div,
+.hc_resources-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 500;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.hc_login-div,
+.hc_pricing-div,
+.hc_resources-div {
+  left: 112px;
+}
+
+.hc_login-div,
+.hc_pricing-div {
+  left: 227px;
+}
+
+.hc_login-div {
+  left: 410px;
+}
+
+.hc_group-div15,
+.hc_rectangle-div4 {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 463px;
+  height: 22px;
+}
+
+.hc_rectangle-div4 {
+  top: 0;
+  border-radius: 10px;
+  background-color: #388e3c;
+  width: 80px;
+  height: 40px;
+}
+
+.hc_sign-up-div {
+  position: absolute;
+  top: 11px;
+  left: 10px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.hc_group-div17 {
+  top: 0;
+  left: 0;
+  width: 80px;
+}
+
+.hc_group-div14,
+.hc_group-div16,
+.hc_group-div17 {
+  position: absolute;
+  height: 40px;
+}
+
+.hc_group-div16 {
+  top: 0;
+  left: 484px;
+  width: 80px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #f8f8fa;
+}
+
+.hc_group-div14 {
+  top: 36px;
+  left: 746px;
+  width: 564px;
+}
+
+.hc_enablemint-div,
+.hc_logo-1-icon {
+  position: absolute;
+  cursor: pointer;
+}
+
+.hc_logo-1-icon {
+  top: 14px;
+  left: 133px;
+  width: 78px;
+  height: 78px;
+  object-fit: cover;
+}
+
+.hc_enablemint-div {
+  top: 39px;
+  left: 215px;
+  font-size: 24px;
+  display: inline-block;
+  width: 155px;
+}
+
+.hc_group-div11,
+.hc_group-div12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 107px;
+}
+
+.hc_group-div11 {
+  text-align: left;
+  font-size: 18px;
+  color: #fff;
+}
+
+.hc_welcome-to-help-center1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 60px;
+  display: inline-block;
+  width: 624px;
+}
+
+.hc_group-div18,
+.hc_group-div19 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 624px;
+  height: 60px;
+}
+
+.hc_group-div18 {
+  top: 174px;
+  left: 408px;
+  font-size: 40px;
+  color: #191a15;
+}
+
+.hc_group-a {
+  text-decoration: none;
+  position: absolute;
+  top: 460px;
+  left: 340px;
+  width: 356px;
+  height: 188px;
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
+}
+
+.hc_account-settings-b,
+.hc_learn-more-about-your-account {
+  position: absolute;
+  top: 76px;
+  left: 94px;
+  display: inline-block;
+  width: 167px;
+  height: 16px;
+}
+
+.hc_learn-more-about-your-account {
+  top: 113px;
+  left: 46px;
+  font-size: 11px;
+  width: 253px;
+  height: 54px;
+}
+
+.hc_group-a1,
+.hc_group-a2,
+.hc_group-a3 {
+  text-decoration: none;
+  position: absolute;
+  top: 684px;
+  left: 744px;
+  width: 356px;
+  height: 188px;
+  cursor: pointer;
+  color: inherit;
+}
+
+.hc_group-a2,
+.hc_group-a3 {
+  left: 340px;
+}
+
+.hc_group-a3 {
+  top: 460px;
+  left: 744px;
+}
+
+.hc_ondemand-video-icon {
+  position: absolute;
+  top: 484px;
+  left: 902px;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.hc_group-textfield {
+  position: absolute;
+  top: 289px;
+  left: 380px;
+  width: 680px;
+  height: 55px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  border: 0;
+}
+
+.hc_group-button1 {
+  position: absolute;
+  top: 295.5px;
+  left: 976px;
+  width: 80px;
+  height: 42px;
+  background: #388E3C;
+  border-radius: 10px;
+}
+
+.hc_ellipse-icon5,
+.hc_rectangle-div9 {
+  position: absolute;
+  top: -1000px;
+  left: 194px;
+  width: 1440px;
+  height: 1634px;
+}
+
+.hc_rectangle-div9 {
+  top: 0;
+  left: 0;
+  background-color: #161c28;
+  height: 455px;
+}
+
+.hc_vector-icon {
+  position: absolute;
+  height: 80%;
+  width: 23.14%;
+  top: 5.71%;
+  right: 76.86%;
+  bottom: 14.29%;
+  left: 0;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.hc_linkedin-icon,
+.hc_twitter-icon {
+  position: absolute;
+  top: 0;
+  left: 35.75px;
+  width: 28.94px;
+  height: 28.09px;
+  object-fit: cover;
+}
+
+.hc_linkedin-icon {
+  left: 73.21px;
+  width: 29.79px;
+  height: 29.79px;
+}
+
+.hc_group-div21 {
+  position: absolute;
+  height: 6.55%;
+  width: 7.15%;
+  top: 81.32%;
+  right: 12.85%;
+  bottom: 12.13%;
+  left: 80%;
+}
+
+.hc_enter-your-email-here,
+.hc_get-started-now-claim-your-fr {
+  position: absolute;
+  line-height: 30px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.hc_get-started-now-claim-your-fr {
+  top: 0;
+  left: 0;
+  width: 329px;
+  height: 60px;
+}
+
+.hc_enter-your-email-here {
+  top: 15px;
+  left: 20px;
+  width: 184px;
+}
+
+.hc_rectangle-div10 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 70px;
+  border: 2px solid #a6a6a6;
+  box-sizing: border-box;
+  width: 410px;
+  height: 60px;
+}
+
+.hc_ellipse-icon6 {
+  position: absolute;
+  top: 7px;
+  left: 357px;
+  width: 46px;
+  height: 46px;
+}
+
+.hc_arrow-right1-1-icon {
+  position: absolute;
+  top: 18px;
+  left: 368px;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+}
+
+.hc_group-div22,
+.hc_group-div23 {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 410px;
+  height: 60px;
+}
+
+.hc_group-div22 {
+  top: 186px;
+  left: 130px;
+  height: 120px;
+}
+
+.hc_copyright-and-rights-reserved {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 30px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.hc_account-div,
+.hc_group-div24 {
+  position: absolute;
+  color: #fff;
+}
+
+.hc_group-div24 {
+  top: 385px;
+  left: 130px;
+  width: 329px;
+  height: 30px;
+}
+
+.hc_account-div {
+  top: 0;
+  left: 3px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.hc_about-us-div1,
+.hc_pricing-div1,
+.hc_sign-in-div,
+.hc_sign-up-div1 {
+  position: absolute;
+  top: 52px;
+  left: 0;
+  font-weight: 500;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.hc_pricing-div1,
+.hc_sign-in-div,
+.hc_sign-up-div1 {
+  top: 93px;
+}
+
+.hc_sign-in-div,
+.hc_sign-up-div1 {
+  top: 136px;
+}
+
+.hc_sign-up-div1 {
+  top: 179px;
+}
+
+.hc_group-div28 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 78px;
+  height: 201px;
+}
+
+.hc_help-center-div1 {
+  position: absolute;
+  top: 52px;
+  left: 196px;
+  font-weight: 500;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.hc_contact-us-div {
+  top: 92px;
+  cursor: pointer;
+}
+
+.hc_cancellation-policy-div,
+.hc_contact-us-div,
+.hc_support-div {
+  position: absolute;
+  left: 196px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.hc_cancellation-policy-div {
+  top: 136px;
+  cursor: pointer;
+}
+
+.hc_support-div {
+  top: 0;
+  color: #fff;
+}
+
+.hc_terms-of-use {
+  top: 52px;
+  cursor: pointer;
+}
+
+.hc_legal-div,
+.hc_privacy-policy-div,
+.hc_terms-of-use {
+  position: absolute;
+  left: 398px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.hc_privacy-policy-div {
+  top: 92px;
+  cursor: pointer;
+}
+
+.hc_legal-div {
+  top: 0;
+  color: #fff;
+}
+
+.hc_group-div25,
+.hc_group-div26 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 518px;
+  height: 201px;
+}
+
+.hc_group-div25 {
+  top: 124px;
+  left: 737px;
+}
+
+.hc_group-div20,
+.hc_logo-1-icon1 {
+  position: absolute;
+  top: 179px;
+  left: 194px;
+  width: 1440px;
+  height: 455px;
+}
+
+.hc_logo-1-icon1 {
+  top: 0;
+  left: 0;
+  width: 78px;
+  height: 78px;
+  object-fit: cover;
+}
+
+.hc_enablemint-div1 {
+  position: absolute;
+  top: 25px;
+  left: 82px;
+  display: inline-block;
+  width: 155px;
+}
+
+.hc_group-div29 {
+  position: absolute;
+  top: 266px;
+  left: 324px;
+  width: 237px;
+  height: 78px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #fff;
+}
+
+.hc_footer-div {
+  position: absolute;
+  top: 1587px;
+  left: -194px;
+  width: 1634px;
+  height: 634px;
+  text-align: left;
+  font-size: 18px;
+  color: #a6a6a6;
+}
+
+.hc_help-center-div {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  height: 2221px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 16px;
+  color: #000;
+  font-family: Inter;
+}

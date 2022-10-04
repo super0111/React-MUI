@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.ellipse-icon9_log {
+  position: absolute;
+  top: 2176px;
+  left: -194px;
+  width: 634px;
+  height: 634px;
+}
+
+.ellipse-icon10_log,
+.ellipse-icon11_log {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1317px;
+  height: 904px;
+}
+
+.ellipse-icon11_log {
+  left: 123px;
+}
+
+.ellipse-icon12_log,
+.ellipse-icon13_log {
+  position: absolute;
+  top: 3278px;
+  left: 1123px;
+  width: 634px;
+  height: 634px;
+}
+
+.ellipse-icon13_log {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 904px;
+}
+
+.welcome-to-help-center_log {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 60px;
+  display: none;
+  width: 624px;
+}
+
+.group-div84_log,
+.group-div85_log {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+}
+
+.group-div84_log {
+  top: 494px;
+  left: 182px;
+  text-align: center;
+  font-size: 40px;
+  color: #191a15;
+}
+
+.vector-icon8_log {
+  position: absolute;
+  height: 0.74%;
+  width: 1.11%;
+  top: 21.35%;
+  right: 83.54%;
+  bottom: 77.91%;
+  left: 15.35%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.my-account-p_log {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.logout-p_log {
+  margin: 0;
+}
+
+.my-account-help-center-logout_log {
+  position: absolute;
+  top: 1136px;
+  left: 71px;
+  font-size: 24px;
+  display: inline-block;
+}
+
+.ellipse-icon14_log,
+.enablemint-div2_log {
+  position: absolute;
+  left: -522px;
+  top: -198px;
+  width: 1301px;
+  height: 1301px;
+}
+
+.enablemint-div2_log {
+  top: 53px;
+  left: 102px;
+  font-size: 20px;
+  display: inline-block;
+  width: 134px;
+  height: 19px;
+}
+
+.logo-1-icon2_log {
+  position: absolute;
+  top: 37px;
+  left: 47px;
+  width: 51px;
+  height: 51px;
+  object-fit: cover;
+}
+
+.email-div_log,
+.login-b_log {
+  position: absolute;
+  display: inline-block;
+  height: 18px;
+}
+
+.email-div_log {
+  top: 76px;
+  left: 0;
+  font-weight: 500;
+  width: 51px;
+}
+
+.login-b_log {
+  top: 0;
+  left: 162px;
+  font-size: 32px;
+  width: 95px;
+  line-height: 39px;
+}
+
+.rectangle-textfield_log {
+  border: none;
+  border-radius: 10px;
+  background-color: #fff;
+  position: absolute;
+  top: 110px;
+  left: 0;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.enter-your-email_log {
+  position: absolute;
+  top: 126px;
+  left: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #a6a6a6;
+  display: inline-block;
+  width: 112px;
+  height: 13px;
+}
+
+.group-div86_log,
+.password-div_log {
+  position: absolute;
+  top: 233px;
+  left: 129px;
+  width: 440px;
+  height: 163px;
+  font-size: 18px;
+}
+
+.password-div_log {
+  top: 438px;
+  left: 130px;
+  font-weight: 500;
+  display: inline-block;
+  width: 92px;
+  height: 18px;
+}
+
+.css-12swjm2-MuiInputBase-root-MuiOutlinedInput-root {
+  border-radius: 10px;
+}
+
+.css-1sw2k4x-MuiInputBase-root-MuiOutlinedInput-root {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.css-e4ydjt-MuiFormLabel-root-MuiInputLabel-root {
+  top: 10px
+}
+
+.css-e4ydjt-MuiFormLabel-root-MuiInputLabel-root.Mui-error {
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.rectangle-textfield1_log {
+  border: none;
+  border-radius: 10px;
+  background-color: #fff;
+  position: absolute;
+  top: 472px;
+  left: 130px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.enter-your-password_log,
+.forgot-your-password_log {
+  position: absolute;
+  top: 488px;
+  left: 150px;
+  font-weight: 500;
+  color: #a6a6a6;
+  display: inline-block;
+  width: 157px;
+  height: 13px;
+}
+
+.forgot-your-password_log {
+  top: 539px;
+  left: 417px;
+  cursor: pointer;
+}
+
+.dont-have-an_log {
+  font-weight: 500;
+}
+
+.dont-have-an-account-signup_log {
+  position: absolute;
+  top: 680px;
+  left: 235px;
+  display: inline-block;
+  width: 213px;
+  height: 13px;
+}
+
+.login-div2_log {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 11px;
+  background-color: #388e3c;
+  width: 440px;
+  height: 50px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.group-div87_log,
+.group-div88_log {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 440px;
+  height: 50px;
+}
+
+.group-div87_log {
+  top: 599px;
+  left: 129px;
+  font-size: 16px;
+}
+
+.asset-3-1_log {
+  position: absolute;
+  top: 201px;
+  left: 857px;
+  width: 474px;
+  height: 502px;
+  object-fit: cover;
+}
+
+.login-div1_log {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  height: 904px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 14px;
+  color: #fff;
+  font-family: Inter;
+}

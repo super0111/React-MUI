@@ -1,0 +1,186 @@
+.contactUs {
+  background: #F5F5F5;
+  position: relative;
+  padding-bottom: 255px;
+}
+
+.contactUs .headerImg {
+  position: absolute;
+  right: 0;
+  top: 80px;
+  width: 50%;
+  z-index: 1;
+}
+
+.contactUs .headerImg img {
+  width: 100%;
+}
+
+.contactUs .map {
+  width: 85%;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.contactUs-form {
+  width: 80%;
+  background: #222938;
+  border-radius: 20px;
+  margin: auto;
+  padding: 30px 85px;
+}
+
+.feedback-form {
+  width: 70%;
+  background: #222938;
+  border-radius: 20px;
+  margin: auto;
+  padding: 30px 85px;
+}
+
+@media screen and (min-width: 1440px) {
+  .css-en848d-MuiGrid-root {
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .feedback-form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .contactUs-form {
+    width: 100%;
+    padding: 25px 15px;
+  }
+
+  .feedback-form {
+    width: 100%;
+    padding: 25px 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contactUs {
+    padding-bottom: 150px;
+  }
+
+  .css-mjoyjw-MuiTypography-root {
+    width: 417px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contactUs .headerImg {
+    top: 68px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .contactUs {
+    padding-bottom: 80px;
+  }
+}
+
+.slick-arrow {
+  /* border: 1px solid red; */
+}
+
+.css-rqmfgp-MuiTypography-root {
+  margin-left: 7px;
+}
+
+#feedback-message::placeholder {
+  color: #a6a6a6cb;
+}
+
+.slick-arrow::before {
+  display: none;
+}
+
+.slick-prev {
+  left: -70px;
+}
+
+.css-k7lcmi {
+  padding-top: 0px;
+}
+
+.css-nxu08x {
+  padding-bottom: 0px;
+}
+
+
+@media screen and (min-width: 1680px) {
+  .css-28e1sc {
+    margin-right: 95px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .css-nxu08x {
+    height: 1380px;
+  }
+
+  .css-11zrmm2-MuiGrid-root {
+    margin-top: 485px;
+  }
+
+  .css-1nsa575-MuiTypography-root {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .css-mjoyjw-MuiTypography-root {
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  .css-13hizsv-MuiTypography-root {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.MuiBox-root.css-5xz8xt textarea {
+  font-size: 18px !important;
+}
+
+.css-1wtc3mi-MuiContainer-root {
+  height: 100vh;
+}
+
+.css-16rbm86 #message::placeholder {
+  padding-left: 15px;
+  padding-top: 5px;
+  color: #A6A6A6;
+  font-weight: 450;
+  line-height: 1.8;
+  letter-spacing: 0.00938em;
+  font-size: 18px;
+}
+
+.css-1y2rohq-MuiTypography-root {
+  font-size: 18px;
+}
+
+.css-1ngw63v {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.css-1x2676u {
+  width: 210px;
+}
+
+.faq-answer {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: #000000;
+}

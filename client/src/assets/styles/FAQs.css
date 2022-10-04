@@ -1,0 +1,98 @@
+.faqs {
+    position: absolute;
+    top: 1487px;
+    left: 83px;
+    width: 1274px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 0 108px;
+}
+
+.faqs-box {
+    display: flex;
+    flex-direction: column;
+    gap: 22px 0;
+}
+
+.faq-title {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 60px;
+    color: #000000;
+}
+
+.faq-summary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.faq-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 583px;
+    min-height: 111px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.05);
+    border-radius: 20px !important;
+    -webkit-border-radius: 20px !important;
+    -moz-border-radius: 20px !important;
+    -ms-border-radius: 20px !important;
+    -o-border-radius: 20px !important;
+}
+
+.faq-box::after,
+.faq-box::before {
+    display: none
+}
+
+#faq-0 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#faq-1 {
+    position: absolute;
+    top: 133px;
+    left: 0;
+}
+
+#faq-2 {
+    position: absolute;
+    top: 266px;
+    left: 0;
+}
+
+#faq-3 {
+    position: absolute;
+    top: 0;
+    left: 692px;
+}
+
+#faq-4 {
+    position: absolute;
+    top: 133px;
+    left: 692px;
+}
+
+#faq-5 {
+    position: absolute;
+    top: 266px;
+    left: 692px;
+}
+
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root.Mui-expanded {
+    margin: 0;
+}
+
+.css-pwcg7p-MuiCollapse-root {
+    overflow: hidden;
+}
+
+.answer {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,296 @@
+.siup4_ellipse-icon {
+    position: absolute;
+    top: 2176px;
+    left: -194px;
+    width: 634px;
+    height: 634px;
+}
+
+.siup4_ellipse-icon1,
+.siup4_ellipse-icon2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1317px;
+    height: 904px;
+}
+
+.siup4_ellipse-icon2 {
+    left: 123px;
+}
+
+.siup4_ellipse-icon3,
+.siup4_ellipse-icon4 {
+    position: absolute;
+    top: 3278px;
+    left: 1123px;
+    width: 634px;
+    height: 634px;
+}
+
+.siup4_ellipse-icon4 {
+    top: 0;
+    left: 0;
+    width: 1440px;
+    height: 904px;
+}
+
+.siup4_welcome-to-help-center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 60px;
+    display: none;
+    width: 624px;
+}
+
+.siup4_group-div,
+.siup4_group-div1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+}
+
+.siup4_group-div {
+    top: -532px;
+    left: 7577px;
+    text-align: center;
+    font-size: 40px;
+    color: #191a15;
+}
+
+.siup4_vector-icon {
+    position: absolute;
+    height: 0.74%;
+    width: 1.11%;
+    top: 21.35%;
+    right: 83.54%;
+    bottom: 77.91%;
+    left: 15.35%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.siup4_my-account-p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.siup4_logout-p {
+    margin: 0;
+}
+
+.siup4_my-account-help-center-logout {
+    position: absolute;
+    top: 1136px;
+    left: 71px;
+    font-size: 24px;
+    display: inline-block;
+}
+
+.siup4_ellipse-icon5,
+.siup4_enablemint-div {
+    position: absolute;
+    left: -522px;
+    top: -198px;
+    width: 1301px;
+    height: 1301px;
+}
+
+.siup4_enablemint-div {
+    top: 53px;
+    left: 102px;
+    font-size: 20px;
+    display: inline-block;
+    width: 134px;
+    height: 19px;
+}
+
+.siup4_logo-1-icon {
+    position: absolute;
+    top: 37px;
+    left: 47px;
+    width: 51px;
+    height: 51px;
+    object-fit: cover;
+}
+
+.siup4_group-textfield,
+.siup4_rectangle-textfield {
+    border: 0;
+    border-radius: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 301px;
+    left: 129px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.siup4_rectangle-textfield {
+    top: 0;
+    left: 0;
+}
+
+.siup4_card-holder-div {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    font-weight: 500;
+    display: inline-block;
+    width: 112px;
+    height: 13px;
+}
+
+.siup4_group-textfield1 {
+    border: 0;
+    border-radius: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 74px;
+    left: 0;
+}
+
+.siup4_group-div2 {
+    position: absolute;
+    top: 443px;
+    left: 129px;
+    width: 440px;
+    height: 127px;
+    color: #a6a6a6;
+}
+
+.siup4_rectangle-textfield2 {
+    border: 0;
+    border-radius: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 158px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.siup4_cvv-div {
+    position: absolute;
+    top: 16px;
+    left: 173px;
+    font-weight: 500;
+    display: inline-block;
+    width: 112px;
+    height: 13px;
+}
+
+.siup4_group-div3 {
+    position: absolute;
+    top: 372px;
+    left: 129px;
+    width: 300px;
+    height: 53px;
+    color: #a6a6a6;
+}
+
+.siup4_back-button {
+    position: absolute;
+    top: 770px;
+    left: 530px;
+    font-size: 14px;
+    text-decoration: underline;
+    font-weight: 500;
+    text-align: right;
+    color: #fff;
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+}
+
+.siup4_rectangle-button {
+    position: absolute;
+    top: 0;
+    left: 181px;
+    border: none;
+    width: 239px;
+    height: 50px;
+    background: #388E3C;
+    border-radius: 11px;
+}
+
+.siup4_purchase-plan-div {
+    position: absolute;
+    top: 15px;
+    left: 224px;
+    font-weight: 600;
+    display: inline-block;
+    width: 153px;
+    height: 25px;
+}
+
+.siup4_xxxx-span {
+    font-weight: 600;
+}
+
+.siup4_charge-xxxx-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: left;
+    display: inline-block;
+    width: 119px;
+}
+
+.siup4_group-div4,
+.siup4_group-div5 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 420px;
+    height: 50px;
+}
+
+.siup4_group-div4 {
+    top: 682px;
+    left: 149px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+}
+
+.siup4_payment-info-b {
+    position: absolute;
+    top: 168px;
+    left: 235px;
+    font-size: 32px;
+    display: inline-block;
+    width: 208px;
+    height: 18px;
+}
+
+.siup4_asset-1-6 {
+    position: absolute;
+    top: 259px;
+    left: 860px;
+    width: 475px;
+    height: 467.69px;
+    object-fit: cover;
+}
+
+.siup4_sign-up-workflow-page-4 {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    height: 904px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 14px;
+    color: #fff;
+    font-family: Inter;
+}
