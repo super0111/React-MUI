@@ -1,5 +1,5 @@
 const config = {
-  server_url: 'https://warehouse-managment-server-dev.us-east-1.elasticbeanstalk.com/'
+  server_url: 'http://localhost:8000/'
 }
 
 export default config;

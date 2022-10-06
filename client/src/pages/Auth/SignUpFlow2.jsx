@@ -1,12 +1,14 @@
 import * as React from "react";
-import { useNavigate, createSearchParams } from "react-router-dom";
+import { useNavigate, createSearchParams, useLocation } from "react-router-dom";
 import { Grid, Typography, Box, Button, TextField } from "@mui/material";
 import { connect } from "react-redux";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import store from "../../app/store";
 import BackgroundImage from '../../assets/images/users/Ellipse 460.png'; // Import using relative path
-import "../../assets/styles/SignUpFlow2.css";
+import { signUpFlow2 } from "../../apis/auth";
 
 const mapStateToProps = (state) => ({ state });
 
@@ -25,25 +27,9 @@ export default connect(
     mapDispatchToProps
 )((props) => {
     const navigate = useNavigate();
-    // const { search } = useLocation();
+    const { state } = useLocation();
     let { updateData } = props;
     let { firstName, lastName, companyName, jobTitle } = store.getState().signup;
-
-    // const qs = search.replace("?", "").split("&");
-    // const getSelectedPlan = () => {
-    //     if (qs.includes("p=a")) {
-    //         return "accelerator";
-    //     } else if (qs.includes("p=g")) {
-    //         return "growth";
-    //     } else if (qs.includes("p=s")) {
-    //         return "starter";
-    //     } else {
-    //         return "free-trial";
-    //     }
-    // };
-
-    // const plan = getSelectedPlan();
-    // let p = plan.split('')[0].toLowerCase();
 
     const validationSchema = yup.object({
         firstName: yup
@@ -69,12 +55,21 @@ export default connect(
         },
         validationSchema: validationSchema,
         onSubmit: (values) => {
-            console.log(values);
             formik.isSubmitting = true;
             updateData({ firstName: values.firstName, lastName: values.lastName, companyName: values.companyName, jobTitle: values.jobTitle });
-            setTimeout(() => {
-                navigate(`/signup?${createSearchParams({ f: "3" })}`)
-            }, 700);
+            const formData = {
+                email: state,
+                values
+            }
+            signUpFlow2(formData)
+            .then((res)=>{
+                if(res.status === "success") {
+                    navigate(`/signup?${createSearchParams({ f: "3" })}`, { state: state})
+                }
+                else {
+                    toast.error(res.error);
+                }
+            })
         },
     });
 
@@ -339,6 +334,7 @@ export default connect(
             }}>
                 <img style={{width: '55%'}} src="/assets/users/Asset 1 8.png" />
             </Grid>
+            <ToastContainer />
         </Grid>
     );
 });

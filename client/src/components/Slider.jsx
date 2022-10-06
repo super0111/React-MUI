@@ -116,8 +116,9 @@ const Slider = (props) => {
     setOpen(false);
   };
 
-  const handleNaviate = () => {
-    navigate('/')
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    navigate("/logout");
   }
 
   return (
@@ -441,7 +442,7 @@ const Slider = (props) => {
                 <ListItemText 
                   primary="Log Out" 
                   sx={{ opacity: open ? 1 : 0, marginLeft: open && "15px" }} 
-                  onClick={()=>navigate("/logout")}
+                  onClick={handleLogout}
                 />
               </ListItemButton>
             </ListItem>

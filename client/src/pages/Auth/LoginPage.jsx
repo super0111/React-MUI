@@ -5,22 +5,26 @@ import { Grid, Typography, Box, Button, TextField, InputAdornment, IconButton, I
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { BsFillEyeSlashFill } from "react-icons/bs";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 import BackgroundImage from '../../assets/images/users/Ellipse 460.png'; // Import using relative path
+import { login } from "../../apis/auth";
+import setAuthToken from "../../utils/setAuthToken";
 
 export const LoginPage = () => {
-    const navigate = useNavigate()
-
-        ; const validationSchema = yup.object({
-            email: yup
-                .string('Enter your email')
-                .email('Enter a valid email')
-                .required('Email is required'),
-            password: yup
-                .string('Enter your password')
-                .required('Password is required'),
-        });
+    const navigate = useNavigate(); 
+    const validationSchema = yup.object({
+        email: yup
+            .string('Enter your email')
+            .email('Enter a valid email')
+            .required('Email is required'),
+        password: yup
+            .string('Enter your password')
+            .required('Password is required'),
+    });
 
     const formik = useFormik({
+        enableReinitialize: true,
         initialValues: {
             email: '',
             password: ''
@@ -29,8 +33,17 @@ export const LoginPage = () => {
         onSubmit: (values, { resetForm }) => {
             console.log(values);
             formik.isSubmitting = true;
-            setInterval(resetForm, 3000);
-            navigate("/dashboard")
+            login(values)
+            .then((res)=>{
+                console.log("resssss", res)
+                if(res.status === "success") {
+                    setAuthToken(res.token);
+                    navigate("/dashboard");
+                }
+                else {
+                    toast.error(res.error)
+                }
+            })
         },
     });
 
@@ -238,6 +251,7 @@ export const LoginPage = () => {
             }}>
                 <img style={{ width: '55%' }} src="/assets/users/Asset 3 1.png" />
             </Grid>
+            <ToastContainer />
         </Grid>
     );
 };

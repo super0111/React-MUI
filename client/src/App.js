@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import * as Pages from "./pages";
 import { SignUpFlowHandler } from "./utils/routesHelper"
 import { GetTabSettings } from "./utils/tabsHandler";
+import PrivateRoutes from "./utils/privateRoutes";
 
 export const App = ({ root }) => {
   GetTabSettings()
@@ -22,15 +23,17 @@ export const App = ({ root }) => {
       <Route path="/cancellation/cancellationContinue" element={<Pages.CancellationContinue />} />
       <Route path="/cancellation/cancellationSuccess" element={<Pages.CancellationSuccess />} />
 
-      <Route path="/dashboard" element={<Pages.Dashboard />} />
-      <Route path="/uploadFile" element={<Pages.UploadFile />} />
-      <Route path="/newCampaign" element={<Pages.NewCampaign />} />
-      <Route path="/campaignA" element={<Pages.CampaignA />} />
-      <Route path="/campaignB" element={<Pages.CampaignB />} />
-      <Route path="/campaignX" element={<Pages.CampaignX />} />
-      <Route path="/myAccount" element={<Pages.MyAccount />} />
-      <Route path="/feedback" element={<Pages.Feedback />} />
-      <Route path="/feedbackSubmit" element={<Pages.FeedbackSubmit />} />
+      <Route exact path='/' element={<PrivateRoutes/>}>
+        <Route path="/dashboard" element={<Pages.Dashboard />} />
+        <Route path="/uploadFile" element={<Pages.UploadFile />} />
+        <Route path="/newCampaign" element={<Pages.NewCampaign />} />
+        <Route path="/campaignA" element={<Pages.CampaignA />} />
+        <Route path="/campaignB" element={<Pages.CampaignB />} />
+        <Route path="/campaignX" element={<Pages.CampaignX />} />
+        <Route path="/myAccount" element={<Pages.MyAccount />} />
+        <Route path="/feedback" element={<Pages.Feedback />} />
+        <Route path="/feedbackSubmit" element={<Pages.FeedbackSubmit />} />
+      </Route>
 
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>

@@ -1,14 +1,17 @@
 import * as React from "react";
-import { useNavigate, createSearchParams } from "react-router-dom";
+import { useNavigate, createSearchParams, useLocation } from "react-router-dom";
 import { Grid, Typography, Box, Button, TextField, InputAdornment, Icon, IconButton, } from "@mui/material";
 import { BsFillEyeSlashFill } from "react-icons/bs";
 import { connect } from "react-redux";
 import InputMask from 'react-input-mask';
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import validate from "../../utils/cardValidator";
 import store from "../../app/store";
 import BackgroundImage from '../../assets/images/users/Ellipse 460.png'; // Import using relative path
+import { signUpFlow4 } from "../../apis/auth";
 
 const mapStateToProps = (state) => ({ state });
 
@@ -27,12 +30,13 @@ export default connect(
     mapDispatchToProps
 )((props) => {
     const navigate = useNavigate();
+    const { state } = useLocation();
+    console.log("statestate", state)
     let { updateData } = props;
     let { cardNumber, cardDate, cvv, holderName, zipCode, amountToCharge } = store.getState().signup;
     const cardExpiryMask = [/[0-1]/, /[1-9]/, "/", /\d/, /\d/, /\d/, /\d/]
 
     const isValidCard = (data) => {
-        // let isvalidName = cardValidator.cardholderName(data.cardHolder)
         return validate(data.cardNumber);
     }
 
@@ -71,16 +75,25 @@ export default connect(
         },
         validationSchema: validationSchema,
         onSubmit: (values) => {
-            console.log(values);
             formik.isSubmitting = true;
-            if (isValidCard(values)) {
+            // if (isValidCard(values)) {
                 updateData({ cardNumber: String(values.cardNumber).split(' ').join(''), cardDate: values.cardDate, cvv: values.cvv, holderName: values.cardHolder, zipCode: values.postalCode });
-                chargeCard().then((result) => {
-                    if (result.success) {
-                        navigate('/dashboard');
-                    }
+                const formData = {
+                    email: state,
+                    values,
+                }
+                signUpFlow4(formData)
+                .then((res)=>{
+                    if(res.status === "success") {
+                        navigate('/dashboard')
+                    } else toast.error(res.error)
                 })
-            }
+                // chargeCard().then((result) => {
+                //     if (result.success) {
+                //         navigate('/dashboard');
+                //     }
+                // })
+            // }
         },
     });
 
@@ -352,6 +365,7 @@ export default connect(
             }}>
                 <img style={{width: '55%'}} src="/assets/users/Asset 1 6.png" />
             </Grid>
+            <ToastContainer />
         </Grid>
 
     );

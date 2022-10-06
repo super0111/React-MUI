@@ -5,8 +5,11 @@ import { connect } from "react-redux";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { BsFillEyeSlashFill } from "react-icons/bs";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import store from "../../app/store";
 import BackgroundImage from '../../assets/images/users/Ellipse 460.png'; // Import using relative path
+import { signUpFlow1 } from "../../apis/auth";
 
 const mapStateToProps = (state) => ({ state });
 
@@ -53,12 +56,23 @@ export default connect(
         },
         validationSchema: validationSchema,
         onSubmit: (values) => {
-            console.log(values);
             formik.isSubmitting = true;
             updateData({ email: values.email, password: values.password });
-            setTimeout(() => {
-                navigate(`/signUp?${createSearchParams({ f: "2" })}`);
-            }, 700);
+            signUpFlow1(values)
+            .then((res)=>{
+                if(res.status === "success") {
+                    navigate(`/signUp?${createSearchParams({ f: "2" })}`, { state: values.email});
+                }
+                else {
+                    if(res.data[0].firstname === null) {
+                        navigate(`/signUp?${createSearchParams({ f: "2" })}`, { state: values.email});
+                    }
+                    else if(res.data[0].freeTrial === null) {
+                        navigate(`/signUp?${createSearchParams({ f: "3" })}`, { state: values.email});
+                    }
+                    toast.error(res.error);
+                }
+            })
         },
     });
 
@@ -267,6 +281,7 @@ export default connect(
             }}>
                 <img style={{ width: '50%' }} src="/assets/users/Asset 15 1.png" />
             </Grid>
+            <ToastContainer />
         </Grid>
     );
 });

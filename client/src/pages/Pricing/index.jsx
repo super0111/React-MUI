@@ -2,10 +2,9 @@ import { useCallback, useState } from "react";
 import { Container, Button, Typography, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
-import { Navbar, Footer, FAQs } from "../components";
-import "../assets/styles/Pricing.css";
-import GetStarted from "./Pricing/GetStarted";
-import Questions from "./Pricing/Questions";
+import { Navbar, Footer } from "../../components";
+import GetStarted from "./GetStarted";
+import Questions from "./Questions";
 
 
 const mapStateToProps = (state) => ({ state });

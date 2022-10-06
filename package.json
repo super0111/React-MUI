@@ -6,9 +6,9 @@
   "main": "server.js",
   "scripts": {
     "server": "node server.js",
+    "dev": "nodemon src/index.js",
     "client": "npm start --prefix enable-mint-ui",
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server:dev": "nodemon server.js",
     "start:dev": "concurrently \"npm run server:dev\" \"npm run client\""
   },
   "repository": {
@@ -42,11 +42,15 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
+    "react-toastify": "^9.0.8",
     "sequelize": "^6.21.3"
   },
   "devDependencies": {

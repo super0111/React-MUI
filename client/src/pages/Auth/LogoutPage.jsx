@@ -1,9 +1,17 @@
 
 import * as React from 'react';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Container, Box, Typography } from '@mui/material';
 import { Footer, Navbar } from "../../components"
 
 const LogoutPage = () => {
+  const navigate = useNavigate();
+  useEffect(()=>{
+    setTimeout(()=>{
+      navigate("/");
+    }, 3000)
+  }, [])
   return (
     <>
       <Navbar currentPage="logout" />

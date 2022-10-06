@@ -1,23 +1,12 @@
 import { useState } from "react";
 import store from "../../app/store";
-import { useNavigate, createSearchParams } from "react-router-dom";
+import { useNavigate, createSearchParams, useLocation } from "react-router-dom";
 import { connect } from "react-redux";
 import { Grid, Typography, Box, Button, Radio, RadioGroup, FormControlLabel, FormControl, } from "@mui/material";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import BackgroundImage from '../../assets/images/users/Ellipse 460.png'; // Import using relative path
-
-import "../../assets/styles/SignUpFlow3.css";
-
-const mapStateToProps = (state) => ({ state });
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    updateData: (data) =>
-      dispatch({
-        type: "signup/ADD_DATA",
-        data: data,
-      }),
-  };
-};
+import { signUpFlow3 } from "../../apis/auth";
 
 const starter = [
   { text: "Unlimited Contacts", },
@@ -45,11 +34,24 @@ const accelerator = [
   {text: "Collaboration (soon)"},
 ]
 
+const mapStateToProps = (state) => ({ state });
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateData: (data) =>
+      dispatch({
+        type: "signup/ADD_DATA",
+        data: data,
+      }),
+  };
+};
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps
 )((props) => {
   const navigate = useNavigate();
+  const { state } = useLocation();
   let { updateData, plan } = props;
 
   plan = store.getState().signup.plan;
@@ -84,15 +86,21 @@ export default connect(
   const handleFormSubmit = (event) => {
     event.preventDefault();
     setIsSubmiting(true);
-    setTimeout(() => { }, 1000);
     if (selectedPlan !== "free-trial" && chargedEvery === "free-trial") chargedEvery = "monthly";
     if (selectedPlan === "free-trial" && chargedEvery !== "free-trial") chargedEvery = "free-trial";
     console.log(chargedEvery, selectedPlan);
     updateData({ plan: selectedPlan, amountToCharge: pricing[chargedEvery][selectedPlan], chargedEvery: chargedEvery });
-    setTimeout(() => {
-      navigate(`/signup?${createSearchParams({ f: "4" })}`);
-      console.log(selectedPlan);
-    }, 700);
+    const formData = {
+      email: state,
+      selectedPlan
+    }
+    signUpFlow3(formData)
+    .then((res)=>{
+      if(res.status === "success") {
+        navigate(`/signup?${createSearchParams({ f: "4" })}`, { state: state});
+      } else
+      toast.error(res.error);
+    })
   };
 
   return (
@@ -434,6 +442,7 @@ export default connect(
       }}>
           <img style={{width: '55%'}} src="/assets/users/man-thinking-asset 1.png" />
       </Grid>
+      <ToastContainer />
   </Grid>
   );
 })
