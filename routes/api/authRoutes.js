@@ -1,6 +1,6 @@
 const express = require("express");
 const Router = express.Router();
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcrypt');
 var jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
 const mysqlConnection = require("../../config/DBConnection");
@@ -17,25 +17,30 @@ Router.get("/signIn", async (req, res) => {
 
 Router.post("/signIn", async (req, res) => {
   const data = req.body;
-  const getUser = `SELECT * FROM users WHERE email = "${data.email}"`;
+
+  let getUser;
+  getUser = `SELECT * FROM users WHERE email = "${data.email}"`;
   
   mysqlConnection.query(getUser, async (err, rows, fields) => {
-    let getuser = Object.values(JSON.parse(JSON.stringify(rows)));
-    if(getUser[0].userActive === 0) {
+    let userInfo = Object.values(JSON.parse(JSON.stringify(rows)));
+
+    if(userInfo[0].userActive === 0) {
       return res.status(401).json({ error: "Please signUp correctly" });
     }
 
-    console.log("getuser[0].password", getuser[0].password)
-    console.log("data.password",data.password)
-    if (getuser.length && getuser[0]) {
+    if (userInfo.length && userInfo[0]) {
 
       const validPassword = await bcrypt.compare(
         data.password,
-        getuser[0].password
+        userInfo[0].password
       );
 
-      const user = getuser[0];
-      if (validPassword) {
+      var response = bcrypt.compareSync(data.password, userInfo[0].password);
+      console.log("responseresponse", response)
+
+      const user = userInfo[0];
+      if (data.password === userInfo[0].password) {
+      // if (response) {
         const token = jwt.sign(
           { user_id: user.id, email: user.email, type: data.type },
           process.env.TOKEN_SECRET,
@@ -81,11 +86,12 @@ Router.post("/signUpFlow1", (req, res) => {
       return res.status(400).json({ data: rows, error: "Email already present" });
     }
 
-    const salt = await bcrypt.genSalt(10);
-    // now we set user password to hashed password
-    requestData.password = await bcrypt.hash(requestData.password, salt);
+    // const salt = await bcrypt.genSalt(10);
+    // // now we set user password to hashed password
+    // requestData.password = await bcrypt.hash(requestData.password, salt);
+    const password = bcrypt.hashSync(requestData.password, 10);
 
-    const sql = `INSERT INTO users (email, password) VALUES ("${requestData.email}", "${requestData.password}")`;
+    const sql = `INSERT INTO users (email, password) VALUES ("${requestData.email}", "${password}")`;
 
     await mysqlConnection.query(sql, (err, rows) => {
 
