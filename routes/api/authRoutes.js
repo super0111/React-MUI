@@ -30,7 +30,7 @@ Router.post("/signIn", async (req, res) => {
 
     if (userInfo.length && userInfo[0]) {
 
-      const validPassword = await bcrypt.compare(
+      const validPassword = await bcrypt.compareSync(
         data.password,
         userInfo[0].password
       );
@@ -38,11 +38,11 @@ Router.post("/signIn", async (req, res) => {
       var response = bcrypt.compareSync(data.password, userInfo[0].password);
       console.log("responseresponse", response)
 
-      const user = userInfo[0];
+      // const user = userInfo[0];
       if (data.password === userInfo[0].password) {
       // if (response) {
         const token = jwt.sign(
-          { user_id: user.id, email: user.email, type: data.type },
+          { user_id: userInfo[0].id, email: userInfo[0].email, type: data.type },
           process.env.TOKEN_SECRET,
           {
             expiresIn: "2h",
@@ -52,9 +52,9 @@ Router.post("/signIn", async (req, res) => {
         res.status(200).json({
           status: "success",
           token,
-          name: user.name,
-          email: user.email,
-          id: user.id,
+          name: userInfo[0].name,
+          email: userInfo[0].email,
+          id: userInfo[0].id,
           userType: data.type,
         });
       } else {
@@ -77,7 +77,6 @@ Router.get("/signUp", (req, res) => {
 Router.post("/signUpFlow1", (req, res) => {
   let requestData = req.body;
 
-  console.log("requestData", requestData)
   let emailpresent;
   emailpresent = `SELECT * FROM users WHERE email = "${requestData.email}"`;
 
@@ -86,12 +85,11 @@ Router.post("/signUpFlow1", (req, res) => {
       return res.status(400).json({ data: rows, error: "Email already present" });
     }
 
-    // const salt = await bcrypt.genSalt(10);
-    // // now we set user password to hashed password
-    // requestData.password = await bcrypt.hash(requestData.password, salt);
-    const password = bcrypt.hashSync(requestData.password, 10);
+    const salt = await bcrypt.genSalt(10);
+    // now we set user password to hashed password
+    requestData.password = await bcrypt.hash(requestData.password, salt);
 
-    const sql = `INSERT INTO users (email, password) VALUES ("${requestData.email}", "${password}")`;
+    const sql = `INSERT INTO users (email, password) VALUES ("${requestData.email}", "${requestData.password}")`;
 
     await mysqlConnection.query(sql, (err, rows) => {
 

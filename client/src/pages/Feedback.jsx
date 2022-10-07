@@ -18,10 +18,11 @@ const FeedbackApp = () => {
       email: emailValue,
       message: messageValue,
     }
-    navigate("/feedbackSubmit");
 
     sendFeedback(formData)
     .then((res)=>{
+      console.log("res", res)
+    // navigate("/feedbackSubmit");
     })
   }
 

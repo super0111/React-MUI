@@ -1,7 +1,7 @@
 import config from "../config";
 
 const sendFeedback = (formData, history) => {
-  return fetch(`${config.server_url}dashboard/post/sendFeedback`, {
+  return fetch(`${config.server_url}api/sendMail/sendMail`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

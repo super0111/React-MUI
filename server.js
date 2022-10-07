@@ -4,6 +4,10 @@ const bodyparser = require("body-parser");
 const cors = require("cors");
 require("dotenv").config();
 
+const nodemailer = require("nodemailer");
+const { google } = require("googleapis");
+const OAuth2 = google.auth.OAuth2;
+
 server.use(function (req, res, next) {
   //Enabling CORS
   res.header("Access-Control-Allow-Origin", "*");
@@ -32,6 +36,7 @@ server.get('/', (req, res, next) => {
 });
 
 server.use("/api/authRoutes/", require("./routes/api/authRoutes"));
+server.use("/api/sendMail/", require("./routes/api/sendMail"));
 
 server.listen(PORT, () =>
   console.log(`Express server is runnig at port no : http://127.0.0.1:${PORT}`)
