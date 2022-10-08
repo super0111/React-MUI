@@ -12,7 +12,6 @@ Router.post("/sendMail", (req, res) => {
     to: "milosdev66@gmail.com",
     from: process.env.EMAIL
   });
-  
   res.status(200).json({msg: 'success'});
 });
 
