@@ -1,7 +1,22 @@
 import config from "../config";
 
 const sendFeedback = (formData, history) => {
-  return fetch(`${config.server_url}api/sendMail/sendMail`, {
+  return fetch(`${config.server_url}api/sendMail/sendFeedback`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      ...formData,
+    }),
+  })
+  .then((res) =>{
+    return res;
+  } );
+};
+
+const sendContactSales = (formData, history) => {
+  return fetch(`${config.server_url}api/sendMail/sendContactSales`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -30,4 +45,4 @@ const sendCancellation = (formData, history) => {
   } );
 };
 
-export { sendFeedback, sendCancellation }
+export { sendFeedback, sendContactSales, sendCancellation }

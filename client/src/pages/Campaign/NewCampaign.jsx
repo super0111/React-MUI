@@ -3,6 +3,8 @@ import { Container, Box, Typography, Button, TextField } from '@mui/material';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Slider from "../../components/Slider";
 import { styled } from '@mui/system';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const InputField = styled('input')({
   width: "100%",
@@ -20,6 +22,21 @@ const InputField = styled('input')({
 
 
 const NewCampaignApp = () => {
+  const [ name, setName ] = useState("");
+  const [ description, setDescription ]= useState("");
+
+  useEffect(()=>{
+    const user = localStorage.getItem("token");
+    console.log("userseresr", user)
+  }, [])
+
+  const handleNewCampaign = () => {
+    const formData = {
+      // email,
+      name,
+      description,
+    }
+  }
   return (
     <Box sx={{
       backgroundImage: `url(/assets/Header_Bg.png)`,
@@ -73,7 +90,10 @@ const NewCampaignApp = () => {
               >
                 New Campaign Name
               </Typography>
-              <InputField placeholder="Enter New Campaign Name" />
+              <InputField 
+                placeholder="Enter New Campaign Name" 
+                onChange={(e)=>setName(e.target.value)}
+              />
             </Box>
             <Box sx={{marginTop: "25px !important"}}>
               <Typography
@@ -90,26 +110,32 @@ const NewCampaignApp = () => {
               >
                 Description
               </Typography>
-              <InputField placeholder="Enter Description" />
+              <InputField 
+                placeholder="Enter Description"
+                onChange={(e)=>setDescription(e.target.value)}
+              />
             </Box>
             <Box display="flex" justifyContent="end">
-              <Button sx={{
-                width: "140px",
-                height: "38px",
-                background: "#388E3C",
-                borderRadius: "12px",
-                fontFamily: 'Inter',
-                fontWtyle: "normal",
-                fontWeight: 500,
-                fontSize: "16px",
-                lineHeight: "19px",
-                textAlign: "center",
-                color: "#F8F8FA",
-                marginTop: "45px",
-                "&:hover": {
-                  background: "#3da642",
-                }
-              }}>
+              <Button 
+                sx={{
+                  width: "140px",
+                  height: "38px",
+                  background: "#388E3C",
+                  borderRadius: "12px",
+                  fontFamily: 'Inter',
+                  fontWtyle: "normal",
+                  fontWeight: 500,
+                  fontSize: "16px",
+                  lineHeight: "19px",
+                  textAlign: "center",
+                  color: "#F8F8FA",
+                  marginTop: "45px",
+                  "&:hover": {
+                    background: "#3da642",
+                  }
+                }}
+                onClick={handleNewCampaign}
+              >
                 Save
               </Button>
             </Box>

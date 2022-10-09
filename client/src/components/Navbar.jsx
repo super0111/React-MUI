@@ -1,11 +1,11 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-
 import { Container, AppBar, Box, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography, Button } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
-import Dropdown from "./Dropdown"
+import Dropdown from "./Dropdown";
 
 const drawerWidth = 160;
 const navItems = ["Home", "About us", "Resources", "Pricing"];
@@ -13,8 +13,22 @@ const navItems = ["Home", "About us", "Resources", "Pricing"];
 const Navbar = (props) => {
   const { window, currentPage } = props;
   const navigate = useNavigate();
+  const [ isAuth, setIsAuth ] = useState(false)
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [resourcesShow, setResourcesShow] = React.useState(false);
+
+  useEffect(()=>{
+    if(localStorage.getItem("token")) {
+      setIsAuth(true);
+    } else setIsAuth(false);
+  }, [])
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsAuth(false)
+  }
+
+  console.log("authttht", isAuth)
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -174,7 +188,7 @@ const Navbar = (props) => {
             >
               {navItems.map((item) => getNavItem(item))}
             </Box>
-            <Box>
+            { isAuth && 
               <Button sx={{ 
                 color: '#fff', 
                 marginRight: "15px",
@@ -187,36 +201,56 @@ const Navbar = (props) => {
                   marginRight: "5px",
                 },
               }}
-                onClick={()=>navigate("/login")}
+                onClick={handleLogout}
               >
-                Login
+                Logout
               </Button>
-              <Button
-                sx={{
-                  width: "80px",
-                  height: "40px",
-                  background: "#388E3C",
-                  borderRadius: "12px",
-                  fontFamily: 'Inter',
-                  fontStyle: "normal",
-                  fontWeight: "500",
-                  fontSize: "16px",
-                  lineHeight: "19px",
-                  color: '#F8F8FA',
+            }
+            { !isAuth &&
+              <Box>
+                <Button sx={{ 
+                  color: '#fff', 
+                  marginRight: "15px",
                   '&:hover': {
-                    background: "#377d3a",
+                    padding: '9px 8px',
+                    color: "rgb(56, 142, 60)",
+                    backgroundColor: "rgba(25, 210, 112, 0.08)",
                   },
                   ['@media (max-width:769px)']: { // eslint-disable-line no-useless-computed-key 
-                    fontSize: "15px",
-                    width: "80px",
-                    height: "33px",
+                    marginRight: "5px",
                   },
                 }}
-                onClick={()=>navigate("/signup")}
-              >
-                Sign Up
-              </Button>
-            </Box>
+                  onClick={()=>navigate("/login")}
+                >
+                  Login
+                </Button>
+                <Button
+                  sx={{
+                    width: "80px",
+                    height: "40px",
+                    background: "#388E3C",
+                    borderRadius: "12px",
+                    fontFamily: 'Inter',
+                    fontStyle: "normal",
+                    fontWeight: "500",
+                    fontSize: "16px",
+                    lineHeight: "19px",
+                    color: '#F8F8FA',
+                    '&:hover': {
+                      background: "#377d3a",
+                    },
+                    ['@media (max-width:769px)']: { // eslint-disable-line no-useless-computed-key 
+                      fontSize: "15px",
+                      width: "80px",
+                      height: "33px",
+                    },
+                  }}
+                  onClick={()=>navigate("/signup")}
+                >
+                  Sign Up
+                </Button>
+              </Box>
+            }
           </Toolbar>
         </Container>
       </AppBar>

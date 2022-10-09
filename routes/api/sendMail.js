@@ -3,9 +3,8 @@ const Router = express.Router();
 require("dotenv").config();
 const nodemailer = require('nodemailer');
 
-Router.post("/sendMail", (req, res) => {
+Router.post("/sendFeedback", (req, res) => {
   const { email, message, name } = req.body;
-  console.log("email", email, message, name)
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -16,17 +15,49 @@ Router.post("/sendMail", (req, res) => {
   
   
   transporter.sendMail({
-    from: `${name}`, // sender address
+    from: `${name} from Enablimint`, // sender
     to: `${email}`, // list of receivers
-    subject: "", // Subject line
+    subject: "Revieved mail", // Subject line
     html: `<b>${message}</b>`, // html body
   }).then(info => {
-    console.log({info});
+    if(info) {
+      return res.status(200).json({status: "success"});
+    }
   }).catch(console.error);
 });
 
-
-
+Router.post("/sendContactSales", (req, res) => {
+  const { firstname, lastname, email, phone, company, website, heading, message } = req.body;
+  console.log("firstname, lastname, email, phone, company, website, heading, message", firstname, lastname, email, phone, company, website, heading, message)
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'adonis0923dev@gmail.com',
+      pass: 'pjxchuuunjqczlau',
+    },
+  });
+  
+  transporter.sendMail({
+    from: `${firstname} ${" "} ${lastname}`, // sender
+    to: `${email}`, // list of receivers
+    subject: `${heading}`, // Subject line
+    html: `
+      <div>
+        <b>Name: ${firstname}${lastname}</b>
+        <b>Phone Number: ${phone}</b>
+        <b>Company: ${company}</b>
+        <b>Website: ${website}</b>
+        <br>
+        <b>Message: </b>
+        <b>${message}</b>
+      </div>
+    `, // html body
+  }).then(info => {
+    if(info) {
+      return res.status(200).json({status: "success"});
+    }
+  }).catch(console.error);
+});
 
 module.exports = Router;
 

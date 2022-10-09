@@ -20,20 +20,11 @@ const Section = styled(Box)(({ theme }) => ({
 }))
 export const LandingPage = () => {
   const navigate = useNavigate();
-  // const initialIndustries = ['Real Estate', 'Healthcare', 'Retail', 'Hospitality', 'Education']
-  // const nextIndustries = ['Manufacturing', 'Engineering', 'VMS', 'Software', 'Professional Services']
-  // const [industries, setIndustries] = useState(initialIndustries);
-
-  // const loadPreviousIndustries = (event) => {
-  //   document.getElementsByClassName('industries-div')[0].classList.remove(['next-data']);
-  //   setIndustries(initialIndustries)
-  // }
-
-  // const loadNextIndustries = (event) => {
-  //   document.getElementsByClassName('industries-div')[0].classList.add(['next-data']);
-  //   setIndustries(nextIndustries)
-  // }
-
+  const handleGetStarted = () => {
+    const token = localStorage.getItem("token");
+    if(token) {navigate("/dashboard")}
+    else {navigate("/login")}
+}
   return (
     <>
       <div className="landing-page-div">
@@ -137,7 +128,7 @@ export const LandingPage = () => {
                           background: "#377d3a",
                         },
                       }}
-                        onClick={() => navigate("/signUp")}
+                        onClick={handleGetStarted}
                       >Get Started for Free</Button>
                     </Box>
                   </Grid>

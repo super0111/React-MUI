@@ -22,6 +22,11 @@ const Component = ({ img, title, body }) => {
 }
 export const HowTo = () => {
     const navigate = useNavigate();
+    const handleGetStarted = () => {
+        const token = localStorage.getItem("token");
+        if(token) {navigate("/dashboard")}
+        else {navigate("/login")}
+    }
     return (
         <Box>
             <Box display="flex" flexDirection={{ md: 'row', xs: 'column' }} gap={3} justifyContent="space-between">
@@ -31,7 +36,7 @@ export const HowTo = () => {
                         '&:hover': {
                             background: "#377d3a",
                         }
-                    }} onClick={() => navigate('/signUp')}>Get Started</Button>
+                    }} onClick={handleGetStarted}>Get Started</Button>
                 </Box>
             </Box>
             <Box mt={15} sx={{

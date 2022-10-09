@@ -36,7 +36,6 @@ Router.post("/signIn", async (req, res) => {
       );
 
       var response = bcrypt.compareSync(data.password, userInfo[0].password);
-      console.log("responseresponse", response)
 
       // const user = userInfo[0];
       if (data.password === userInfo[0].password) {

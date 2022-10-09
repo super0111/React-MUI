@@ -8,7 +8,7 @@ import * as yup from "yup";
 
 import { styled } from '@mui/system';
 import BackgroundImage from '../../assets/images/users/Ellipse 460.png'; // Import using relative path
-import { sendCancellation } from "../../apis/Post";
+import { sendCancellation } from "../../apis/sendMail";
 
 const labels = [
   { text: "Its too expensive", value: '1' },
