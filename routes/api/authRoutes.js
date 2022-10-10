@@ -24,11 +24,10 @@ Router.post("/signIn", async (req, res) => {
   mysqlConnection.query(getUser, async (err, rows, fields) => {
     let userInfo = Object.values(JSON.parse(JSON.stringify(rows)));
 
-    if(userInfo[0].userActive === 0) {
+    if(userInfo[0]?.userActive === 0) {
       return res.status(401).json({ error: "Please signUp correctly" });
     }
-
-    if (userInfo.length && userInfo[0]) {
+    if (userInfo.length > 0 && userInfo[0]) {
 
       const validPassword = await bcrypt.compareSync(
         data.password,

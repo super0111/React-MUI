@@ -35,7 +35,7 @@ export const LoginPage = () => {
             formik.isSubmitting = true;
             login(values)
             .then((res)=>{
-                console.log("resssss", res)
+                console.log("resssss", res.error)
                 if(res.status === "success") {
                     setAuthToken(res.token);
                     navigate("/dashboard");

@@ -1,10 +1,11 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { Container, Box, Typography, Button, TextField } from '@mui/material';
 import OutlinedInput from '@mui/material/OutlinedInput';
+import jwt_decode from "jwt-decode";
 import Slider from "../../components/Slider";
 import { styled } from '@mui/system';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { createSerializableStateInvariantMiddleware } from '@reduxjs/toolkit';
 
 const InputField = styled('input')({
   width: "100%",
@@ -24,15 +25,17 @@ const InputField = styled('input')({
 const NewCampaignApp = () => {
   const [ name, setName ] = useState("");
   const [ description, setDescription ]= useState("");
+  const [ email, setEmail ]= useState("");
 
   useEffect(()=>{
-    const user = localStorage.getItem("token");
-    console.log("userseresr", user)
+    const token = localStorage.getItem("token");
+    const current_user = jwt_decode(token);
+    setEmail(current_user.email)
   }, [])
 
   const handleNewCampaign = () => {
     const formData = {
-      // email,
+      email,
       name,
       description,
     }
