@@ -77,7 +77,7 @@ const WebsiteModal = ({ websiteModal, setWebsiteModal, workFlowWebsites, setWork
   const [ comapnyMapping, setCompanyMapping ] = useState('');
   const [ launchSchedule, setLaunchSchedule ] = useState('');
   const [ notification, setNotification ]= useState('');
-  const [cvFile, setCVFile] = useState({ data: '', fileName: '' })
+  const [cvFile, setCVFile] = useState({ data: '', fileName: '' });
 
   useEffect(()=>{
     const token = localStorage.getItem("token");

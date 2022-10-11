@@ -15,6 +15,21 @@ const saveNewCampaign = (formData, history) => {
   } );
 };
 
+const saveCampaignX = (formData, history) => {
+  return fetch(`${config.server_url}api/dashboardRoutes/campaignX`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      ...formData,
+    }),
+  })
+  .then((res) =>{
+    return res.json();
+  } );
+};
+
 const uploadWebsite = (formData, history) => {
   return fetch(`${config.server_url}api/dashboardRoutes/uploadWebsite`, {
     method: "POST",
@@ -45,4 +60,4 @@ const uploadLinkedIn = (formData, history) => {
   } );
 };
 
-export { saveNewCampaign, uploadWebsite, uploadLinkedIn }
+export { saveNewCampaign, saveCampaignX, uploadWebsite, uploadLinkedIn }

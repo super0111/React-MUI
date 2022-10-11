@@ -34,6 +34,26 @@ Router.post("/newCampaign", (req, res) => {
   });
 });
 
+Router.post("/campaignX", (req, res) => {
+  let requestData = req.body;
+  const sql = `INSERT INTO campaignX (email, interestedJob, noInterestedJob, senority, companyYears, roleYears, filteredName, cvFile, fileName) VALUES (
+    "${requestData.email}", "${requestData.interestedJob}", "${requestData.noInterestedJob}", "${requestData.senority}", "${requestData.companyYears}", "${requestData.roleYears}", "${requestData.filteredName}", "${requestData.cvFile}", "${requestData.fileName}"
+  )`;
+  
+  mysqlConnection.query(sql, (err, rows) => {
+    const data = `SELECT * FROM campaignX WHERE email = "${requestData.email}"`;
+    mysqlConnection.query(data, (err, rows) => {
+      if (!err) {
+        return res.status(200).json({
+          message: "success",
+          data: rows,
+        });
+      }
+      res.send(err);
+    });
+  });
+});
+
 Router.get("/getUploadWebsite/:id", async (req, res) => {
   const email = req.params.id;
   let getUploadwebsite;
