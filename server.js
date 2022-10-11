@@ -37,6 +37,7 @@ server.get('/', (req, res, next) => {
 
 server.use("/api/authRoutes/", require("./routes/api/authRoutes"));
 server.use("/api/sendMail/", require("./routes/api/sendMail"));
+server.use("/api/dashboardRoutes/", require("./routes/api/dashboardRoutes"));
 
 server.listen(PORT, () =>
   console.log(`Express server is runnig at port no : http://127.0.0.1:${PORT}`)

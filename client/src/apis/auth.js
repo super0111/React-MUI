@@ -1,7 +1,6 @@
 import config from "../config";
 
 const login = (formData, history) => {
-  console.log("form datat", formData)
   return fetch(`${config.server_url}api/authRoutes/signIn`, {
     method: "POST",
     headers: {
@@ -17,7 +16,6 @@ const login = (formData, history) => {
 };
 
 const signUpFlow1 = (formData, history) => {
-  console.log("form datat", formData)
   return fetch(`${config.server_url}api/authRoutes/signUpFlow1`, {
     method: "POST",
     headers: {
@@ -63,7 +61,6 @@ const signUpFlow3 = (formData, history) => {
 };
 
 const signUpFlow4 = (formData, history) => {
-  console.log("formdata", formData)
   return fetch(`${config.server_url}api/authRoutes/signUpFlow4`, {
     method: "POST",
     headers: {

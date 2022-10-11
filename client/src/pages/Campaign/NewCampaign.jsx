@@ -1,11 +1,14 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
-import { Container, Box, Typography, Button, TextField } from '@mui/material';
-import OutlinedInput from '@mui/material/OutlinedInput';
+import { useState, useEffect, useContext } from 'react';
+import { Container, Box, Typography, Button } from '@mui/material';
 import jwt_decode from "jwt-decode";
 import Slider from "../../components/Slider";
 import { styled } from '@mui/system';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 import { createSerializableStateInvariantMiddleware } from '@reduxjs/toolkit';
+import { saveNewCampaign } from "../../apis/dashboard";
+import { Context } from '../../context/AppContext';
 
 const InputField = styled('input')({
   width: "100%",
@@ -26,6 +29,7 @@ const NewCampaignApp = () => {
   const [ name, setName ] = useState("");
   const [ description, setDescription ]= useState("");
   const [ email, setEmail ]= useState("");
+  const { campaigns, setCampaigns } = useContext(Context);
 
   useEffect(()=>{
     const token = localStorage.getItem("token");
@@ -39,6 +43,15 @@ const NewCampaignApp = () => {
       name,
       description,
     }
+    saveNewCampaign(formData)
+    .then((res)=>{
+      if(res.message === "success") {
+        setCampaigns(res.data);
+        toast.info("New Campaign Successfully Save");
+      } else {
+        toast.error(res.error)
+      }
+    })
   }
   return (
     <Box sx={{
@@ -94,7 +107,11 @@ const NewCampaignApp = () => {
                 New Campaign Name
               </Typography>
               <InputField 
-                placeholder="Enter New Campaign Name" 
+                sx={{
+                  color: "black",
+                  fontSize: "14px",
+                }}
+                placeholder="Enter New Campaign Name"
                 onChange={(e)=>setName(e.target.value)}
               />
             </Box>
@@ -114,6 +131,10 @@ const NewCampaignApp = () => {
                 Description
               </Typography>
               <InputField 
+                sx={{
+                  color: "black",
+                  fontSize: "14px",
+                }}
                 placeholder="Enter Description"
                 onChange={(e)=>setDescription(e.target.value)}
               />
@@ -144,6 +165,7 @@ const NewCampaignApp = () => {
             </Box>
           </Box>
       </Container>
+      <ToastContainer />
     </Box>
   )
 }

@@ -1,23 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { styled, useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
+import { Box, Toolbar, List, Typography, IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText,  } from '@mui/material';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import useMediaQuery from '@mui/material/useMediaQuery';
-
+import jwt_decode from "jwt-decode";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
+import config from "../config";
+import { Context } from '../context/AppContext';
 
 const drawerWidth = 240;
 
@@ -85,7 +79,6 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-
 const Slider = (props) => {
   const {Component, TitleField, textField} = props;
   const navigate = useNavigate()
@@ -95,6 +88,8 @@ const Slider = (props) => {
   const [active, setActive] = useState(['/dashboard', '/uploadFile',].indexOf(location.pathname));
   const [isCampaignShow, setIsCampaignShow] = useState(true);
   const matches = useMediaQuery('(min-width:685px)');
+  const [ email, setEmail ] = useState("");
+  const { campaigns, setCampaigns } = useContext(Context)
 
   const handleActive = (index) => {
     setActive(index);
@@ -103,6 +98,7 @@ const Slider = (props) => {
   useEffect(() => {
     setOpen(matches);
   }, [matches])
+
   useEffect(() => {
     if(open===false)
     setIsCampaignShow(false)
@@ -120,6 +116,21 @@ const Slider = (props) => {
     localStorage.removeItem('token');
     navigate("/logout");
   }
+
+  useEffect(()=>{
+    const token = localStorage.getItem("token");
+    const current_user = jwt_decode(token);
+    setEmail(current_user.email);
+  }, [])
+
+  useEffect( () => {
+    const fetchPosts = async () => {
+      const res = await fetch(`${config.server_url}api/dashboardRoutes/getCampaigns/${email}`);
+      const data = await res.json();
+      setCampaigns(data);
+    };
+    fetchPosts();
+  }, [email]);
 
   return (
     <Box 
@@ -236,51 +247,49 @@ const Slider = (props) => {
           <List sx={
             open === true && { paddingLeft: "10px" }}>
             {['Dashboard', 'Upload my file',].map((text, index) => (
-              <>
-                <ListItem 
-                  id={`nav-${index}`}
-                  key={index}
-                  sx={
-                    active === index &&
-                    {
-                      backgroundColor: "#131926",
-                    }
+              <ListItem 
+                id={`nav-${index}`}
+                key={index}
+                sx={
+                  active === index &&
+                  {
+                    backgroundColor: "#131926",
                   }
-                  className={`${active === index ? 'nav-active' : ''}`}
-                  disablePadding 
-                  button
-                  onClick={() => {
-                    handleActive(index);
-                    navigate(['/dashboard', '/uploadfile',].filter((url, j)=>(  
-                      index === j
-                    )).join(''));
+                }
+                className={`${active === index ? 'nav-active' : ''}`}
+                disablePadding 
+                button
+                onClick={() => {
+                  handleActive(index);
+                  navigate(['/dashboard', '/uploadfile',].filter((url, j)=>(  
+                    index === j
+                  )).join(''));
+                }}
+              >
+                <ListItemButton
+                  sx={{
+                    minHeight: 40,
+                    justifyContent: open ? 'initial' : 'center',
+                    px: 2.5,
+                    color: "white"
                   }}
                 >
-                  <ListItemButton
+                  <ListItemIcon
                     sx={{
-                      minHeight: 40,
-                      justifyContent: open ? 'initial' : 'center',
-                      px: 2.5,
-                      color: "white"
+                      minWidth: 0,
+                      mr: open ? 3 : 'auto',
+                      justifyContent: 'center',
                     }}
                   >
-                    <ListItemIcon
-                      sx={{
-                        minWidth: 0,
-                        mr: open ? 3 : 'auto',
-                        justifyContent: 'center',
-                      }}
-                    >
-                      {
-                        [ <img style={{width: "20px"}} src='/assets/dashboard/Vector.png' />, <img style={{width: "20px"}} src='/assets/dashboard/Vector (1).png' />].map((icon, i) => (
-                          index === i && icon
-                        ))
-                      }
-                    </ListItemIcon>
-                    <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-                  </ListItemButton>
-                </ListItem>
-              </>
+                    {
+                      [ <img style={{width: "20px"}} src='/assets/dashboard/Vector.png' />, <img style={{width: "20px"}} src='/assets/dashboard/Vector (1).png' />].map((icon, i) => (
+                        index === i && icon
+                      ))
+                    }
+                  </ListItemIcon>
+                  <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                </ListItemButton>
+              </ListItem>
             ))}
             <ListItem 
               disablePadding 
@@ -328,7 +337,27 @@ const Slider = (props) => {
                     <img src="/assets/dashboard/Vector (2).png" style={{width: "15px", marginRight: "10px",}} />
                     New campaign
                   </Typography>
-                  <Typography
+
+                  {
+                    campaigns.map((item, i)=>(
+                      <Typography
+                        key={i}
+                        sx={{
+                          fontStyle: "normal",
+                          fontWeight: 500,
+                          fontSize: "14px",
+                          lineHeight: "16px",
+                          color: "#FFFFFF",
+                          margin: "10px 0 10px 30px",
+                        }}
+                        onClick={()=>navigate("/campaign", { state: item})}
+                      >
+                        {item.name}
+                    </Typography>
+                    ))
+                  }
+
+                  {/* <Typography
                     sx={{
                       fontStyle: "normal",
                       fontWeight: 500,
@@ -353,7 +382,9 @@ const Slider = (props) => {
                     onClick={()=>navigate("/campaignB")}
                   >
                     Campaign B
-                  </Typography>
+                  </Typography> */}
+
+
                   <Typography
                     sx={{
                       fontStyle: "normal",
@@ -376,47 +407,45 @@ const Slider = (props) => {
           <List sx={
             open === true && { paddingLeft: "10px" }}>
             {['Feedback', 'My Account', 'Help Center'].map((text, index) => (
-              <>
-                <ListItem 
-                  id={`nav-${index}`}
-                  key={index}
-                  className={`${active === index ? 'nav-active' : ''}`}
-                  disablePadding 
-                  button
-                  onClick={() => {
-                    handleActive(index);
-                    navigate(['/feedback', '/myAccount', '/help-center'].filter((url, j)=>(  
-                      index === j
-                    )).join(''));
+              <ListItem 
+                id={`nav-${index}`}
+                key={index}
+                className={`${active === index ? 'nav-active' : ''}`}
+                disablePadding 
+                button
+                onClick={() => {
+                  handleActive(index);
+                  navigate(['/feedback', '/myAccount', '/help-center'].filter((url, j)=>(  
+                    index === j
+                  )).join(''));
+                }}
+              >
+                <ListItemButton
+                  sx={{
+                    minHeight: 40,
+                    justifyContent: open ? 'initial' : 'center',
+                    px: 2.5,
+                    color: "white"
                   }}
                 >
-                  <ListItemButton
+                  <ListItemIcon
                     sx={{
-                      minHeight: 40,
-                      justifyContent: open ? 'initial' : 'center',
-                      px: 2.5,
-                      color: "white"
+                      minWidth: 0,
+                      mr: open ? 3 : 'auto',
+                      justifyContent: 'center',
                     }}
                   >
-                    <ListItemIcon
-                      sx={{
-                        minWidth: 0,
-                        mr: open ? 3 : 'auto',
-                        justifyContent: 'center',
-                      }}
-                    >
-                      {[
-                        <img style={{width: "20px"}} src='/assets/dashboard/Vector (3).png' />, 
-                        <img style={{width: "20px"}} src='/assets/dashboard/Vector (4).png' />,
-                        <img style={{width: "20px"}} src='/assets/dashboard/Vector (5).png' />,
-                      ].map((icon, i) => (
-                        index === i && icon
-                      ))}
-                    </ListItemIcon>
-                    <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-                  </ListItemButton>
-                </ListItem>
-              </>
+                    {[
+                      <img style={{width: "20px"}} src='/assets/dashboard/Vector (3).png' />, 
+                      <img style={{width: "20px"}} src='/assets/dashboard/Vector (4).png' />,
+                      <img style={{width: "20px"}} src='/assets/dashboard/Vector (5).png' />,
+                    ].map((icon, i) => (
+                      index === i && icon
+                    ))}
+                  </ListItemIcon>
+                  <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                </ListItemButton>
+              </ListItem>
             ))}
             <ListItem 
               disablePadding 

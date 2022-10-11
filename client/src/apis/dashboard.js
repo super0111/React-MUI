@@ -1,7 +1,7 @@
 import config from "../config";
 
-const newCampaign = (formData, history) => {
-  return fetch(`${config.server_url}api/sendMail/newCampaign`, {
+const saveNewCampaign = (formData, history) => {
+  return fetch(`${config.server_url}api/dashboardRoutes/newCampaign`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -11,8 +11,8 @@ const newCampaign = (formData, history) => {
     }),
   })
   .then((res) =>{
-    return res;
+    return res.json();
   } );
 };
 
-export { newCampaign }
+export { saveNewCampaign }

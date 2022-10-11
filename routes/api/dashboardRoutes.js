@@ -5,20 +5,28 @@ const mysqlConnection = require("../../config/DBConnection");
 
 dotenv.config();
 
+Router.get("/getCampaigns/:id", async (req, res) => {
+  const email = req.params.id;
+  let getCampaigns;
+  getCampaigns = `SELECT * FROM campaigns WHERE email = "${email}"`;
+  mysqlConnection.query(getCampaigns, (err, rows, fields) => {
+    if (!err) {
+      res.send(rows);
+    }
+  });
+});
+
 Router.post("/newCampaign", (req, res) => {
   let requestData = req.body;
-
-  let emailpresent;
-  emailpresent = `SELECT * FROM newCampain WHERE email = "${requestData.email}"`;
-
-  mysqlConnection.query(emailpresent, async (err, rows, fields) => {
-
-    const sql = `INSERT INTO newCampaign (name, description) VALUES ("${requestData.name}", "${requestData.description}")`;
-
-    await mysqlConnection.query(sql, (err, rows) => {
+  const sql = `INSERT INTO campaigns (email, name, description) VALUES ("${requestData.email}", "${requestData.name}", "${requestData.description}")`;
+  
+  mysqlConnection.query(sql, (err, rows) => {
+    const data = `SELECT * FROM campaigns WHERE email = "${requestData.email}"`;
+    mysqlConnection.query(data, (err, rows) => {
       if (!err) {
         return res.status(200).json({
-          status: "success",
+          message: "success",
+          data: rows,
         });
       }
       res.send(err);
