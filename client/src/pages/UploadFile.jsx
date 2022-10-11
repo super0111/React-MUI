@@ -193,7 +193,7 @@ const UploadFileApp = () => {
         </TableContainer>
       </Container>
       <WebsiteModal  websiteModal={websiteModal} setWebsiteModal={setWebsiteModal} workFlowWebsites={workFlowWebsites} setWorkFlowWebsites={setWorkFlowWebsites}/>
-      <LinkedInModal linkedInModal={linkedInModal} setLinkedInModal={setLinkedInModal} />
+      <LinkedInModal linkedInModal={linkedInModal} setLinkedInModal={setLinkedInModal} workFlowWebsites={workFlowWebsites} setWorkFlowWebsites={setWorkFlowWebsites}/>
     </Box>
   )
 }

@@ -1,6 +1,7 @@
+const config = require("../../config");
 const express = require('express');
 const router = express.Router();
-const server_url= 'http://localhost:8000/'
+// const server_url= 'http://localhost:8000/';
 
 router.post('/', async (req, res) => {
   if(req.files != null) {
@@ -10,7 +11,7 @@ router.post('/', async (req, res) => {
               console.log(err)
               return res.status(500).send(err);
           }
-          res.json({file: `${server_url}${cvFile.name}`});
+          res.json({file: `${config.server_url}${cvFile.name}`});
       });
   } else {
       res.json({file: null});

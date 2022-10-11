@@ -95,7 +95,6 @@ const WebsiteModal = ({ websiteModal, setWebsiteModal, workFlowWebsites, setWork
   }, [email]);
 
   const handleCookieValue = (e, i) => {
-    console.log("eee, iii", e, i)
     if(i === 0) {
       setCookie1Value(e.target.value)
     } else if(i === 1) {
@@ -129,9 +128,7 @@ const WebsiteModal = ({ websiteModal, setWebsiteModal, workFlowWebsites, setWork
         formData.fileName = cvFile.fileName;
         uploadWebsite(formData)
         .then((res) => {
-          console.log(res)
           if(res.message == "success") {
-            console.log("res",res)
             setWorkFlowWebsites(res.data)
             setWebsiteModal(false)
             setCVFile({ fileName: "" });            
