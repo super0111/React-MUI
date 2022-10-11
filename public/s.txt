@@ -1,0 +1,16 @@
+HTTP/1.1 302 Found
+Location: https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=https%3A%2F%2Fdevelopers.google.com%2Foauthplayground&prompt=consent&response_type=code&client_id=407408718192.apps.googleusercontent.com&scope=https%3A%2F%2Fmail.google.com%2F&access_type=offline
+GET /oauthplayground/?code=4/0ARtbsJr7BlCS2zayU8vUKj_OthhLka2eriuSbBRZYTu6qO0Owh0LAfkjJJLQi56tZ7WfqA&scope=https://mail.google.com/ HTTP/1.1
+Host: developers.google.com
+
+
+4/0ARtbsJr7BlCS2zayU8vUKj_OthhLka2eriuSbBRZYTu6qO0Owh0LAfkjJJLQi56tZ7WfqA
+
+code=4%2F0ARtbsJr7BlCS2zayU8vUKj_OthhLka2eriuSbBRZYTu6qO0Owh0LAfkjJJLQi56tZ7WfqA&redirect_uri=https%3A%2F%2Fdevelopers.google.com%2Foauthplayground&client_id=407408718192.apps.googleusercontent.com&client_secret=************&scope=&grant_type=authorization_code
+
+
+1//04lAns5sj-U_CCgYIARAAGAQSNwF-L9IrUA1jCKP0TBqsyUp97zr8pqe3jr9_wDYpgW5o-Mgkg2JxG9vKHwfOYRLXs_Ib_beeHIw
+
+ya29.a0Aa4xrXO3MOnINiJ0u-wpEh_Pp1HxXJqHYWMR9udO3evTLyL_csVnvpwkm-uLIo3qssDZZ4Kk31aAIM7gqGRQpsBTqw4QRle5_1SjCWDD2lF2Vb5eaqI7BlX31cGq6F1DCWoojNuxNVtXwm-1FjaIfgetvmaNaCgYKATASARASFQEjDvL9T8RGquOpq0ZrIs740xciIg0163
+
+

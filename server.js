@@ -3,10 +3,7 @@ var server = express();
 const bodyparser = require("body-parser");
 const cors = require("cors");
 require("dotenv").config();
-
-const nodemailer = require("nodemailer");
-const { google } = require("googleapis");
-const OAuth2 = google.auth.OAuth2;
+const fileUpload = require('express-fileupload');
 
 server.use(function (req, res, next) {
   //Enabling CORS
@@ -35,9 +32,23 @@ server.get('/', (req, res, next) => {
     res.send('Welcome to EnableMint Backend API');
 });
 
+server.use(fileUpload());
+server.use(express.static('public'));
 server.use("/api/authRoutes/", require("./routes/api/authRoutes"));
 server.use("/api/sendMail/", require("./routes/api/sendMail"));
 server.use("/api/dashboardRoutes/", require("./routes/api/dashboardRoutes"));
+server.use("/api/file/", require("./routes/api/file"));
+
+
+// Serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('client/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 server.listen(PORT, () =>
   console.log(`Express server is runnig at port no : http://127.0.0.1:${PORT}`)

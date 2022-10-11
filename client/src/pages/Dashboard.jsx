@@ -1,12 +1,9 @@
 import * as React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import { Container, Box, Typography } from '@mui/material';
+import { useState, useEffect, useContext } from 'react';
+import { Container, Box, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import jwt_decode from "jwt-decode";
+import config from '../config';
+import { Context } from '../context/AppContext';
 import Slider from "../components/Slider";
 
 const items = [
@@ -16,6 +13,24 @@ const items = [
 ]
 
 const DashboardApp = () => {
+  const [ email, setEmail ] = useState("");
+  const { campaigns, setCampaigns } = useContext(Context);
+
+  useEffect(()=>{
+    const token = localStorage.getItem("token");
+    const current_user = jwt_decode(token);
+    setEmail(current_user.email);
+  }, [])
+
+  useEffect( () => {
+    const fetchPosts = async () => {
+      const res = await fetch(`${config.server_url}api/dashboardRoutes/getCampaigns/${email}`);
+      const data = await res.json();
+      setCampaigns(data);
+    };
+    fetchPosts();
+  }, [email]);
+
   return (
     <Box sx={{
       backgroundImage: `url(/assets/Header_Bg.png)`,
@@ -46,24 +61,16 @@ const DashboardApp = () => {
                 </TableRow>
               </TableHead>
               <TableBody sx={{backgroundColor: "white"}}>
+                  { campaigns.map((item, i)=>(
                   <TableRow>
+                    <TableCell key={i} sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center">
+                      {item.name}
+                    </TableCell>
                     <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
                     <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
                     <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell align="center"></TableCell>
                   </TableRow>
-                  <TableRow>
-                    <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell align="center"></TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell align="center"></TableCell>
-                  </TableRow>
+                )) }
               </TableBody>
             </Table>
           </TableContainer>

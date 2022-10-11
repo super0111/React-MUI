@@ -15,4 +15,34 @@ const saveNewCampaign = (formData, history) => {
   } );
 };
 
-export { saveNewCampaign }
+const uploadWebsite = (formData, history) => {
+  return fetch(`${config.server_url}api/dashboardRoutes/uploadWebsite`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      ...formData,
+    }),
+  })
+  .then((res) =>{
+    return res.json();
+  } );
+};
+
+const uploadLinkedIn = (formData, history) => {
+  return fetch(`${config.server_url}api/dashboardRoutes/uploadLinkedIn`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      ...formData,
+    }),
+  })
+  .then((res) =>{
+    return res.json();
+  } );
+};
+
+export { saveNewCampaign, uploadWebsite, uploadLinkedIn }

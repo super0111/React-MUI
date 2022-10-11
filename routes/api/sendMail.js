@@ -9,7 +9,8 @@ Router.post("/sendFeedback", (req, res) => {
     service: 'gmail',
     auth: {
       user: 'adonis0923dev@gmail.com',
-      pass: 'pjxchuuunjqczlau',
+      user: process.env.EMAIL,
+      pass: process.env.password,
     },
   });
   
@@ -17,7 +18,7 @@ Router.post("/sendFeedback", (req, res) => {
   transporter.sendMail({
     from: `${name} from Enablimint`, // sender
     to: `${email}`, // list of receivers
-    subject: "Revieved mail", // Subject line
+    subject: "Revieved mail for Enablimint", // Subject line
     html: `<b>${message}</b>`, // html body
   }).then(info => {
     if(info) {

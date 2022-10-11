@@ -1,20 +1,36 @@
 import * as React from 'react';
-import { useState } from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import { Container, Box, Typography } from '@mui/material';
+import { useState, useEffect } from 'react';
+import { Container, Box, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import jwt_decode from "jwt-decode";
+import Moment from 'moment';
 import Slider from "../components/Slider";
+import config from '../config';
 import LinkedInModal from '../components/Modal/LinkedInModal';
 import WebsiteModal from '../components/Modal/WebsiteModal';
 
 const UploadFileApp = () => {
+  const [ email, setEmail ] = useState("");
   const [websiteModal, setWebsiteModal] = useState(false);
   const [linkedInModal, setLinkedInModal] = useState(false);
+  const [workFlowWebsites, setWorkFlowWebsites] = useState([]);
+
+  useEffect(()=>{
+    const token = localStorage.getItem("token");
+    const current_user = jwt_decode(token);
+    setEmail(current_user.email);
+  }, [])
+
+  useEffect( () => {
+    const fetchPosts = async () => {
+      const res = await fetch(`${config.server_url}api/dashboardRoutes/getUploadWebsite/${email}`);
+      const data = await res.json();
+      console.log("data", data)
+      setWorkFlowWebsites(data);
+    };
+    fetchPosts();
+  }, [email]);
+
+  console.log("workFlowWebsites", workFlowWebsites)
   
   return (
     <Box sx={{
@@ -86,7 +102,7 @@ const UploadFileApp = () => {
               }}
               onClick={()=>setWebsiteModal(true)}
             >
-              <Box component="img" sx={{width: "25px", height: "25px"}} src="/assets/dashboard/+.png" />
+              <Box component="img" sx={{width: "25px", height: "25px", margin: "0 !important"}} src="/assets/dashboard/+.png" />
             </Box>
           </Box>
           <Box sx={{
@@ -142,6 +158,7 @@ const UploadFileApp = () => {
             </Box>
           </Box>
         </Box>
+
         <TableContainer component={Paper} 
             sx={{ 
               boxShadow: "none",
@@ -160,39 +177,22 @@ const UploadFileApp = () => {
                 </TableRow>
               </TableHead>
               <TableBody sx={{backgroundColor: "white"}}>
-                  <TableRow>
-                    <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell align="center"></TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell align="center"></TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell align="center"></TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
-                    <TableCell align="center"></TableCell>
-                  </TableRow>
+                {
+                  workFlowWebsites.map((item, i)=>(
+                    <TableRow key={i}>
+                      <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center"></TableCell>
+                      <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center">{item.fileName}</TableCell>
+                      <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center">{item.comapnyNumber}</TableCell>
+                      <TableCell sx={{borderRight: "1px solid #A6A6A6", padding: "20px 0"}} align="center">{Moment(item.update_date).format('YYYY-MM-DD HH:mm')}</TableCell>
+                      <TableCell align="center">{item.comapnyMapping}</TableCell>
+                    </TableRow>
+                  ))
+                }
               </TableBody>
             </Table>
         </TableContainer>
       </Container>
-      <WebsiteModal  websiteModal={websiteModal} setWebsiteModal={setWebsiteModal}/>
+      <WebsiteModal  websiteModal={websiteModal} setWebsiteModal={setWebsiteModal} workFlowWebsites={workFlowWebsites} setWorkFlowWebsites={setWorkFlowWebsites}/>
       <LinkedInModal linkedInModal={linkedInModal} setLinkedInModal={setLinkedInModal} />
     </Box>
   )

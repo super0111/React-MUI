@@ -40,12 +40,9 @@ const FeedbackApp = () => {
           formik.isSubmitting = true;
           sendFeedback(values)
           .then((res)=>{
-            if(res.status === "success") {
-              toast.info("Successfully Submited!")
-              navigate("/feedbackSubmit");
-            }
-            else toast.error("Submit Failed")
-          })
+            toast.info("Successfully Submited!")
+            navigate("/feedbackSubmit");
+        })
       },
   });
 
