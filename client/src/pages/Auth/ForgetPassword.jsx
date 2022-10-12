@@ -5,16 +5,16 @@ import { Grid, Typography, Box, Button, TextField, } from "@mui/material";
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import BackgroundImage from '../../assets/images/users/Ellipse 460.png'; // Import using relative path
+import { forgotPassword } from "../../apis/auth";
 
 export const ForgetPassword = () => {
-    const navigate = useNavigate()
-
-        ; const validationSchema = yup.object({
-            email: yup
-                .string('Enter your email')
-                .email('Enter a valid email')
-                .required('Email is required'),
-        });
+    const navigate = useNavigate(); 
+    const validationSchema = yup.object({
+        email: yup
+            .string('Enter your email')
+            .email('Enter a valid email')
+            .required('Email is required'),
+    });
 
     const formik = useFormik({
         initialValues: {
@@ -24,8 +24,11 @@ export const ForgetPassword = () => {
         onSubmit: (values, { resetForm }) => {
             console.log(values);
             formik.isSubmitting = true;
-            setInterval(resetForm, 3000);
-            navigate("/login")
+            forgotPassword(values)
+            .then((res)=>{
+                console.log("forgot password res", res)
+                // navigate("/login")
+            })
         },
     });
 

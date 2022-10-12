@@ -1,5 +1,6 @@
 export { LoginPage } from "./Auth/LoginPage";
 export { ForgetPassword } from "./Auth/ForgetPassword";
+export { ResetPassword } from "./Auth/ResetPassword";
 export { default as SignUpFlow1 } from "./Auth/SignUpFlow1";
 export { default as SignUpFlow2 } from "./Auth/SignUpFlow2";
 export { default as SignUpFlow3 } from "./Auth/SignUpFlow3";

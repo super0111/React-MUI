@@ -46,31 +46,6 @@ const FeedbackApp = () => {
       },
   });
 
-
-
-  // const navigate = useNavigate();
-  // const [nameValue, setNameValue] = useState("");
-  // const [emailValue, setEmailValue] = useState("");
-  // const [messageValue, setMessageValue] = useState("");
-
-  // const  handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const formData = {
-  //     name: nameValue,
-  //     email: emailValue,
-  //     message: messageValue,
-  //   }
-
-  //   sendFeedback(formData)
-  //   .then((res)=>{
-  //     if(res.status === "success") {
-  //       toast.info("Successfully Submited!")
-  //       navigate("/feedbackSubmit");
-  //     }
-  //     else toast.error("Submit Failed")
-  //   })
-  // }
-
   return (
     <Box sx={{
       backgroundImage: `url(/assets/Header_Bg.png)`,

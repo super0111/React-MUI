@@ -59,6 +59,7 @@
     "nodemailer": "^6.8.0",
     "passport": "^0.5.3",
     "path": "^0.12.7",
+    "rand-token": "^1.0.1",
     "react-toastify": "^9.0.8",
     "sequelize": "^6.21.3"
   },

@@ -13,7 +13,8 @@ export const App = ({ root }) => {
       <Routes>
         <Route path="/" element={<Pages.LandingPage />} />
         <Route path="/login" element={<Pages.LoginPage />} />
-        <Route path="/reset-password" element={<Pages.ForgetPassword />} />
+        <Route path="/forgot-password" element={<Pages.ForgetPassword />} />
+        <Route path="/reset-password/:id" element={<Pages.ResetPassword />} />
         <Route path="/signUp" element={<SignUpFlowHandler /> } />
         <Route path="/logout" element={<Pages.LogoutPage />} />
         <Route path="/about-us" element={<Pages.AboutUsPage />} />

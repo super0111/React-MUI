@@ -1,44 +1,45 @@
 import * as React from "react";
-import { useNavigate } from "react-router-dom";
-import { Grid, Typography, Box, Button, TextField, InputAdornment, IconButton, Icon } from "@mui/material";
+import { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { Grid, Typography, Box, Button, TextField, } from "@mui/material";
 
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import { BsFillEyeSlashFill } from "react-icons/bs";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 import BackgroundImage from '../../assets/images/users/Ellipse 460.png'; // Import using relative path
-import { login } from "../../apis/auth";
-import setAuthToken from "../../utils/setAuthToken";
+import { resetPassword } from "../../apis/auth";
 
-export const LoginPage = () => {
+export const ResetPassword = () => {
     const navigate = useNavigate(); 
+    const { id } = useParams();
+    const token = id;
     const validationSchema = yup.object({
-        email: yup
-            .string('Enter your email')
-            .email('Enter a valid email')
-            .required('Email is required'),
         password: yup
             .string('Enter your password')
-            .required('Password is required'),
+            .required('password is required'),
+        confirmPassword: yup
+            .string('Enter your confirmPassword')
+            .required('confirmPassword is required'),
     });
 
     const formik = useFormik({
-        enableReinitialize: true,
         initialValues: {
-            email: '',
-            password: ''
+            password: '',
+            confirmPassword: '',
         },
         validationSchema: validationSchema,
         onSubmit: (values, { resetForm }) => {
-            console.log(values);
+            if(values.password !== values.confirmPassword) {
+                toast.error("Please confirm your password");
+                return;
+            }
+            values.token = token;
             formik.isSubmitting = true;
-            login(values)
+            resetPassword(values)
             .then((res)=>{
-                console.log("resssss", res.error)
-                if(res.status === "success") {
-                    setAuthToken(res.token);
-                    navigate("/dashboard");
+                if(res.message === "success") {
+                    navigate("/login")
                 }
                 else {
                     toast.error(res.error)
@@ -47,21 +48,11 @@ export const LoginPage = () => {
         },
     });
 
-    const changePasswordVisibility = () => {
-        const password = document.getElementById('password')
-        if (password.getAttribute('type') === 'password') {
-            password.setAttribute('type', 'text')
-        } else {
-            password.setAttribute('type', 'password')
-        }
-    }
-
     return (
         <Grid container spacing={2} sx={{
             backgroundImage: `url(/assets/Header_Bg.png)`,
             backgroundSize: "100% 100%",
             backgroundRepeat: "no-repeat",
-            height: '100vh',
         }}>
             <Grid item md={6} xs={12} sx={{
                 backgroundImage: `url(${BackgroundImage})`,
@@ -106,7 +97,7 @@ export const LoginPage = () => {
                                 marginBottom: '30px',
                             }}
                         >
-                            Login
+                            Forgot Password?
                         </Typography>
                         <Typography
                             sx={{
@@ -120,57 +111,14 @@ export const LoginPage = () => {
                                 textAlign: "left",
                             }}
                         >
-                            Email
+                            Passwprd
                         </Typography>
                         <TextField
                             variant="outlined"
-                            id="email"
-                            name="email"
-                            type="email"
-                            autoComplete='off'
-                            placeholder="Enter your email"
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            value={formik.values.email}
-                            error={formik.touched.email && Boolean(formik.errors.email)}
-                            label={formik.touched.email && formik.errors.email}
-                            InputLabelProps={{ shrink: true }}
-                            required
-                            sx={{
-                                width: '100%',
-                                background: "#FFFFFF",
-                                borderRadius: "12px",
-                            }}
-                        />
-                        <Typography
-                            sx={{
-                                fontFamily: 'Inter',
-                                fontStyle: "normal",
-                                fontWeight: 400,
-                                fontSize: "16px",
-                                lineHeight: "19px",
-                                color: "white",
-                                marginBottom: "10px",
-                                textAlign: "left",
-                                marginTop: "40px",
-                            }}
-                        >
-                            Password
-                        </Typography>
-                        <TextField
                             id="password"
-                            variant="outlined"
                             name="password"
                             type="password"
-                            InputProps={{
-                                endAdornment: (
-                                    <InputAdornment position="end">
-                                        <IconButton aria-label="toggle password visibility" onClick={changePasswordVisibility}>
-                                            <Icon><BsFillEyeSlashFill /></Icon>
-                                        </IconButton>
-                                    </InputAdornment>
-                                ),
-                            }}
+                            autoComplete='off'
                             placeholder="Enter your password"
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
@@ -178,7 +126,6 @@ export const LoginPage = () => {
                             error={formik.touched.password && Boolean(formik.errors.password)}
                             label={formik.touched.password && formik.errors.password}
                             InputLabelProps={{ shrink: true }}
-                            margin="none"
                             required
                             sx={{
                                 width: '100%',
@@ -190,22 +137,40 @@ export const LoginPage = () => {
                             sx={{
                                 fontFamily: 'Inter',
                                 fontStyle: "normal",
-                                fontWeight: 500,
-                                fontSize: "14px !important",
-                                lineHeight: "17px",
-                                color: "#A6A6A6",
-                                textAlign: "end",
-                                marginTop: "14px",
-                                cursor: "pointer",
+                                fontWeight: 400,
+                                fontSize: "16px",
+                                lineHeight: "19px",
+                                color: "white",
+                                margin: "10px 0",
+                                textAlign: "left",
                             }}
-                            onClick={() => navigate("/forgot-password")}
                         >
-                            Forgot your password?
+                            Confirm Passwprd
                         </Typography>
+                        <TextField
+                            variant="outlined"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            type="password"
+                            autoComplete='off'
+                            placeholder="Enter your confirm Password"
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            value={formik.values.confirmPassword}
+                            error={formik.touched.confirmPassword && Boolean(formik.errors.confirmPassword)}
+                            label={formik.touched.confirmPassword && formik.errors.confirmPassword}
+                            InputLabelProps={{ shrink: true }}
+                            required
+                            sx={{
+                                width: '100%',
+                                background: "#FFFFFF",
+                                borderRadius: "12px",
+                            }}
+                        />
 
                         <Box display="flex" justifyContent="center">
                             <Button type="submit" sx={{
-                                marginTop: "40px",
+                                marginTop: "20px",
                                 width: "100%",
                                 height: "50px",
                                 background: "#388E3C",
@@ -221,22 +186,31 @@ export const LoginPage = () => {
                                     background: "#388E3C",
                                 }
                             }}>
-                                Login
+                                Confirm
                             </Button>
                         </Box>
-                        <Typography sx={{
-                            fontFamily: 'Inter',
-                            fontStyle: "normal",
-                            fontWeight: 500,
-                            fontSize: "14px !important",
-                            lineHeight: "17px",
-                            color: "#FFFFFF",
-                            textAlign: 'center',
-                            marginTop: '40px'
-                        }}>
-                            Don’t have an account?
-                            <span style={{ marginLeft: '10px', cursor: "pointer" }} onClick={() => navigate("/signUp")}>Signup</span>
-                        </Typography>
+                        <Box display="flex" justifyContent="center">
+                            <Button sx={{
+                                marginTop: "20px",
+                                width: "100%",
+                                height: "50px",
+                                background: "none",
+                                border: "1px solid #FFFFFF",
+                                borderRadius: "11px",
+                                fontFamily: 'Inter',
+                                fontStyle: 'normal',
+                                fontWeight: 600,
+                                fontSize: '16px',
+                                lineHeight: '19px',
+                                textAlign: 'center',
+                                color: "#FFFFFF",
+                            }}
+                                onClick={() => navigate("/login")}
+                            >
+                                Go back to login
+                            </Button>
+                        </Box>
+
                     </form>
                 </Box>
 
@@ -249,7 +223,7 @@ export const LoginPage = () => {
                     margin: "20px 0"
                 },
             }}>
-                <img style={{ width: '55%' }} src="/assets/users/Asset 3 1.png" />
+                <img style={{ width: '55%' }} src="/assets/users/forgot-password-asset_1 1.png" />
             </Grid>
             <ToastContainer />
         </Grid>

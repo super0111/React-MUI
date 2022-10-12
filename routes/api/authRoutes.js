@@ -3,6 +3,8 @@ const Router = express.Router();
 const bcrypt = require('bcrypt');
 var jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
+const nodemailer = require('nodemailer');
+var randtoken = require('rand-token');
 const mysqlConnection = require("../../config/DBConnection");
 
 dotenv.config();
@@ -22,6 +24,7 @@ Router.post("/signIn", async (req, res) => {
   getUser = `SELECT * FROM users WHERE email = "${data.email}"`;
   
   mysqlConnection.query(getUser, async (err, rows, fields) => {
+    console.log("usersss", rows)
     let userInfo = Object.values(JSON.parse(JSON.stringify(rows)));
 
     if(userInfo[0]?.userActive === 0) {
@@ -189,5 +192,103 @@ Router.post("/signUpFlow4", (req, res) => {
     });
   });
 });
+
+
+function sendEmail(email, token) {
+  console.log("sendmail tokenene", token)
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.password,
+    },
+  });
+
+
+  transporter.sendMail({
+    from: `From Enablimint`, // sender
+    to: `${email}`, // list of receivers
+    subject: "Forgot Password for Enablimint", // Subject line
+    html: `
+    <div>
+      <b>You have got forgot password from Enablimint</b>
+      <div style='display: flex; justify-content: center;'>
+        <p>You requested for reset password, kindly use this 
+          <a 
+            style='text-decoration: none; background-color: green; padding: 5px 20px; margin: 0 10px; border-radius: 5px; color: white;'
+            href="http://localhost:3000/reset-password/${token}"
+          >
+            link
+          </a> 
+          to reset your password
+        </p>
+      </div>
+    </div>`, // html body
+  }).then(info => {
+    if(info) {
+      return info.status(200).json({status: "success"});
+    }
+  }).catch(console.error);
+}
+
+Router.post("/reset-password-email", (req, res) => {
+  const { email } = req.body;
+
+  let currentUser;
+  currentUser = `SELECT * FROM users WHERE email = "${email}"`;
+  mysqlConnection.query(currentUser, async (err, rows, fields) => {
+    if (err) throw err;
+    if (rows[0]?.email.length > 0) {
+      var token = randtoken.generate(20);
+      var sent = sendEmail(email, token);
+
+      if (sent != '0') {
+        var data = {
+          token: token
+        }
+        mysqlConnection.query('UPDATE users SET ? WHERE email ="' + rows[0].email + '"', data, function(err, result) {
+          if(err) throw err
+          return res.status(200).json({ message: 'success' });
+        })
+      } else {
+        return res.status(401).json({ error: 'Something goes to wrong. Please try again' });
+      }
+    } else {
+      console.log('2');
+      return res.status(401).json({ error: 'The Email is not registered with us' });
+    }
+  });
+});
+
+Router.post('/update-password', function(req, res, next) {
+  var token = req.body.token;
+  var password = req.body.password;
+  console.log("tokken", token)
+  mysqlConnection.query('SELECT * FROM users WHERE token ="' + token + '"', function(err, result) {
+    console.log("reqasdf", result)
+    if (err) throw err;
+    if (result.length > 0) {
+      // var saltRounds = 10;
+      // var hash = bcrypt.hash(password, saltRounds);
+      // bcrypt.genSalt(saltRounds, function(err, salt) {
+      //   bcrypt.hash(password, salt, function(err, hash) {
+
+      //   });
+      // });
+      var data = {
+        password: password
+      }
+      mysqlConnection.query('UPDATE users SET ? WHERE email ="' + result[0].email + '"', data, function(err, result) {
+        console.log("after change passowrd", result)
+        if(err) throw err
+        else {
+          res.status(200).json({ message: 'success' });
+        }
+      });
+    } else {
+      return res.status(401).json({ error: 'Invalid link; please try again' });
+    }
+  });
+})
 
 module.exports = Router;
