@@ -1,6 +1,6 @@
 import * as React from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import { Grid, Typography, Box, Button, Radio, RadioGroup, FormControlLabel, FormControl, } from "@mui/material";
 
 import BackgroundImage from '../../assets/images/users/Ellipse 460.png'; // Import using relative path
@@ -15,6 +15,8 @@ const labels = [
 
 const Cancellation = () => {
   const navigate = useNavigate();
+  const [ reason, setReason ] = useState("Its too expensive");
+  console.log("reasonnns", reason);
   return (
     <Grid container spacing={2} sx={{
       backgroundImage: `url(/assets/Header_Bg.png)`,
@@ -68,8 +70,9 @@ const Cancellation = () => {
           >
             { labels.map((item, i)=>(
               <FormControlLabel 
-                key={item}
-                value={item.value} 
+                key={i}
+                value={item.text} 
+                onChange={(e)=>setReason(e.target.value)}
                 control={ i === 0 ? <Radio defaultSelected /> : <Radio />}  
                 label={
                   <Typography sx={{
@@ -113,7 +116,7 @@ const Cancellation = () => {
               width: "100%",
             },
           }}
-          onClick={()=>navigate("/cancellation/cancellationContinue")}
+          onClick={()=>navigate("/cancellation/cancellationContinue", {state: reason})}
         >
             Continue
           </Button>

@@ -31,7 +31,6 @@ export const App = ({ root }) => {
           <Route path="/uploadFile" element={<Pages.UploadFile />} />
           <Route path="/newCampaign" element={<Pages.NewCampaign />} />
           <Route path="/campaign" element={<Pages.Campaign />} />
-          {/* <Route path="/campaignB" element={<Pages.CampaignB />} /> */}
           <Route path="/campaignX" element={<Pages.CampaignX />} />
           <Route path="/myAccount" element={<Pages.MyAccount />} />
           <Route path="/feedback" element={<Pages.Feedback />} />

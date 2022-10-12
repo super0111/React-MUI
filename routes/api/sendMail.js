@@ -60,6 +60,30 @@ Router.post("/sendContactSales", (req, res) => {
   }).catch(console.error);
 });
 
+Router.post("/sendCancellation", (req, res) => {
+  const { name, email, cancellReason } = req.body;
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'adonis0923dev@gmail.com',
+      user: process.env.EMAIL,
+      pass: process.env.password,
+    },
+  });
+  
+  
+  transporter.sendMail({
+    from: `${name} From Enablimint`, // sender
+    to: `${email}`, // list of receivers
+    subject: "You Revieved mail for cancellation of Enablimint", // Subject line
+    html: `<b>${cancellReason}</b>`, // html body
+  }).then(info => {
+    if(info) {
+      return res.status(200).json({message: "success"});
+    } else return res.status(500).json({error: "Something got wrong, try again"});
+  }).catch(console.error);
+});
+
 module.exports = Router;
 
 

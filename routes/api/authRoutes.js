@@ -193,7 +193,6 @@ Router.post("/signUpFlow4", (req, res) => {
   });
 });
 
-
 function sendEmail(email, token) {
   console.log("sendmail tokenene", token)
   const transporter = nodemailer.createTransport({
@@ -263,9 +262,7 @@ Router.post("/reset-password-email", (req, res) => {
 Router.post('/update-password', function(req, res, next) {
   var token = req.body.token;
   var password = req.body.password;
-  console.log("tokken", token)
   mysqlConnection.query('SELECT * FROM users WHERE token ="' + token + '"', function(err, result) {
-    console.log("reqasdf", result)
     if (err) throw err;
     if (result.length > 0) {
       // var saltRounds = 10;
@@ -279,7 +276,6 @@ Router.post('/update-password', function(req, res, next) {
         password: password
       }
       mysqlConnection.query('UPDATE users SET ? WHERE email ="' + result[0].email + '"', data, function(err, result) {
-        console.log("after change passowrd", result)
         if(err) throw err
         else {
           res.status(200).json({ message: 'success' });

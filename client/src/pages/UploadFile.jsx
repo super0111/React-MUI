@@ -24,7 +24,6 @@ const UploadFileApp = () => {
     const fetchPosts = async () => {
       const res = await fetch(`${config.server_url}api/dashboardRoutes/getUploadWebsite/${email}`);
       const data = await res.json();
-      console.log("data", data)
       setWorkFlowWebsites(data);
     };
     fetchPosts();

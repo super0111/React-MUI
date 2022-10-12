@@ -11,7 +11,7 @@ const sendFeedback = (formData, history) => {
     }),
   })
   .then((res) =>{
-    return res;
+    return res.json();
   } );
 };
 
@@ -26,12 +26,12 @@ const sendContactSales = (formData, history) => {
     }),
   })
   .then((res) =>{
-    return res;
+    return res.json();
   } );
 };
 
 const sendCancellation = (formData, history) => {
-  return fetch(`${config.server_url}dashboard/post/sendCancellation`, {
+  return fetch(`${config.server_url}api/sendMail/sendCancellation`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -41,7 +41,7 @@ const sendCancellation = (formData, history) => {
     }),
   })
   .then((res) =>{
-    return res;
+    return res.json();
   } );
 };
 

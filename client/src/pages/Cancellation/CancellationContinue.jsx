@@ -1,12 +1,14 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { Grid, TextField, Typography, Box, Button, Radio, RadioGroup, FormControlLabel, FormControl, } from "@mui/material";
 import { useFormik } from "formik";
 import * as yup from "yup";
 
 import { styled } from '@mui/system';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 import BackgroundImage from '../../assets/images/users/Ellipse 460.png'; // Import using relative path
 import { sendCancellation } from "../../apis/sendMail";
 
@@ -35,6 +37,7 @@ const InputField = styled('input')({
 
 const CancellationContinue = () => {
   const navigate = useNavigate();
+  const { state } = useLocation();
 
   const name = '';
   const email = '';
@@ -57,9 +60,16 @@ const CancellationContinue = () => {
       validationSchema: validationSchema,
       onSubmit: (values) => {
           formik.isSubmitting = true;
-          navigate("/cancellation/cancellationSuccess");
-          setTimeout(() => {
-          }, 700);
+          values.cancellReason = state;
+          sendCancellation(values)
+          .then((res)=>{
+            if(res.message == "success") {
+              navigate("/cancellation/cancellationSuccess");
+            }
+            else {
+              toast.error(res.error)
+            }
+          })
       },
   });
 
@@ -275,6 +285,7 @@ const CancellationContinue = () => {
       }}>
         <img style={{width: '80%'}} src="/assets/users/woman-planning-green-scheme-png 1.png" />
       </Grid>
+      <ToastContainer />
     </Grid>
   )
 }

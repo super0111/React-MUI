@@ -32,7 +32,7 @@ const accounts = [
 const support = [
   { text: "Help Center", router: "/help-center" },
   { text: "Contact us", router: "/contact-us" },
-  { text: "Cancellation Policy", router: "/cancellation-policy" },
+  { text: "Cancellation Policy", router: "/cancellation" },
 ]
 
 const legal = [
