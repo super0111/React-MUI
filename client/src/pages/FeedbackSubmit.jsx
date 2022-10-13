@@ -59,8 +59,7 @@ const FeedbackSubmitApp = () => {
           }}>
             Thank you for your feedback and helping us grow into a better company for our clients!
           </Typography>
-          <Box
-            component="img"
+          <Box component="img"
             sx={{
               width: "45%"
             }}
