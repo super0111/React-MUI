@@ -91,7 +91,6 @@ export const GetTabSettings = () => {
         if (title) {
             document.title = title;
         }
-
         if (metaDescription) {
             const metaDescriptionTag = document.querySelector(
                 'head > meta[name="description"]'
