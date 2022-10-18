@@ -115,7 +115,6 @@ export const Navbar = ({ currentPage, window }) => {
 
   return (
     <>
-      {/* className={`active ${show && 'hidden'}`} */}
       <Box Container sx={{ zIndex: 7898 }}>
           <AppBar
             component="nav"
@@ -123,7 +122,6 @@ export const Navbar = ({ currentPage, window }) => {
             style={{ "justifyContent": "center" }}
           >
             <Container>
-
               <Toolbar>
                 <IconButton
                   color="inherit"
@@ -134,7 +132,6 @@ export const Navbar = ({ currentPage, window }) => {
                 >
                   <MenuIcon />
                 </IconButton>
-
                 <Link to="/">
                   <Box
                     component="img"
@@ -187,7 +184,6 @@ export const Navbar = ({ currentPage, window }) => {
                 </Box>
               </Toolbar>
           </Container>
-          
           </AppBar>
           <Box component="nav">
             <Drawer
