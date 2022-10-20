@@ -7,9 +7,6 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-import "../assets/styles/FAQs.css"
-
-
 export const FAQs = () => {
     const [last_faq_id, setLastFAQId] = React.useState('');
     const [expanded, setExpanded] = React.useState('');
