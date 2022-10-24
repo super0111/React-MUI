@@ -110,9 +110,7 @@ export const Navbar = ({ currentPage, window }) => {
       </List>
     </Box>
   );
-
   const container = window !== undefined ? () => window().document.body : undefined;
-
   return (
     <>
       <Box Container sx={{ zIndex: 7898 }}>
