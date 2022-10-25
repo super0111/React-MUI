@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Link, useNavigate } from "react-router-dom";
-  
 import { 
   Container,
   AppBar, 
@@ -16,7 +15,6 @@ import {
   Typography, 
   Button 
 } from "@mui/material";
-
 import MenuIcon from "@mui/icons-material/Menu";
 import logo from "../assets/images/logo.png";
 import "../assets/styles/Navbar.css";
@@ -27,7 +25,6 @@ const navItems = ["Home", "About us", "Resources", "Pricing"];
 
 export const Navbar = ({ currentPage, window }) => {
   const navigate = useNavigate();
-
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [show, setShow] = React.useState(true);
   const [lastScrollY, setLastScrollY] = React.useState(0);
