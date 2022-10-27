@@ -42,7 +42,6 @@ export const Navbar = ({ currentPage, window }) => {
         setLastScrollY(window.scrollY);
       }
     };
-
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', controlNavbar);
 
@@ -52,7 +51,6 @@ export const Navbar = ({ currentPage, window }) => {
       };
     }
   }, [lastScrollY]);
-
   const changeLocation = React.useCallback((callerID) => {
     navigate(`/${callerID}`);
   }, [navigate]);
