@@ -1,7 +1,6 @@
 const config = require("../../config");
 const express = require('express');
 const router = express.Router();
-// const server_url= 'http://localhost:8000/';
 
 router.post('/', async (req, res) => {
   if(req.files != null) {

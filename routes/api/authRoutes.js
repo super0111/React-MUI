@@ -1,10 +1,10 @@
 const express = require("express");
 const Router = express.Router();
 const bcrypt = require('bcrypt');
-var jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
 const nodemailer = require('nodemailer');
 var randtoken = require('rand-token');
+var jwt = require("jsonwebtoken");
 const mysqlConnection = require("../../config/DBConnection");
 
 dotenv.config();
@@ -39,9 +39,7 @@ Router.post("/signIn", async (req, res) => {
 
       var response = bcrypt.compareSync(data.password, userInfo[0].password);
 
-      // const user = userInfo[0];
       if (data.password === userInfo[0].password) {
-      // if (response) {
         const token = jwt.sign(
           { user_id: userInfo[0].id, email: userInfo[0].email, type: data.type },
           process.env.TOKEN_SECRET,
@@ -87,7 +85,6 @@ Router.post("/signUpFlow1", (req, res) => {
     }
 
     const salt = await bcrypt.genSalt(10);
-    // now we set user password to hashed password
     requestData.password = await bcrypt.hash(requestData.password, salt);
 
     const sql = `INSERT INTO users (email, password) VALUES ("${requestData.email}", "${requestData.password}")`;
@@ -265,13 +262,6 @@ Router.post('/update-password', function(req, res, next) {
   mysqlConnection.query('SELECT * FROM users WHERE token ="' + token + '"', function(err, result) {
     if (err) throw err;
     if (result.length > 0) {
-      // var saltRounds = 10;
-      // var hash = bcrypt.hash(password, saltRounds);
-      // bcrypt.genSalt(saltRounds, function(err, salt) {
-      //   bcrypt.hash(password, salt, function(err, hash) {
-
-      //   });
-      // });
       var data = {
         password: password
       }

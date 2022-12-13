@@ -71,7 +71,6 @@ Router.post("/sendCancellation", (req, res) => {
     },
   });
   
-  
   transporter.sendMail({
     from: `${name} From Enablimint`, // sender
     to: `${email}`, // list of receivers
