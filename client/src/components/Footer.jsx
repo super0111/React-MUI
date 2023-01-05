@@ -214,17 +214,18 @@ export const Footer = () => {
               </Typography>
               {
                 support.map((item, i) => (
-                  <Typography key={i} sx={{
-                    fontFamily: 'Inter',
-                    fontStyle: "normal",
-                    fontWeight: 500,
-                    fontSize: "16px",
-                    lineHeight: "16px",
-                    color: "#A6A6A6",
-                    margin: "9px 0",
-                    cursor: "pointer",
-                  }}
+                  <Typography key={i} 
                     onClick={() => navigate(`${item.router}`)}
+                    sx={{
+                      fontFamily: 'Inter',
+                      fontStyle: "normal",
+                      fontWeight: 500,
+                      fontSize: "16px",
+                      lineHeight: "16px",
+                      color: "#A6A6A6",
+                      margin: "9px 0",
+                      cursor: "pointer",
+                    }}
                   >
                     {item.text}
                   </Typography>
