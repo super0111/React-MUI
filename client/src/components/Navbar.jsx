@@ -71,13 +71,14 @@ const Navbar = (props) => {
 
   const drawer = (
     <Box sx={{ textAlign: 'center' }}>
-      <Typography sx={{ 
-        fontSize: "25px", my: 2, color: "white", fontWeight: 700, marginTop: "30px",
-        ['@media (max-width:769px)']: { // eslint-disable-line no-useless-computed-key 
-          fontSize: "23px !important",
-        },
-        }}
+      <Typography 
         onClick={handleDrawerToggle}
+        sx={{ 
+          fontSize: "25px", my: 2, color: "white", fontWeight: 700, marginTop: "30px",
+          ['@media (max-width:769px)']: { // eslint-disable-line no-useless-computed-key 
+            fontSize: "23px !important",
+          },
+        }}
       >
         Enablemint
       </Typography>
