@@ -54,14 +54,14 @@ const Navbar = (props) => {
         <Button
           key={_item}
           id={_item}
+          ref={(ref) => { if (ref) changeColor(ref); }}
+          onClick={() => { changeLocation(_item) }}
           sx={{ 
             mr: 0.4, color: "#fff", ":hover": { color: "#388E3C", bgcolor: "#19d27014",},
             ['@media (max-width:769px)']: { // eslint-disable-line no-useless-computed-key 
               padding: "6px 0px !important",
             },
           }}
-          ref={(ref) => { if (ref) changeColor(ref); }}
-          onClick={() => { changeLocation(_item) }}
         >
           {item}
         </Button>
