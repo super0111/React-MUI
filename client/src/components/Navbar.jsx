@@ -28,8 +28,6 @@ const Navbar = (props) => {
     setIsAuth(false)
   }
 
-  console.log("authttht", isAuth)
-
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
