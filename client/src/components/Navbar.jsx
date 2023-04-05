@@ -138,9 +138,7 @@ const Navbar = (props) => {
   return (
     <Box sx={{ display: 'flex', padding: "0 50px" }}>
       <AppBar component="nav"
-        sx={{
-          background: "#161C28",
-        }}
+        sx={{ background: "#161C28" }}
       >
         <Container sx={{padding: "10px !important"}}>
           <Toolbar sx={{
