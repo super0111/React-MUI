@@ -1,6 +1,3 @@
-// import { useState } from "react";
-// import { Link } from "react-router-dom";
-
 import { Box, Typography, Button, styled, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { Navbar, Footer } from "../../components";
