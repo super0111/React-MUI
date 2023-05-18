@@ -37,15 +37,11 @@ export const Navbar = ({ currentPage, window }) => {
         } else { // if scroll up show the navbar
           setShow(true);
         }
-
-        // remember current page location to use in the next move
         setLastScrollY(window.scrollY);
       }
     };
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', controlNavbar);
-
-      // cleanup function
       return () => {
         window.removeEventListener('scroll', controlNavbar);
       };

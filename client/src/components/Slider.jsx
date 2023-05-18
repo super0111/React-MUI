@@ -356,35 +356,6 @@ const Slider = (props) => {
                     </Typography>
                     ))
                   }
-
-                  {/* <Typography
-                    sx={{
-                      fontStyle: "normal",
-                      fontWeight: 500,
-                      fontSize: "14px",
-                      lineHeight: "16px",
-                      color: "#FFFFFF",
-                      margin: "10px 0 10px 30px",
-                    }}
-                    onClick={()=>navigate("/campaignA")}
-                  >
-                    Campaign A
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontStyle: "normal",
-                      fontWeight: 500,
-                      fontSize: "14px",
-                      lineHeight: "16px",
-                      color: "#FFFFFF",
-                      margin: "10px 0 10px 30px",
-                    }}
-                    onClick={()=>navigate("/campaignB")}
-                  >
-                    Campaign B
-                  </Typography> */}
-
-
                   <Typography
                     sx={{
                       fontStyle: "normal",
