@@ -25,28 +25,6 @@ export default connect(
 )((props) => {
     const navigate = useNavigate();
     let { updateData } = props;
-
-    // const pricing = {
-    //     monthly: {
-    //         "name": "monthly",
-    //         "starter": 70,
-    //         "growth": 120,
-    //         "accelerator": 200
-    //     },
-    //     yearly: {
-    //         "name": "yearly",
-    //         "starter": 63,
-    //         "growth": 102,
-    //         "accelerator": 170
-    //     },
-    //     free_trial: {
-    //         "name": "free-trial",
-    //         "free-trial": 0
-    //     }
-    // };
-
-    // const [currentPricing, setPricing] = useState(pricing.monthly)
-
     const changeLocation = useCallback((newLocation = null) => {
         if (newLocation) {
             navigate(`/${newLocation}`);
