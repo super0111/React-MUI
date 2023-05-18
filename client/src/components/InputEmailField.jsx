@@ -30,7 +30,6 @@ export const InputEmailField = (props) => {
                     label={props.label}
                     name={props.fieldName}
                     variant="outlined"
-                    // size={'small'}
                     helperText={props.helperText}
                     value={value}
                     InputLabelProps={{
