@@ -87,7 +87,6 @@ export const Footer = () => {
                 InputLabelProps={{ shrink: true }}
                 required
               />
-              {/* <input className="enter-your-email-here" type="email" placeholder="Enter your email here" name="email" id="__footer_email_input" /> */}
               <button type="submit" className="form-btn" disabled={formik.isSubmitting}>
                 <img className="arrow-right1-1-icon" alt="" src="assets/arrowright1-1.svg" />
               </button>
