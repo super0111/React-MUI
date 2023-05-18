@@ -26,7 +26,7 @@ export const App = ({ root }) => {
         <Route path="/cancellation/cancellationContinue" element={<Pages.CancellationContinue />} />
         <Route path="/cancellation/cancellationSuccess" element={<Pages.CancellationSuccess />} />
 
-        <Route exact path='/' element={<PrivateRoutes/>}>
+        <Route exact path='/'>
           <Route path="/dashboard" element={<Pages.Dashboard />} />
           <Route path="/uploadFile" element={<Pages.UploadFile />} />
           <Route path="/newCampaign" element={<Pages.NewCampaign />} />

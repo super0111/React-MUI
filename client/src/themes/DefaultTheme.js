@@ -168,15 +168,15 @@ const createPaletteSystem = () => ({
         // dark: '',
         // contrastText: '',
     },
-		// secondary: {
+    // secondary: {
 
-		// }
-		warning: {
-			main: '#FFC728',
-		},
-		success: {
-			main: '#388E3C',
-		}
+    // }
+    warning: {
+        main: '#FFC728',
+    },
+    success: {
+        main: '#388E3C',
+    }
 })
 const createComponentSystem = () => ({
     MuiButton: {

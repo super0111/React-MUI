@@ -56,66 +56,6 @@ export class FeedbackForm extends React.Component {
                         </div>
                     </div>
                     <button type="submit" className="group-button3">Contact Us</button>
-                    {/* <div className="group-div62">
-                        <div className="group-div63">
-                            <div className="message-div">Message</div>
-                            <TextField
-                                className="rectangle-textfield"
-                                sx={{ width: 440 }}
-                                color="primary"
-                                variant="outlined"
-                                type="text"
-                                // placeholder="What would you like to say?"
-                                size="medium"
-                                margin="none"
-                                required
-                            />
-                            <div className="what-would-you-like-to-say">
-                                What would you like to say ?
-                            </div>
-                        </div>
-                    </div>
-                    <div className="group-div64">
-                        <Button
-                            className="group-button3"
-                            sx={{ width: 440 }}
-                            variant="contained"
-                            color="success"
-                            href="/submit-feedback"
-                        >
-                            Contact Us
-                        </Button>
-                    </div>
-                    <div className="group-div65">
-                        <div className="email-div">Email</div>
-                        <TextField
-                            className="rectangle-textfield"
-                            sx={{ width: 440 }}
-                            color="primary"
-                            variant="outlined"
-                            type="email"
-                            // placeholder="Enter your email"
-                            size="medium"
-                            margin="none"
-                            required
-                        />
-                        <div className="enter-your-email">Enter your email</div>
-                    </div>
-                    <div className="group-div67">
-                        <div className="email-div">Name</div>
-                        <TextField
-                            className="rectangle-textfield"
-                            sx={{ width: 440 }}
-                            color="primary"
-                            variant="outlined"
-                            type="text"
-                            // placeholder="Enter your name"
-                            size="medium"
-                            margin="none"
-                            required
-                        />
-                        <div className="enter-your-email">Enter your name</div>
-                    </div>  */}
                 </form>
             </div>
         );
