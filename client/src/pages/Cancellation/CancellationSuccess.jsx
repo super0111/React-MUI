@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import { Grid, Typography, Box, Button, } from "@mui/material";
-
 import BackgroundImage from '../../assets/images/users/Ellipse 460.png'; // Import using relative path
 
 const CancellationSuccess = () => {
