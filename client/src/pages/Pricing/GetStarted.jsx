@@ -469,7 +469,6 @@ const GetStarted = ({ updateData }) => {
             fontWeight: 600,
             fontSize: '15px',
             lineHeight: '27px',
-            // textDecorationLine: 'underline',
             color: '#A6A6A6',
             textAlign: 'center',
             marginBottom: '20px',
