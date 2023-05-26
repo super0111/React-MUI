@@ -6,7 +6,7 @@ import { Grid, Typography, Box, Button, } from "@mui/material";
 import BackgroundImage from '../../assets/images/users/Ellipse 460.png'; // Import using relative path
 
 const labels = [
-  { text: "Its too expensive", value: '1' },
+  { text: "Its too expensives", value: '1' },
   { text: "It’s too complicated", value: '2' },
   { text: "It did not do what I needed", value: '3' },
   { text: "Going with a competing tool", value: '4' },
