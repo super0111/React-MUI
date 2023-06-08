@@ -161,12 +161,12 @@ const Navbar = (props) => {
             <Typography
               variant="h6"
               component="div"
+              onClick={()=>navigate("/")}
               sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, color: "white", cursor:"pointer",
                 ['@media (max-width:769px)']: { // eslint-disable-line no-useless-computed-key 
                   fontSize: "20px !important",
                 },
               }}
-              onClick={()=>navigate("/")}
             >
               <Box component="img" src="/assets/logo-1@2x.png" sx={{
                 width: "55px", marginRight: "5px",
